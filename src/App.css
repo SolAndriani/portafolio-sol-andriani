@@ -139,7 +139,7 @@ main.layout-principal {
   gap: 2rem;
   padding-top: 2rem;
   padding-bottom: 3rem;
-  flex-wrap: nowrap; /* evita que se apile */
+  flex-wrap: wrap; /* ✅ permite que se apilen en pantallas chicas */
 }
 
 .foto-lateral {
@@ -391,30 +391,55 @@ html {
   scroll-behavior: smooth;
 }
 
-/* MEDIA QUERIES */
-/* Solo achica foto y texto sin apilar ni mover la foto arriba */
+/* Pantallas medianas (tablets) */
 @media (max-width: 768px) {
+  #presentacion {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
   .foto-lateral {
-    flex: 0 0 35%;
-    max-width: 35%;
+    flex: 0 0 100%;
+    max-width: 300px;
+    margin-bottom: 1rem;
   }
 
   .presentacion,
   .texto-sobre-mi {
-    max-width: 60%;
-    font-size: 1.8rem;
+    max-width: 100%;
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  .subtitulo {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
+/* Pantallas pequeñas (celulares) */
 @media (max-width: 480px) {
-  .foto-lateral {
-    flex: 0 0 40%;
-    max-width: 40%;
-  }
-
   .presentacion,
   .texto-sobre-mi {
-    max-width: 55%;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+  }
+
+  .menu-navegacion {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  header.encabezado {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .galeria-fotos {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
   }
 }
+
