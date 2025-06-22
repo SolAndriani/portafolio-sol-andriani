@@ -21,7 +21,7 @@ export default function Proyectos() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src="/imagenes/heroes.png" alt="Vista previa del portafolio" className="preview-img" />
+            <img src="/imagenes/marvel.png" alt="Vista previa del portafolio" className="preview-img" />
           </a>
           <p><strong>Superhéroes:</strong>Explora el universo Marvel y DC</p>
         </div>

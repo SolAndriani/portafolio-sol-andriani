@@ -119,7 +119,7 @@ header.encabezado {
 }
 
 .menu-navegacion::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Edge oculta scrollbar */
+  display: none;
 }
 .menu-navegacion li a {
   color: #222;
@@ -129,7 +129,7 @@ header.encabezado {
   text-decoration: none;
   letter-spacing: 0.5px;
   font-family: 'Open Sans', sans-serif;
-  white-space: nowrap; /* que los enlaces no hagan salto */
+  white-space: nowrap; 
 }
 
 .menu-navegacion li a:hover {
@@ -145,12 +145,12 @@ main.layout-principal {
 
 #presentacion {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
   gap: 2rem;
-  padding-top: 2rem;
-  padding-bottom: 3rem;
-  flex-wrap: nowrap; /* para que no se apilen en celular */
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  flex-wrap: nowrap; 
 }
 
 .foto-lateral {
@@ -174,8 +174,8 @@ main.layout-principal {
   flex: 1 1 auto;
   max-width: 70%;
   font-family: 'Playfair Display', serif;
-  font-weight: 300;
-  font-size: 2.4rem;
+  font-weight: 500;
+  font-size: 3rem;
   color: #222;
   text-align: left;
   display: flex;
