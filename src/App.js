@@ -5,7 +5,6 @@ import SobreMi from './components/SobreMi';
 import Proyectos from './components/Proyectos';
 import Galeria from './components/Galeria';
 import Footer from './components/Footer';
-import '@fortawesome/fontawesome-free/css/all.min.css';
 
 
 import './App.css';
