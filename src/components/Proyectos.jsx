@@ -21,30 +21,30 @@ export default function Proyectos() {
             Una forma simple de organizar tus días.
           </p>
         </div>
+       <div className="proyecto">
+  <a
+    href="https://mi-app-portafolio-b2ac.vercel.app"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <img
+      src="/imagenes/gifs.png"
+      alt="Vista previa del portafolio"
+      className="preview-img"
+    />
+  </a>
+  <p>
+    <strong>Buscador de GIFs</strong>
+    <br />
+    Buscá tus GIFs favoritos por categoría.
+  </p>
+</div>
         <div className="proyecto">
           <a
-            href="https://mi-app-portafolio-b2ac-2veztyi7q-sol-andrianis-projects.vercel.app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src="/imagenes/gifs.png"
-              alt="Vista previa del portafolio"
-              className="preview-img"
-            />
-          </a>
-          <p>
-            <strong>Buscador de GIFs</strong>
-            <br />
-            Buscá tus GIFs favoritos por categoría.
-          </p>
-        </div>
-        <div className="proyecto">
-          <a
-            href="https://superh-roes-i1c6-qms1p0qve-sol-andrianis-projects.vercel.app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+  href="https://superh-roes-i1c6.vercel.app/marvel"
+  target="_blank"
+  rel="noopener noreferrer"
+>
             <img
               src="/imagenes/marvel.png"
               alt="Vista previa del proyecto Superhéroes"

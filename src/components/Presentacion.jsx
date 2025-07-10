@@ -7,7 +7,7 @@ export default function Presentacion() {
         <img src="/imagenes/foto sol.jpg" alt="Foto de Sol" />
       </div>
       <div className="texto-sobre-mi">
-        <h1 className="presentacion">Soy Sol, desarrolladora web junior.</h1>
+        <h1 className="presentacion">Soy Sol, desarrolladora web Junior.</h1>
         <p className="subtitulo">
           Creo experiencias digitales claras y funcionales, mientras avanzo en mi desarrollo profesional.
         </p>
