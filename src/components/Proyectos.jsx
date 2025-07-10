@@ -41,7 +41,7 @@ export default function Proyectos() {
 </div>
         <div className="proyecto">
           <a
-  href="https://superh-roes-i1c6.vercel.app/marvel"
+  href="https://superh-roes-i1c6.vercel.app"
   target="_blank"
   rel="noopener noreferrer"
 >
