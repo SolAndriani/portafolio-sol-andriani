@@ -34,7 +34,7 @@ export default function Galeria() {
     <section id="galeria">
       <header className="galeria-header">
         <h2>Fotos</h2>
-        <p>Capturando momentos de mis viajes.</p>
+        
       </header>
       <div className="galeria-fotos">
         {imagenes.map((img, i) => (

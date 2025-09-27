@@ -5,6 +5,24 @@ export default function Proyectos() {
       <div className="proyectos-grid">
         <div className="proyecto">
           <a
+            href="https://biologofotos.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="/imagenes/Biologo.png"
+              alt="Vista previa del proyecto Fotografía de Agustín"
+              className="preview-img"
+            />
+          </a>
+          <p>
+            <strong>Portfolio Fotográfico</strong>
+            <br />
+            Página web personalizada para mostrar fotografías.
+          </p>
+        </div>
+         <div className="proyecto">
+          <a
             href="https://solandriani-github-io.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
@@ -21,30 +39,32 @@ export default function Proyectos() {
             Una forma simple de organizar tus días.
           </p>
         </div>
-       <div className="proyecto">
-  <a
-    href="https://mi-app-portafolio-b2ac.vercel.app"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <img
-      src="/imagenes/gifs.png"
-      alt="Vista previa del portafolio"
-      className="preview-img"
-    />
-  </a>
-  <p>
-    <strong>Buscador de GIFs</strong>
-    <br />
-    Buscá tus GIFs favoritos por categoría.
-  </p>
-</div>
+
         <div className="proyecto">
           <a
-  href="https://superh-roes-i1c6.vercel.app"
-  target="_blank"
-  rel="noopener noreferrer"
->
+            href="https://mi-app-portafolio-b2ac.vercel.app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="/imagenes/gifs.png"
+              alt="Vista previa del portafolio"
+              className="preview-img"
+            />
+          </a>
+          <p>
+            <strong>Buscador de GIFs</strong>
+            <br />
+            Buscá tus GIFs favoritos por categoría.
+          </p>
+        </div>
+
+        <div className="proyecto">
+          <a
+            href="https://superh-roes-i1c6.vercel.app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <img
               src="/imagenes/marvel.png"
               alt="Vista previa del proyecto Superhéroes"
@@ -57,8 +77,8 @@ export default function Proyectos() {
             Explora el universo Marvel y DC.
           </p>
         </div>
+        
       </div>
     </section>
   );
 }
-
