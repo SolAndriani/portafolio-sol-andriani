@@ -11,7 +11,7 @@ export default function Header() {
   return (
     <header className="header">
       <div className="header-left">
-        <img src="/imagenes/Logo-SOLution.png" alt="Logo SOLution" className="logo" />
+        <img src="/imagenes/Logo-SOL.png" alt="Logo SOL" className="logo" />
         <span className="empresa">Sol Andriani</span>
       </div>
 

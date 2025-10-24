@@ -5,7 +5,7 @@ export default function Proyectos() {
   const proyectos = [
     {
       titulo: "Portfolio Fotográfico",
-      descripcion: "Página web personalizada mostrando fotografías. Proyecto de SOLution con diseño limpio y funcional.",
+      descripcion: "Página web personalizada mostrando fotografías",
       url: "https://biologofotos.vercel.app/",
       img: "/imagenes/Biologo.png",
       alt: "Portfolio Fotográfico de Agustín",
@@ -26,7 +26,7 @@ export default function Proyectos() {
     },
     {
       titulo: "Buscador de GIFs",
-      descripcion: "Proyecto de SOLution: buscador de GIFs por categoría con React y diseño intuitivo.",
+      descripcion: "Proyecto: buscador de GIFs por categoría con React y diseño intuitivo.",
       url: "https://mi-app-portafolio-b2ac.vercel.app",
       img: "/imagenes/gifs.png",
       alt: "Buscador de GIFs",
