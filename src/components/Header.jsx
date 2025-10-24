@@ -1,17 +1,19 @@
 import React from 'react';
+import './Header.css';
 
 export default function Header() {
   return (
-    <header className="encabezado">
-      <div className="nombre-completo">
-        <a href="#presentacion"><strong>Sol Andriani</strong></a>
-        <a href="mailto:solagustinaandriani@gmail.com">solagustinaandriani@gmail.com</a>
+    <header className="header">
+      <div className="header-left">
+        <img src="/imagenes/Logo-SOLution.png" alt="Logo SOLution" className="logo" />
+        <span className="empresa">Sol Andriani</span>
       </div>
-      <nav>
-        <ul className="menu-navegacion">
+
+      <nav className="header-nav">
+        <ul>
           <li><a href="#sobre-mi">Sobre mí</a></li>
           <li><a href="#proyectos">Proyectos</a></li>
-          <li><a href="#galeria">Fotos</a></li>
+          <li><a href="#galeria">Galería</a></li>
           <li><a href="#contacto">Contacto</a></li>
         </ul>
       </nav>

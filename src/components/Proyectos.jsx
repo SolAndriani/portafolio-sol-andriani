@@ -1,83 +1,64 @@
+import React from 'react';
+import './Proyectos.css';
+
 export default function Proyectos() {
+  const proyectos = [
+    {
+      titulo: "Portfolio Fotográfico",
+      descripcion: "Página web personalizada mostrando fotografías. Proyecto de SOLution con diseño limpio y funcional.",
+      url: "https://biologofotos.vercel.app/",
+      img: "/imagenes/Biologo.png",
+      alt: "Portfolio Fotográfico de Agustín",
+    },
+    {
+      titulo: "Glosario de React",
+      descripcion: "Proyecto práctico para repasar y reforzar conceptos de React, incluyendo Hooks, componentes, props y eventos.",
+      url: "https://glosario-react.vercel.app/",
+      img: "/imagenes/React.jpg",
+      alt: "Glosario de conceptos de React",
+    },
+    {
+      titulo: "Calendario",
+      descripcion: "Aplicación web simple para organizar tareas y días. Desarrollo funcional y responsive.",
+      url: "https://solandriani-github-io.vercel.app/",
+      img: "/imagenes/calendario.png",
+      alt: "Proyecto Calendario",
+    },
+    {
+      titulo: "Buscador de GIFs",
+      descripcion: "Proyecto de SOLution: buscador de GIFs por categoría con React y diseño intuitivo.",
+      url: "https://mi-app-portafolio-b2ac.vercel.app",
+      img: "/imagenes/gifs.png",
+      alt: "Buscador de GIFs",
+    },
+    {
+      titulo: "Superhéroes",
+      descripcion: "Explora el universo Marvel y DC con un proyecto funcional y diseño moderno.",
+      url: "https://superh-roes-i1c6.vercel.app",
+      img: "/imagenes/marvel.png",
+      alt: "Proyecto Superhéroes",
+    },
+  ];
+
   return (
-    <section id="proyectos" className="seccion">
-      <h2>Proyectos</h2>
+    <section id="proyectos" className="proyectos seccion">
+      <h2 className="subtitulo">Proyectos</h2>
       <div className="proyectos-grid">
-        <div className="proyecto">
-          <a
-            href="https://biologofotos.vercel.app/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src="/imagenes/Biologo.png"
-              alt="Vista previa del proyecto Fotografía de Agustín"
-              className="preview-img"
-            />
-          </a>
-          <p>
-            <strong>Portfolio Fotográfico</strong>
-            <br />
-            Página web personalizada para mostrar fotografías.
-          </p>
-        </div>
-         <div className="proyecto">
-          <a
-            href="https://solandriani-github-io.vercel.app/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src="/imagenes/calendario.png"
-              alt="Vista previa del proyecto Calendario"
-              className="preview-img"
-            />
-          </a>
-          <p>
-            <strong>Calendario</strong>
-            <br />
-            Una forma simple de organizar tus días.
-          </p>
-        </div>
-
-        <div className="proyecto">
-          <a
-            href="https://mi-app-portafolio-b2ac.vercel.app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src="/imagenes/gifs.png"
-              alt="Vista previa del portafolio"
-              className="preview-img"
-            />
-          </a>
-          <p>
-            <strong>Buscador de GIFs</strong>
-            <br />
-            Buscá tus GIFs favoritos por categoría.
-          </p>
-        </div>
-
-        <div className="proyecto">
-          <a
-            href="https://superh-roes-i1c6.vercel.app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src="/imagenes/marvel.png"
-              alt="Vista previa del proyecto Superhéroes"
-              className="preview-img"
-            />
-          </a>
-          <p>
-            <strong>Superhéroes</strong>
-            <br />
-            Explora el universo Marvel y DC.
-          </p>
-        </div>
-        
+        {proyectos.map((proyecto, index) => (
+          <div className="proyecto-card" key={index}>
+            <a href={proyecto.url} target="_blank" rel="noopener noreferrer">
+              <img
+                src={proyecto.img}
+                alt={proyecto.alt}
+                className="proyecto-img"
+              />
+            </a>
+            <div className="proyecto-info">
+              <h3>{proyecto.titulo}</h3>
+              <p>{proyecto.descripcion}</p>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );

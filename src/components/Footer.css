@@ -1,0 +1,43 @@
+/* ===== Footer unificado ===== */
+footer {
+  background-color: #F5F5F0; /* mismo fondo claro que Presentación */
+  color: #333;
+  font-family: 'Montserrat', sans-serif;
+  padding: 3rem 2rem 2rem;
+  text-align: center;
+}
+
+/* ===== Iconos de contacto ===== */
+.iconos-contacto {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.iconos-contacto a {
+  color: #14213D; /* azul principal coherente con Presentación/Proyectos */
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.iconos-contacto a:hover {
+  color: #3D5A80; /* azul secundario para hover */
+  transform: scale(1.2);
+}
+
+/* ===== Texto del copyright ===== */
+footer p {
+  font-size: 0.95rem;
+  color: #333;
+  margin-top: 0.5rem;
+  letter-spacing: 0.5px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .iconos-contacto {
+    gap: 1.5rem;
+    font-size: 1.5rem;
+  }
+}

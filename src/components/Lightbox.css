@@ -1,0 +1,94 @@
+/* ===== Lightbox fondo ===== */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(20, 33, 61, 0.9);
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: opacity 0.3s ease;
+}
+
+.lightbox.active {
+  display: flex;
+  opacity: 1;
+}
+
+/* ===== Imagen dentro del Lightbox ===== */
+.lightbox-img {
+  max-width: 90vw;
+  max-height: 85vh;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease;
+}
+
+.lightbox-img:hover {
+  transform: scale(1.02);
+}
+
+/* ===== Botón cerrar ===== */
+.cerrar {
+  position: fixed;
+  top: 20px;
+  right: 30px;
+  color: #fff;
+  font-size: 3rem;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 2100;
+  user-select: none;
+  transition: color 0.3s ease;
+}
+
+.cerrar:hover {
+  color: #ddd;
+}
+
+/* ===== Navegación siguiente/anterior ===== */
+.prev, .next {
+  position: fixed;
+  top: 50%;
+  color: #fff;
+  font-size: 4rem;
+  cursor: pointer;
+  user-select: none;
+  padding: 10px 15px;
+  background: rgba(0,0,0,0.3);
+  border-radius: 4px;
+  transform: translateY(-50%);
+  z-index: 2100;
+  transition: background 0.3s ease;
+}
+
+.prev:hover, .next:hover {
+  background: rgba(0,0,0,0.6);
+}
+
+.prev { left: 20px; }
+.next { right: 20px; }
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .lightbox-img {
+    max-width: 95vw;
+    max-height: 75vh;
+  }
+
+  .prev, .next {
+    font-size: 3rem;
+    padding: 8px 12px;
+  }
+
+  .cerrar {
+    font-size: 2.5rem;
+    top: 15px;
+    right: 20px;
+  }
+}

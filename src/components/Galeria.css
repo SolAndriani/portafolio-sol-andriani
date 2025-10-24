@@ -1,0 +1,180 @@
+/* ============================= */
+/* Sección Galería */
+.galeria-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.galeria-header h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #14213D;
+  margin-bottom: 0.5rem;
+}
+
+.galeria-header p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Grid de fotos */
+.galeria-fotos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  opacity: 0;
+  animation: fadeIn 0.8s forwards;
+}
+
+.galeria-item {
+  width: 100%;
+  aspect-ratio: 3/4; /* Fotos verticales */
+  object-fit: cover;
+  border-radius: 0; /* Bordes rectos */
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.galeria-item:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+/* Overlay con título */
+.galeria-item::after {
+  content: attr(alt);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(20,20,20,0.6);
+  color: #fff;
+  text-align: center;
+  padding: 0.4rem 0;
+  font-size: 0.95rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.galeria-item:hover::after {
+  opacity: 1;
+}
+
+/* ============================= */
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(20, 20, 20, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.lightbox.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lightbox-img {
+  max-width: 60%; /* Más grande y vertical */
+  max-height: 90%;
+  border-radius: 0; /* Bordes rectos */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.lightbox-img:hover {
+  transform: scale(1.02);
+}
+
+/* Botón cerrar */
+.cerrar {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  font-size: 2.5rem;
+  color: #fff;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.cerrar:hover {
+  color: #3D5A80;
+}
+
+/* Flechas */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  font-size: 2.5rem;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.3);
+  transition: background 0.3s ease, color 0.3s ease;
+  transform: translateY(-50%);
+}
+
+.prev:hover, .next:hover {
+  background: rgba(61,90,128,0.8);
+  color: #fff;
+}
+
+.prev { left: 2rem; }
+.next { right: 2rem; }
+
+/* ============================= */
+/* Animación de aparición */
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+/* ============================= */
+/* Responsive */
+@media (max-width: 1024px) {
+  .galeria-fotos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .galeria-item {
+    aspect-ratio: 3/4;
+  }
+}
+
+@media (max-width: 768px) {
+  .galeria-fotos {
+    grid-template-columns: 1fr;
+  }
+
+  .galeria-item {
+    aspect-ratio: 3/4;
+  }
+
+  .prev, .next {
+    font-size: 2rem;
+    padding: 0.3rem 0.6rem;
+  }
+
+  .cerrar {
+    font-size: 2rem;
+    top: 1rem;
+    right: 1rem;
+  }
+}

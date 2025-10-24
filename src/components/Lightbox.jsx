@@ -1,5 +1,5 @@
-// src/components/Lightbox.jsx
 import React from 'react';
+import './Lightbox.css'; // <-- Importar estilos
 
 export default function Lightbox({ imagen, cerrar, anterior, siguiente }) {
   return (
