@@ -1,77 +1,94 @@
-/* ===== Header unificado con fondo blanco ===== */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 2rem;
-  background-color: #ffffff; /* blanco para resaltar sobre el fondo general */
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* sombra sutil para destacar */
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  padding: 1rem 2rem;
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  position: relative;
 }
 
-/* ===== Logo y nombre ===== */
 .header-left {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
 }
 
 .logo {
-  height: 50px;
-  width: auto;
+  height: 40px;
+  margin-right: 0.5rem;
 }
 
 .empresa {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  font-size: 1.4rem;
-  color: #14213D; /* azul principal */
+  font-weight: bold;
+  font-size: 1.2rem;
 }
 
-/* ===== Navegación ===== */
+/* Navegación principal */
 .header-nav ul {
   display: flex;
-  gap: 2rem;
+  gap: 1.5rem;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
 .header-nav a {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1rem;
-  font-weight: 500;
-  color: #14213D; /* azul principal */
   text-decoration: none;
-  transition: color 0.3s, transform 0.2s;
+  color: #333;
+  font-weight: 500;
 }
 
-.header-nav a:hover {
-  color: #3D5A80; /* azul secundario */
-  transform: translateY(-2px);
+/* ===== HAMBURGER ===== */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
 }
 
-/* ===== Responsive ===== */
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  transition: 0.3s;
+}
+
+/* Animación de la X */
+.bar.open:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.bar.open:nth-child(2) {
+  opacity: 0;
+}
+.bar.open:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
-  .header {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 1rem 2rem;
+  .header-nav {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #fff;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+
+  .header-nav.open {
+    max-height: 200px; /* Ajusta según la cantidad de links */
   }
 
   .header-nav ul {
     flex-direction: column;
     gap: 1rem;
-    margin-top: 1rem;
+    padding: 1rem;
   }
 
-  .logo {
-    height: 45px;
-  }
-
-  .empresa {
-    font-size: 1.2rem;
+  .hamburger {
+    display: flex;
   }
 }
