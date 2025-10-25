@@ -1,6 +1,4 @@
-/* ============================= */
-/* Sección Sobre mí */
-/* ============================= */
+
 .sobre-mi {
   background-color: #fff;
   padding: clamp(4rem, 6vw, 6rem) 2rem;
@@ -14,7 +12,7 @@
   margin-bottom: 3rem;
 }
 
-/* Contenedor tarjetas - Desktop */
+
 .sobre-mi-contenedor {
   display: flex;
   flex-wrap: wrap;
@@ -24,7 +22,7 @@
   margin: 0 auto;
 }
 
-/* Tarjetas individuales */
+
 .trabajo-card {
   background-color: #F5F5F0;
   flex: 1 1 250px;
@@ -32,8 +30,8 @@
   border-radius: 16px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.08);
   display: flex;
-  flex-direction: row;      /* número y texto en fila */
-  align-items: flex-start;  /* alinea el número con el texto */
+  flex-direction: row;      
+  align-items: flex-start; 
   gap: 1rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -43,7 +41,7 @@
   box-shadow: 0 10px 25px rgba(0,0,0,0.12);
 }
 
-/* Número de paso */
+
 .numero {
   font-size: 1.5rem;
   font-weight: 700;
@@ -51,32 +49,29 @@
   flex-shrink: 0;
 }
 
-/* Texto de la tarjeta */
+
 .trabajo-card p {
   font-size: 1.1rem;
   line-height: 1.7;
   color: #333;
   margin: 0;
-  text-align: left;  /* más legible para frases cortas */
+  text-align: left;  
 }
 
-/* ============================= */
-/* Responsive - Pantallas pequeñas */
-/* ============================= */
+
 @media (max-width: 768px) {
 
-  /* Contenedor pasa a grid para eliminar espacios vacíos */
   .sobre-mi-contenedor {
     display: grid;
-    grid-template-columns: 1fr; /* 1 columna */
+    grid-template-columns: 1fr; 
     gap: 1.5rem;
     max-width: 400px;
     margin: 0 auto;
   }
 
-  /* Tarjetas adaptadas a móvil */
+
   .trabajo-card {
-    flex-direction: row; /* número a la izquierda del texto */
+    flex-direction: row;
     width: 100%;
     flex: none;
     align-items: flex-start;

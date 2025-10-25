@@ -14,7 +14,6 @@
   flex-wrap: wrap;
 }
 
-/* Foto lateral */
 .foto-lateral {
   flex: 0 0 300px;
 }
@@ -22,7 +21,7 @@
 .foto-lateral img {
   width: 100%;
   height: auto;
-  border-radius: 16px; /* tu estilo original */
+  border-radius: 16px;
   object-fit: cover;
   display: block;
   box-shadow: 0 8px 20px rgba(0,0,0,0.1);
@@ -33,7 +32,7 @@
   transform: scale(1.03);
 }
 
-/* Texto presentación */
+
 .texto-presentacion {
   flex: 1;
   min-width: 250px;
@@ -66,7 +65,7 @@
   margin-bottom: 2rem;
 }
 
-/* Botón de contacto */
+
 .btn-contacto {
   display: inline-block;
   background-color: #14213D;
@@ -85,7 +84,7 @@
   transform: translateY(-2px);
 }
 
-/* Iconos sociales */
+
 .social-icons {
   display: flex;
   gap: 1rem;
@@ -103,7 +102,7 @@
   transform: translateY(-3px);
 }
 
-/* Responsive: tablets */
+
 @media (max-width: 1024px) {
   .foto-lateral {
     flex: 0 0 250px;
@@ -118,7 +117,7 @@
   }
 }
 
-/* Responsive: móviles */
+
 @media (max-width: 768px) {
   .presentacion-contenedor {
     flex-direction: column;
@@ -128,9 +127,9 @@
 
   .foto-lateral {
     flex: 0 0 auto;
-    width: 50%; /* antes estaba 65%, lo reducimos un poco */
-    max-width: 200px; /* límite para que no sea gigante */
-    margin: 0 auto; /* centra la foto */
+    width: 50%; 
+    max-width: 200px; 
+    margin: 0 auto; 
   }
 
   .texto-presentacion h1 {
