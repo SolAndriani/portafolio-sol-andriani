@@ -15,7 +15,7 @@ export default function SobreMi() {
       <div className="sobre-mi-contenedor">
         {pasosTrabajo.map((paso, index) => (
           <div key={index} className="trabajo-card">
-            <span className="numero">{index + 1}</span>
+            <span className="numero">{index + 1}.</span> {/* Punto agregado */}
             <p>{paso}</p>
           </div>
         ))}
@@ -23,4 +23,3 @@ export default function SobreMi() {
     </section>
   );
 }
-

@@ -128,7 +128,9 @@
 
   .foto-lateral {
     flex: 0 0 auto;
-    width: 65%;
+    width: 50%; /* antes estaba 65%, lo reducimos un poco */
+    max-width: 200px; /* límite para que no sea gigante */
+    margin: 0 auto; /* centra la foto */
   }
 
   .texto-presentacion h1 {

@@ -45,19 +45,23 @@ export default function Proyectos() {
       <h2 className="subtitulo">Proyectos</h2>
       <div className="proyectos-grid">
         {proyectos.map((proyecto, index) => (
-          <div className="proyecto-card" key={index}>
-            <a href={proyecto.url} target="_blank" rel="noopener noreferrer">
-              <img
-                src={proyecto.img}
-                alt={proyecto.alt}
-                className="proyecto-img"
-              />
-            </a>
+          <a
+            href={proyecto.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="proyecto-card"
+            key={index}
+          >
+            <img
+              src={proyecto.img}
+              alt={proyecto.alt}
+              className="proyecto-img"
+            />
             <div className="proyecto-info">
               <h3>{proyecto.titulo}</h3>
               <p>{proyecto.descripcion}</p>
             </div>
-          </div>
+          </a>
         ))}
       </div>
     </section>
