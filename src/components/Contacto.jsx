@@ -10,7 +10,7 @@ export default function Contacto({ modalOpen, setModalOpen }) {
   });
   const [status, setStatus] = useState("");
 
-  if (!modalOpen) return null; // 🔸 No muestra nada si el modal está cerrado
+  if (!modalOpen) return null; // No muestra nada si el modal está cerrado
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -21,7 +21,6 @@ export default function Contacto({ modalOpen, setModalOpen }) {
     setStatus("Enviando...");
 
     try {
-      // 🔹 Usamos la variable de entorno REACT_APP_API para la URL del backend
       const response = await fetch(`${process.env.REACT_APP_API}/api/contact`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -29,7 +28,7 @@ export default function Contacto({ modalOpen, setModalOpen }) {
           name: form.name,
           from: form.from,
           subject: form.subject,
-          message: form.message,
+          message: form.message
         }),
       });
 
@@ -37,23 +36,20 @@ export default function Contacto({ modalOpen, setModalOpen }) {
       console.log("📥 Respuesta del backend:", data);
 
       if (response.ok) {
-        setStatus("Mensaje enviado correctamente!");
+        setStatus("✅ Mensaje enviado correctamente!");
         setForm({ name: "", from: "", subject: "", message: "" });
       } else {
         setStatus("⚠ Error: " + (data.error || "Algo salió mal"));
       }
     } catch (error) {
       console.error("Error en fetch:", error);
-      setStatus("No se pudo enviar el formulario. Revisá CORS o el backend.");
+      setStatus("❌ No se pudo enviar el formulario. Revisá CORS o el backend.");
     }
   };
 
   return (
     <div className="modal-overlay" onClick={() => setModalOpen(false)}>
-      <div
-        className="modal-content"
-        onClick={(e) => e.stopPropagation()} 
-      >
+      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
         <button className="cerrar-modal" onClick={() => setModalOpen(false)}>
           ✖
         </button>
