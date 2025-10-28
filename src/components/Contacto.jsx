@@ -22,7 +22,7 @@ export default function Contacto({ modalOpen, setModalOpen }) {
 
     try {
       const response = await fetch(
-        process.env.REACT_APP_API + "/api/contact",
+        "https://portafolio-sol-andriani-backend.onrender.com/api/contact", // URL de tu backend
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -41,7 +41,7 @@ export default function Contacto({ modalOpen, setModalOpen }) {
       }
     } catch (error) {
       console.error("Error en fetch:", error);
-      setStatus("No se pudo enviar el formulario. Revisá CORS o el backend.");
+      setStatus( "No se pudo enviar el formulario. Revisá CORS o el backend.");
     }
   };
 
@@ -55,7 +55,7 @@ export default function Contacto({ modalOpen, setModalOpen }) {
           <input type="email" name="from" placeholder="Email" value={form.from} onChange={handleChange} required />
           <input type="text" name="subject" placeholder="Asunto" value={form.subject} onChange={handleChange} />
           <textarea name="message" placeholder="Mensaje" value={form.message} onChange={handleChange} required />
-          <button type="submit">Enviar</button>
+          <button type="submit" disabled={status === "Enviando..."}>Enviar</button>
         </form>
         <p className="estado">{status}</p>
       </div>
