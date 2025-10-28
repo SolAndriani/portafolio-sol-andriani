@@ -21,11 +21,17 @@ export default function Contacto({ modalOpen, setModalOpen }) {
     setStatus("Enviando...");
 
     try {
-      const response = await fetch("https://portafolio-sol-andriani-backend.onrender.com/api/contact", {
-  method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify({ name, from, subject, message })
-});
+      // 🔹 Usamos la variable de entorno REACT_APP_API para la URL del backend
+      const response = await fetch(`${process.env.REACT_APP_API}/api/contact`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: form.name,
+          from: form.from,
+          subject: form.subject,
+          message: form.message,
+        }),
+      });
 
       const data = await response.json();
       console.log("📥 Respuesta del backend:", data);
