@@ -1,3 +1,4 @@
+/* Sección Presentación */
 #presentacion {
   background-color: #F5F5F0;
   padding: clamp(3rem, 5vw, 6rem) 2rem;
@@ -14,6 +15,7 @@
   flex-wrap: wrap;
 }
 
+/* Foto lateral */
 .foto-lateral {
   flex: 0 0 300px;
 }
@@ -32,7 +34,7 @@
   transform: scale(1.03);
 }
 
-
+/* Texto de presentación */
 .texto-presentacion {
   flex: 1;
   min-width: 250px;
@@ -65,26 +67,39 @@
   margin-bottom: 2rem;
 }
 
-
+/* Botón Trabajemos juntos sin cambio de color */
 .btn-contacto {
   display: inline-block;
-  background-color: #14213D;
-  color: #fff;
+  background-color: #14213D; /* color fijo */
+  color: #fff !important;    /* texto siempre blanco */
   padding: 0.8rem 1.6rem;
   border-radius: 9999px;
   font-weight: 500;
   text-decoration: none;
   letter-spacing: 0.3px;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(20, 33, 61, 0.2);
+  box-shadow: 0 4px 12px rgba(20,33,61,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+
+  /* Eliminar efectos de navegador */
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  border: none;
 }
 
-.btn-contacto:hover {
-  background-color: #3D5A80;
-  transform: translateY(-2px);
+.btn-contacto:hover,
+.btn-contacto:focus,
+.btn-contacto:active {
+  transform: translateY(-3px) scale(1.03); /* mini levantamiento */
+  box-shadow: 0 8px 20px rgba(20,33,61,0.3); /* sombra elegante */
+  color: #fff !important; /* fuerza color blanco siempre */
+  text-decoration: none;   /* elimina subrayado de focus */
 }
 
-
+/* Iconos sociales */
 .social-icons {
   display: flex;
   gap: 1rem;
@@ -92,17 +107,19 @@
 }
 
 .social-icons a {
-  color: #14213D;
+  color: #14213D; /* color fijo */
   font-size: 1.8rem;
-  transition: color 0.3s, transform 0.3s;
+  transition: transform 0.3s ease;
 }
 
-.social-icons a:hover {
-  color: #3D5A80;
-  transform: translateY(-3px);
+.social-icons a:hover,
+.social-icons a:focus,
+.social-icons a:active {
+  transform: translateY(-3px) scale(1.1); /* mini levantamiento */
+  color: #14213D !important; /* nunca cambia de color */
 }
 
-
+/* Media Queries */
 @media (max-width: 1024px) {
   .foto-lateral {
     flex: 0 0 250px;
@@ -116,7 +133,6 @@
     font-size: 1.2rem;
   }
 }
-
 
 @media (max-width: 768px) {
   .presentacion-contenedor {
@@ -146,5 +162,16 @@
 
   .btn-contacto {
     margin: 0 auto;
+  }
+}
+
+@media (max-width: 400px) {
+  .btn-contacto {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .social-icons a {
+    font-size: 1.5rem;
   }
 }

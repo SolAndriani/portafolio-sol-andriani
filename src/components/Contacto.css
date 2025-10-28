@@ -1,0 +1,97 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 1rem; /* para que no quede pegado en móviles */
+}
+
+.modal-content {
+  background: #fff;
+  padding: clamp(1.5rem, 2vw, 2.5rem);
+  border-radius: 12px;
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.cerrar-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: clamp(0.8rem, 1vw, 1rem);
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: clamp(0.95rem, 1vw, 1rem);
+  font-family: inherit;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Botón submit sin nube azul */
+button[type="submit"] {
+  background-color: #14213D; /* color fijo */
+  color: #fff !important;    /* texto siempre blanco */
+  border: none;
+  padding: clamp(0.8rem, 1vw, 1rem);
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: clamp(1rem, 1vw, 1.1rem);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  /* eliminar efectos de navegador */
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+}
+
+button[type="submit"]:hover,
+button[type="submit"]:focus,
+button[type="submit"]:active {
+  transform: translateY(-2px) scale(1.02); /* mini levantamiento */
+  box-shadow: 0 6px 15px rgba(20,33,61,0.3); /* sombra elegante */
+  color: #fff !important; /* mantiene blanco */
+  text-decoration: none;
+}
+
+.estado {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: clamp(0.9rem, 1vw, 1rem);
+}
+
+/* Media Queries para pantallas muy pequeñas */
+@media (max-width: 400px) {
+  .modal-content {
+    padding: 1rem;
+  }
+  
+  button[type="submit"] {
+    font-size: 1rem;
+  }
+}
