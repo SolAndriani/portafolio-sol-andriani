@@ -1,7 +1,7 @@
 import Header from './components/Header';
 import Presentacion from './components/Presentacion';
 import SobreMi from './components/SobreMi';
-import Servicios from './components/Servicios'; // <-- si no existe, te tira error
+import Tecnologias from './components/Tecnologias'; 
 import Proyectos from './components/Proyectos';
 import Galeria from './components/Galeria';
 import Footer from './components/Footer';
@@ -15,7 +15,7 @@ function App() {
       <main className="layout-principal">
         <Presentacion />
         <SobreMi />
-        <Servicios />
+        <Tecnologias />        
         <Proyectos />
         <Galeria />
       </main>
