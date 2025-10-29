@@ -31,7 +31,7 @@ export default function Galeria() {
   const anterior = () => setIndex((index - 1 + imagenes.length) % imagenes.length);
 
   return (
-    <section className="galeria-timmy">
+    <section id="galeria" className="galeria-timmy">
       {/* ===== Título y subtítulo ===== */}
       <div className="galeria-header">
         <h2>Galería</h2>
