@@ -22,14 +22,14 @@ export default function Contacto({ modalOpen, setModalOpen }) {
 
     try {
       const response = await fetch(
-  "https://biologo-fotos-backend.onrender.com/api/contact",
+  "https://biologo-fotos-backend.onrender.com",
+  {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(form),
+  }
+);
 
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(form),
-        }
-      );
 
       const data = await response.json();
       console.log("📥 Respuesta del backend:", data);
