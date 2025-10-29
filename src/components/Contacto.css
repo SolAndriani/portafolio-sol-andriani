@@ -75,7 +75,7 @@ button[type="submit"]:focus,
 button[type="submit"]:active {
   transform: translateY(-2px) scale(1.02); /* mini levantamiento */
   box-shadow: 0 6px 15px rgba(20,33,61,0.3); /* sombra elegante */
-  color: #fff !important; /* mantiene blanco */
+  color: #fff !important;
   text-decoration: none;
 }
 
@@ -85,7 +85,6 @@ button[type="submit"]:active {
   font-size: clamp(0.9rem, 1vw, 1rem);
 }
 
-/* Media Queries para pantallas muy pequeñas */
 @media (max-width: 400px) {
   .modal-content {
     padding: 1rem;

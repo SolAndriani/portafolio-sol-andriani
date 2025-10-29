@@ -22,7 +22,8 @@ export default function Contacto({ modalOpen, setModalOpen }) {
 
     try {
       const response = await fetch(
-        "https://portafolio-sol-andriani-backend.onrender.com/api/contact",
+  "https://biologo-fotos-backend.onrender.com/api/contact",
+
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
