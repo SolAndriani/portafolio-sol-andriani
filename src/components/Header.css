@@ -1,3 +1,4 @@
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -5,7 +6,12 @@
   padding: 1rem 2rem;
   background-color: #ffffff;
   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-  position: relative;
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .header-left {
@@ -21,9 +27,10 @@
 .empresa {
   font-weight: bold;
   font-size: 1.2rem;
+  color: #14213D;
 }
 
-/* Navegación principal */
+
 .header-nav ul {
   display: flex;
   gap: 1.5rem;
@@ -36,9 +43,15 @@
   text-decoration: none;
   color: #333;
   font-weight: 500;
+  transition: color 0.3s;
 }
 
-/* ===== HAMBURGER ===== */
+.header-nav a:hover,
+.header-nav a:focus {
+  color: #3D5A80;
+}
+
+
 .hamburger {
   display: none;
   flex-direction: column;
@@ -53,7 +66,7 @@
   transition: 0.3s;
 }
 
-/* Animación de la X */
+
 .bar.open:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
@@ -64,7 +77,6 @@
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   .header-nav {
     position: absolute;
@@ -76,14 +88,11 @@
     overflow: hidden;
     transition: max-height 0.3s ease-in-out;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border-top: 1px solid #eee;
   }
 
   .header-nav.open {
-    max-height: 200px; /* Ajusta según la cantidad de links */
-  }
-
-  .header-nav ul {
-    flex-direction: column;
+    max-height: 300px; 
     gap: 1rem;
     padding: 1rem;
   }
@@ -91,4 +100,9 @@
   .hamburger {
     display: flex;
   }
+}
+
+
+html {
+  scroll-behavior: smooth;
 }

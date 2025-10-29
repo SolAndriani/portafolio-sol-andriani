@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import './Header.css';
+import React, { useState } from "react";
+import "./Header.css";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -17,14 +17,14 @@ export default function Header() {
 
       {/* Botón de hamburguesa solo visible en pantallas pequeñas */}
       <div className="hamburger" onClick={toggleMenu}>
-        <div className={`bar ${menuOpen ? 'open' : ''}`}></div>
-        <div className={`bar ${menuOpen ? 'open' : ''}`}></div>
-        <div className={`bar ${menuOpen ? 'open' : ''}`}></div>
+        <div className={`bar ${menuOpen ? "open" : ""}`}></div>
+        <div className={`bar ${menuOpen ? "open" : ""}`}></div>
+        <div className={`bar ${menuOpen ? "open" : ""}`}></div>
       </div>
 
-      <nav className={`header-nav ${menuOpen ? 'open' : ''}`}>
+      <nav className={`header-nav ${menuOpen ? "open" : ""}`}>
         <ul>
-          <li><a href="#sobre-mi">Sobre mí</a></li>
+          <li><a href="#presentacion">Inicio</a></li>
           <li><a href="#tecnologias">Tecnologías</a></li>
           <li><a href="#proyectos">Proyectos</a></li>
           <li><a href="#galeria">Galería</a></li>
