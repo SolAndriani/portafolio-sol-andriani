@@ -12,10 +12,10 @@ export default function Header() {
     <header className="header">
       <div className="header-left">
         <img src="/imagenes/Logo-SOL.png" alt="Logo SOL" className="logo" />
-        <span className="empresa">Sol Andriani</span>
+        <span className>Sol Andriani</span>
       </div>
 
-      {/* Botón de hamburguesa solo visible en pantallas pequeñas */}
+
       <div className="hamburger" onClick={toggleMenu}>
         <div className={`bar ${menuOpen ? "open" : ""}`}></div>
         <div className={`bar ${menuOpen ? "open" : ""}`}></div>
