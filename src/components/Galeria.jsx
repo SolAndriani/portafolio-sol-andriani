@@ -32,7 +32,6 @@ export default function Galeria() {
 
   return (
     <section id="galeria" className="galeria-timmy">
-      {/* ===== Título y subtítulo ===== */}
       <div className="galeria-header">
         <h2>Galería</h2>
         <p>Además de crear sitios web, me gusta viajar y capturar momentos a través de la fotografía.</p>
@@ -53,8 +52,8 @@ export default function Galeria() {
         >
           <span className="cerrar" onClick={cerrarLightbox}>&times;</span>
           <img className="lightbox-img" src={imagenes[index].src} alt={imagenes[index].alt} />
-          <a className="prev" onClick={(e) => { e.stopPropagation(); anterior(); }}>&#10094;</a>
-          <a className="next" onClick={(e) => { e.stopPropagation(); siguiente(); }}>&#10095;</a>
+          <button className="prev" onClick={(e) => { e.stopPropagation(); anterior(); }}>&#10094;</button>
+          <button className="next" onClick={(e) => { e.stopPropagation(); siguiente(); }}>&#10095;</button>
         </div>
       )}
     </section>
