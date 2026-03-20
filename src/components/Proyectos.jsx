@@ -15,7 +15,7 @@ const proyectos = [
     numero: "02",
     titulo: "Sistema de Gestión de Libros",
     descripcion: "Aplicación fullstack con autenticación JWT, CRUD completo con paginación y rutas privadas por usuario. Backend en FastAPI con PostgreSQL, SQLAlchemy y Pydantic.",
-    url: "#",
+    url: "https://sistema-libros-frontend.vercel.app/",
     img: "/imagenes/libros.png",
     alt: "Sistema de Gestión de Libros",
     tags: ["FastAPI", "PostgreSQL", "JWT", "React"],
