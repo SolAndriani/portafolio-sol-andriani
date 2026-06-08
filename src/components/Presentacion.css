@@ -1,4 +1,3 @@
-/* Sección Presentación */
 #presentacion {
   background-color: #F5F5F0;
   padding: clamp(3rem, 5vw, 6rem) 2rem;
@@ -15,7 +14,6 @@
   flex-wrap: wrap;
 }
 
-/* Foto lateral */
 .foto-lateral {
   flex: 0 0 300px;
 }
@@ -34,7 +32,6 @@
   transform: scale(1.03);
 }
 
-/* Texto de presentación */
 .texto-presentacion {
   flex: 1;
   min-width: 250px;
@@ -67,11 +64,17 @@
   margin-bottom: 2rem;
 }
 
-/* Botón Trabajemos juntos sin cambio de color */
+.botones-presentacion {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
 .btn-contacto {
   display: inline-block;
-  background-color: #14213D; /* color fijo */
-  color: #fff !important;    /* texto siempre blanco */
+  background-color: #14213D;
+  color: #fff !important;
   padding: 0.8rem 1.6rem;
   border-radius: 9999px;
   font-weight: 500;
@@ -80,8 +83,6 @@
   box-shadow: 0 4px 12px rgba(20,33,61,0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
-
-  /* Eliminar efectos de navegador */
   -webkit-tap-highlight-color: transparent;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -93,13 +94,32 @@
 .btn-contacto:hover,
 .btn-contacto:focus,
 .btn-contacto:active {
-  transform: translateY(-3px) scale(1.03); /* mini levantamiento */
-  box-shadow: 0 8px 20px rgba(20,33,61,0.3); /* sombra elegante */
-  color: #fff !important; /* fuerza color blanco siempre */
-  text-decoration: none;   /* elimina subrayado de focus */
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 8px 20px rgba(20,33,61,0.3);
+  color: #fff !important;
+  text-decoration: none;
 }
 
-/* Iconos sociales */
+.btn-cv {
+  display: inline-block;
+  background-color: transparent;
+  color: #14213D !important;
+  padding: 0.8rem 1.6rem;
+  border-radius: 9999px;
+  font-weight: 500;
+  text-decoration: none;
+  letter-spacing: 0.3px;
+  border: 1.5px solid #14213D;
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-cv:hover {
+  background-color: #14213D;
+  color: #fff !important;
+  transform: translateY(-3px);
+}
+
 .social-icons {
   display: flex;
   gap: 1rem;
@@ -107,7 +127,7 @@
 }
 
 .social-icons a {
-  color: #14213D; /* color fijo */
+  color: #14213D;
   font-size: 1.8rem;
   transition: transform 0.3s ease;
 }
@@ -115,11 +135,10 @@
 .social-icons a:hover,
 .social-icons a:focus,
 .social-icons a:active {
-  transform: translateY(-3px) scale(1.1); /* mini levantamiento */
-  color: #14213D !important; /* nunca cambia de color */
+  transform: translateY(-3px) scale(1.1);
+  color: #14213D !important;
 }
 
-/* Media Queries */
 @media (max-width: 1024px) {
   .foto-lateral {
     flex: 0 0 250px;
@@ -143,9 +162,9 @@
 
   .foto-lateral {
     flex: 0 0 auto;
-    width: 50%; 
-    max-width: 200px; 
-    margin: 0 auto; 
+    width: 50%;
+    max-width: 200px;
+    margin: 0 auto;
   }
 
   .texto-presentacion h1 {
@@ -156,17 +175,18 @@
     font-size: 1.1rem;
   }
 
-  .social-icons {
+  .botones-presentacion {
     justify-content: center;
   }
 
-  .btn-contacto {
-    margin: 0 auto;
+  .social-icons {
+    justify-content: center;
   }
 }
 
 @media (max-width: 400px) {
-  .btn-contacto {
+  .btn-contacto,
+  .btn-cv {
     padding: 0.5rem 1rem;
     font-size: 0.9rem;
   }

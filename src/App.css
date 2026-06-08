@@ -1,8 +1,5 @@
-/* ============================= */
-/* Tipografía y colores globales */
-/* ============================= */
 html {
-  scroll-behavior: smooth; /* Scroll suave */
+  scroll-behavior: smooth;
 }
 
 body {
@@ -16,7 +13,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Montserrat', sans-serif;
-  color: #14213D; 
+  color: #14213D;
   margin: 0 0 1rem 0;
 }
 
@@ -24,10 +21,10 @@ h1 { font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 700; }
 h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 700; }
 h3 { font-size: clamp(1.4rem, 2vw, 1.8rem); font-weight: 600; }
 
-p { 
+p {
   font-size: clamp(1.1rem, 1.2vw, 1.3rem);
-  color: #333; 
-  margin-bottom: 1rem; 
+  color: #333;
+  margin-bottom: 1rem;
   line-height: 1.8;
 }
 
@@ -36,21 +33,20 @@ a {
   text-decoration: none;
   transition: color 0.3s;
 }
+
 a:hover { color: #3D5A80; }
 
-/* Botones e iconos sociales */
 button, .social-icons a {
   font-family: 'Montserrat', sans-serif;
   color: #14213D;
   transition: color 0.3s, transform 0.2s;
 }
+
 button:hover, .social-icons a:hover {
   color: #3D5A80;
   transform: translateY(-2px);
 }
 
-/* ============================= */
-/* Secciones generales */
 .seccion {
   padding: clamp(3rem, 5vw, 6rem) 2rem;
   max-width: 1200px;
@@ -58,8 +54,6 @@ button:hover, .social-icons a:hover {
   box-sizing: border-box;
 }
 
-/* ============================= */
-/* Imágenes */
 img {
   max-width: 100%;
   height: auto;
@@ -67,8 +61,6 @@ img {
   border-radius: 8px;
 }
 
-/* ============================= */
-/* Grid para proyectos y galería */
 .proyectos-grid {
   display: grid;
   gap: 2rem;
@@ -77,11 +69,10 @@ img {
 
 .galeria-fotos {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 columnas fijas */
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
 }
 
-/* Tarjetas de proyectos */
 .proyecto, .proyecto-card {
   background-color: #FFFFFF;
   padding: 1rem;
@@ -89,20 +80,18 @@ img {
   box-shadow: 0 6px 15px rgba(0,0,0,0.08);
   transition: transform 0.3s, box-shadow 0.3s;
 }
+
 .proyecto:hover, .proyecto-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
-/* Lightbox (galería) */
 .lightbox-img {
   max-width: 90%;
   max-height: 80vh;
   border-radius: 8px;
 }
 
-/* ============================= */
-/* Responsive general */
 @media (max-width: 1024px) {
   h1 { font-size: 2.2rem; }
   h2 { font-size: 2rem; }
@@ -114,8 +103,7 @@ img {
   h2 { font-size: 1.6rem; }
   h3 { font-size: 1.3rem; }
   p { font-size: 1.1rem; line-height: 1.6; }
-
   .proyectos-grid, .galeria-fotos {
-    grid-template-columns: 1fr; /* 1 columna en móviles */
+    grid-template-columns: 1fr;
   }
 }

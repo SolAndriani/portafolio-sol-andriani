@@ -1,18 +1,22 @@
 import React from "react";
-import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaGitAlt } from "react-icons/fa";
-import { SiMongodb, SiFigma } from "react-icons/si";
+import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaGitAlt, FaPython } from "react-icons/fa";
+import { SiMongodb, SiPostgresql, SiFastapi, SiTailwindcss, SiN8N } from "react-icons/si";
 import "./Tecnologias.css";
 
 export default function Tecnologias() {
   const herramientas = [
-    { name: "HTML5", icon: <FaHtml5 />, class: "html" },
-    { name: "CSS3", icon: <FaCss3Alt />, class: "css" },
-    { name: "JavaScript", icon: <FaJs />, class: "js" },
-    { name: "React", icon: <FaReact />, class: "react" },
-    { name: "Node.js", icon: <FaNodeJs />, class: "node" },
-    { name: "MongoDB", icon: <SiMongodb />, class: "mongodb" },
-    { name: "Git/GitHub", icon: <FaGitAlt />, class: "git" },
-    { name: "Figma", icon: <SiFigma />, class: "figma" },
+    { name: "HTML5", icon: <FaHtml5 />, clase: "html" },
+    { name: "CSS3", icon: <FaCss3Alt />, clase: "css" },
+    { name: "JavaScript", icon: <FaJs />, clase: "js" },
+    { name: "React", icon: <FaReact />, clase: "react" },
+    { name: "Tailwind", icon: <SiTailwindcss />, clase: "tailwind" },
+    { name: "Node.js", icon: <FaNodeJs />, clase: "node" },
+    { name: "Python", icon: <FaPython />, clase: "python" },
+    { name: "FastAPI", icon: <SiFastapi />, clase: "fastapi" },
+    { name: "PostgreSQL", icon: <SiPostgresql />, clase: "postgresql" },
+    { name: "MongoDB", icon: <SiMongodb />, clase: "mongodb" },
+    { name: "n8n", icon: <SiN8N />, clase: "n8n" },
+    { name: "Git/GitHub", icon: <FaGitAlt />, clase: "git" },
   ];
 
   return (
@@ -21,7 +25,7 @@ export default function Tecnologias() {
       <p>Estas son las herramientas y lenguajes que utilizo para desarrollar mis proyectos:</p>
       <div className="tecnologias-grid">
         {herramientas.map((item, index) => (
-          <div key={index} className={`tecnologias-item ${item.class}`}>
+          <div key={index} className={`tecnologias-item ${item.clase}`}>
             <span className="tecnologias-icon">{item.icon}</span>
             <span>{item.name}</span>
           </div>

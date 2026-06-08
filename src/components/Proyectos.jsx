@@ -4,6 +4,15 @@ import './Proyectos.css';
 const proyectos = [
   {
     numero: "01",
+    titulo: "Austreon — Automatización para Clínicas Dentales",
+    descripcion: "Sistema completo con IA conversacional conectada a WhatsApp, agenda inteligente y triage médico automático (Rojo/Amarillo/Verde). Odontograma digital, formulario post-atención y landing page bilingüe en React + Vite.",
+    url: "https://austreon.com",
+    img: "/imagenes/austreon.png",
+    alt: "Austreon",
+    tags: ["n8n", "Groq/LLaMA", "Twilio", "React", "Airtable"],
+  },
+  {
+    numero: "02",
     titulo: "Portfolio Fotográfico",
     descripcion: "Sitio web personalizado para mostrar fotografías organizadas por categorías. Carga y almacenamiento de imágenes con Cloudinary, rutas públicas y protegidas.",
     url: "https://biologofotos.vercel.app/",
@@ -12,22 +21,13 @@ const proyectos = [
     tags: ["Node.js", "MongoDB", "Cloudinary"],
   },
   {
-    numero: "02",
+    numero: "03",
     titulo: "Sistema de Gestión de Libros",
     descripcion: "Aplicación fullstack con autenticación JWT, CRUD completo con paginación y rutas privadas por usuario. Backend en FastAPI con PostgreSQL, SQLAlchemy y Pydantic.",
     url: "https://sistema-libros-frontend.vercel.app/",
     img: "/imagenes/libros.png",
     alt: "Sistema de Gestión de Libros",
     tags: ["FastAPI", "PostgreSQL", "JWT", "React"],
-  },
-  {
-    numero: "03",
-    titulo: "Inmook — Gestión de Inquilinos",
-    descripcion: "Aplicación web para gestionar pagos de inquilinos. Permite registrar pagos y visualizar estados pendientes. Backend con Node.js, Express y MongoDB.",
-    url: "https://inmook.vercel.app",
-    img: "/imagenes/inmo.png",
-    alt: "Inmook",
-    tags: ["Node.js", "MongoDB", "React"],
   },
   {
     numero: "04",

@@ -3,10 +3,10 @@ import './SobreMi.css';
 
 export default function SobreMi() {
   const pasosTrabajo = [
-    'Organizo cada proyecto de manera clara y eficiente.',
-    'Diseño interfaces limpias y fáciles de usar.',
-    'Aseguro compatibilidad y buen rendimiento en todas las pantallas.',
-    'Integro funcionalidades que facilitan la gestión de clientes y procesos internos.'
+    'Analizo cada proyecto desde cero: objetivo, usuario y funcionalidades clave.',
+    'Diseño interfaces limpias, accesibles y fáciles de usar en cualquier dispositivo.',
+    'Desarrollo el backend con APIs REST, autenticación y bases de datos relacionales y no relacionales.',
+    'Integro automatizaciones e IA conversacional para optimizar procesos internos y atención al cliente.'
   ];
 
   return (
@@ -15,7 +15,7 @@ export default function SobreMi() {
       <div className="sobre-mi-contenedor">
         {pasosTrabajo.map((paso, index) => (
           <div key={index} className="trabajo-card">
-            <span className="numero">{index + 1}.</span> {/* Punto agregado */}
+            <span className="numero">{index + 1}.</span>
             <p>{paso}</p>
           </div>
         ))}

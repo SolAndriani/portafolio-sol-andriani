@@ -18,15 +18,21 @@ export default function Presentacion() {
 
         <div className="texto-presentacion">
           <h1>¡Hola! Soy <span>Sol Andriani</span></h1>
-          <h2>Desarrolladora web</h2>
+          <h2>Desarrolladora Full Stack · Automatización e IA</h2>
           <p>
-            Desarrollo sitios web <strong>modernos y funcionales</strong>, combinando
-            <strong> diseño cuidado</strong> y <strong>estructura clara</strong>.
+            Construyo aplicaciones web <strong>completas y funcionales</strong>, desde 
+            interfaces en React hasta sistemas con <strong>IA conversacional</strong> y{" "}
+            <strong>automatización de procesos</strong>.
           </p>
 
-          <button className="btn-contacto" onClick={() => setModalOpen(true)}>
-            Trabajemos juntos
-          </button>
+          <div className="botones-presentacion">
+            <button className="btn-contacto" onClick={() => setModalOpen(true)}>
+              Trabajemos juntos
+            </button>
+            <a href="/CV_SolAndriani.pdf" download className="btn-cv">
+              Descargar CV
+            </a>
+          </div>
 
           <div className="social-icons">
             <a href="https://www.linkedin.com/in/solandriani" target="_blank" rel="noreferrer">

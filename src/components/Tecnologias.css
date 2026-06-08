@@ -15,7 +15,6 @@
   color: #555;
 }
 
-/* Grid de íconos */
 .tecnologias-grid {
   display: flex;
   flex-wrap: wrap;
@@ -23,13 +22,12 @@
   gap: 2rem;
 }
 
-/* Ítem base gris */
 .tecnologias-item {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
-  color: #999; /* gris por defecto */
+  color: #999;
   font-weight: 600;
   transition: transform 0.2s, color 0.2s;
   cursor: pointer;
@@ -39,23 +37,25 @@
   transform: translateY(-5px);
 }
 
-/* Íconos grandes */
 .tecnologias-icon {
   font-size: 3rem;
   transition: color 0.2s;
 }
 
-/* Hover con colores oficiales */
-.tecnologias-item.html:hover { color: #E34F26; }    /* HTML naranja */
-.tecnologias-item.css:hover { color: #1572B6; }     /* CSS azul */
-.tecnologias-item.js:hover { color: #F7DF1E; }      /* JS amarillo */
-.tecnologias-item.react:hover { color: #61DAFB; }   /* React celeste */
-.tecnologias-item.node:hover { color: #339933; }    /* Node verde */
-.tecnologias-item.mongodb:hover { color: #47A248; } /* MongoDB verde */
-.tecnologias-item.git:hover { color: #F05032; }     /* Git rojo */
-.tecnologias-item.figma:hover { color: #F24E1E; }   /* Figma rojo/naranja */
+.tecnologias-item.html:hover       { color: #E34F26; }
+.tecnologias-item.css:hover        { color: #1572B6; }
+.tecnologias-item.js:hover         { color: #F7DF1E; }
+.tecnologias-item.react:hover      { color: #61DAFB; }
+.tecnologias-item.tailwind:hover   { color: #38BDF8; }
+.tecnologias-item.node:hover       { color: #339933; }
+.tecnologias-item.python:hover     { color: #3776AB; }
+.tecnologias-item.fastapi:hover    { color: #009688; }
+.tecnologias-item.postgresql:hover { color: #336791; }
+.tecnologias-item.mongodb:hover    { color: #47A248; }
+.tecnologias-item.n8n:hover        { color: #EA4B71; }
+.tecnologias-item.git:hover        { color: #F05032; }
+.tecnologias-item.figma:hover      { color: #F24E1E; }
 
-/* Responsive */
 @media (max-width: 768px) {
   .tecnologias-grid {
     gap: 1.5rem;
