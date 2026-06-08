@@ -7,8 +7,8 @@
 .presentacion-contenedor {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  gap: 3rem;
+  justify-content: center;
+  gap: 5rem;
   max-width: 1200px;
   margin: 0 auto;
   flex-wrap: wrap;
@@ -35,10 +35,11 @@
 .texto-presentacion {
   flex: 1;
   min-width: 250px;
+  max-width: 600px;
 }
 
 .texto-presentacion h1 {
-  font-size: clamp(2rem, 3vw, 2.8rem);
+  font-size: clamp(2.2rem, 3vw, 3rem);
   color: #14213D;
   line-height: 1.3;
   margin-bottom: 0.5rem;
@@ -51,7 +52,7 @@
 }
 
 .texto-presentacion h2 {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   color: #4B5563;
   margin-bottom: 1.2rem;
   font-weight: 400;
