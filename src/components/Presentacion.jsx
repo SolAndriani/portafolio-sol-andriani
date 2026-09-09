@@ -25,14 +25,11 @@ export default function Presentacion() {
             <strong>automatización de procesos</strong>.
           </p>
 
-          <div className="botones-presentacion">
-            <button className="btn-contacto" onClick={() => setModalOpen(true)}>
-              Trabajemos juntos
-            </button>
-            <a href="/CV_SolAndriani.pdf" download className="btn-cv">
-              Descargar CV
-            </a>
-          </div>
+        <div className="botones-presentacion">
+  <button className="btn-contacto" onClick={() => setModalOpen(true)}>
+    Trabajemos juntos
+  </button>
+</div>
 
           <div className="social-icons">
             <a href="https://www.linkedin.com/in/solandriani" target="_blank" rel="noreferrer">
