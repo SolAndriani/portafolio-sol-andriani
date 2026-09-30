@@ -13,7 +13,7 @@ export default function CasoAustreon() {
 
       <div className="caso-texto">
         <p>
-          Armé bots de WhatsApp para clínicas dentales y veterinarias que agendan
+          Armé bots de WhatsApp para clínicas que agendan
           turnos y responden consultas solos. El problema aparece cuando el bot no
           puede: una urgencia, alguien que insiste en hablar con una persona, o una
           pregunta que no sabe responder. Sin una forma ordenada de pasarle esa
@@ -28,7 +28,7 @@ export default function CasoAustreon() {
           porque los mensajes salen por el mismo número de siempre.
         </p>
 
-        <h3>Lo que costó</h3>
+        <h3>Qué hubo que resolver</h3>
 
         <p>
           Que el bot y la persona no se pisen. Cuando alguien toma el control, el
@@ -66,12 +66,6 @@ export default function CasoAustreon() {
           cuántos turnos consigue fuera del horario de atención y por qué motivo
           tuvo que derivar cada conversación (pidió una persona, no tenía la
           respuesta, urgencia, reclamo). Con eso se decide qué mejorar después.
-        </p>
-
-        <p className="caso-cierre-contacto">
-          <a href="mailto:solagustinaandriani@gmail.com">
-            solagustinaandriani@gmail.com
-          </a>
         </p>
 
         <p className="caso-nota">

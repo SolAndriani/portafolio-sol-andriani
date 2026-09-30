@@ -33,7 +33,6 @@
   margin-bottom: 1.5rem;
 }
 
-
 /* ===== Texto corrido ===== */
 .caso-texto {
   max-width: 62ch;
@@ -71,27 +70,3 @@
   }
 }
 
-.caso-cierre-contacto {
-  font-size: 1.05rem !important;
-  color: #E8EEF5 !important;
-  margin-top: 2.5rem !important;
-}
-
-.caso-cierre-contacto a {
-  color: #8FB0D4;
-  font-weight: 600;
-  border-bottom: 1.5px solid #8FB0D4;
-  padding-bottom: 1px;
-  word-break: break-word;
-}
-
-.caso-cierre-contacto a:hover {
-  color: #FFFFFF;
-  border-bottom-color: #FFFFFF;
-}
-
-.caso-cierre-contacto a:focus-visible {
-  outline: 3px solid #FFFFFF;
-  outline-offset: 3px;
-  border-radius: 3px;
-}
