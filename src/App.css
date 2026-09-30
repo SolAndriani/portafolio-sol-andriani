@@ -4,8 +4,8 @@ html {
 
 body {
   font-family: 'Montserrat', sans-serif;
-  color: #333;
-  background-color: #F5F5F0;
+  color: var(--texto);
+  background-color: var(--crema);
   margin: 0;
   padding: 0;
   padding-top: 70px;
@@ -14,7 +14,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Montserrat', sans-serif;
-  color: #14213D;
+  color: var(--navy);
   margin: 0 0 1rem 0;
 }
 
@@ -24,33 +24,33 @@ h3 { font-size: clamp(1.4rem, 2vw, 1.8rem); font-weight: 600; }
 
 p {
   font-size: clamp(1rem, 1.1vw, 1.12rem);
-  color: #333;
+  color: var(--texto);
   margin-bottom: 0.9rem;
   line-height: 1.6;
 }
 
 a {
-  color: #14213D;
+  color: var(--navy);
   text-decoration: none;
   transition: color 0.3s;
 }
 
-a:hover { color: #3D5A80; }
+a:hover { color: var(--azul); }
 
 button, .social-icons a {
   font-family: 'Montserrat', sans-serif;
-  color: #14213D;
+  color: var(--navy);
   transition: color 0.3s, transform 0.2s;
 }
 
 button:hover, .social-icons a:hover {
-  color: #3D5A80;
+  color: var(--azul);
   transform: translateY(-2px);
 }
 
 .seccion {
   padding: clamp(3rem, 5vw, 6rem) 2rem;
-  max-width: 1200px;
+  max-width: var(--ancho);
   margin: 0 auto;
   box-sizing: border-box;
 }
@@ -75,7 +75,7 @@ img {
 }
 
 .proyecto, .proyecto-card {
-  background-color: #FFFFFF;
+  background-color: var(--blanco);
   padding: 1rem;
   border-radius: 12px;
   box-shadow: 0 6px 15px rgba(0,0,0,0.08);

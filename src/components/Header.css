@@ -3,7 +3,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: #ffffff;
+  background-color: var(--blanco);
   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
   position: fixed;
   top: 0;
@@ -27,7 +27,7 @@
 .header-left span {
   font-weight: bold;
   font-size: 1.2rem;
-  color: #14213D;
+  color: var(--navy);
 }
 
 .header-nav ul {
@@ -40,14 +40,14 @@
 
 .header-nav a {
   text-decoration: none;
-  color: #333;
+  color: var(--texto);
   font-weight: 500;
   transition: color 0.3s;
 }
 
 .header-nav a:hover,
 .header-nav a:focus {
-  color: #3D5A80;
+  color: var(--azul);
 }
 
 .hamburger {
@@ -60,7 +60,7 @@
 .bar {
   width: 25px;
   height: 3px;
-  background-color: #333;
+  background-color: var(--texto);
   transition: 0.3s;
 }
 
@@ -79,13 +79,13 @@
     position: absolute;
     top: 100%;
     right: 0;
-    background-color: #fff;
+    background-color: var(--blanco);
     width: 100%;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-in-out;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    border-top: 1px solid #eee;
+    border-top: 1px solid var(--borde);
     display: flex;
     flex-direction: column;
   }

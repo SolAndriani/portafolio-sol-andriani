@@ -1,18 +1,18 @@
 .tecnologias {
-  background-color: #F5F5F0;
+  background-color: var(--crema);
   padding: clamp(3.5rem, 5vw, 5rem) 2rem;
 }
 
 .tecnologias .subtitulo {
   font-size: 2rem;
   font-weight: 600;
-  color: #14213D;
+  color: var(--navy);
   margin-bottom: 2.5rem;
   text-align: center;
 }
 
 .tec-lista {
-  max-width: 720px;
+  max-width: var(--ancho);
   margin: 0 auto;
 }
 
@@ -21,7 +21,7 @@
   grid-template-columns: 160px 1fr;
   gap: 1.5rem;
   padding: 0.9rem 0;
-  border-bottom: 1px solid #E0DDD5;
+  border-bottom: 1px solid var(--borde);
 }
 
 .tec-fila:last-child {
@@ -33,7 +33,7 @@
   font-weight: 700;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: #3D5A80;
+  color: var(--azul);
   padding-top: 0.15rem;
 }
 
@@ -41,7 +41,7 @@
   margin: 0;
   font-size: 0.98rem;
   line-height: 1.6;
-  color: #444;
+  color: var(--texto);
 }
 
 @media (max-width: 600px) {

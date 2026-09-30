@@ -1,5 +1,5 @@
 #presentacion {
-  background-color: #F5F5F0;
+  background-color: var(--crema);
   padding: clamp(3rem, 5vw, 6rem) 2rem;
   box-sizing: border-box;
 }
@@ -8,8 +8,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 5rem;
-  max-width: 1200px;
+  gap: 4rem;
+  max-width: var(--ancho);
   margin: 0 auto;
   flex-wrap: wrap;
 }
@@ -40,20 +40,20 @@
 
 .texto-presentacion h1 {
   font-size: clamp(2.2rem, 3vw, 3rem);
-  color: #14213D;
+  color: var(--navy);
   line-height: 1.2;
   margin-bottom: 0.3rem;
   font-weight: 600;
 }
 
 .texto-presentacion h1 span {
-  color: #3D5A80;
+  color: var(--azul);
   font-weight: 700;
 }
 
 .texto-presentacion h2 {
   font-size: 1.1rem;
-  color: #4B5563;
+  color: var(--gris);
   margin-bottom: 0.8rem;
   line-height: 1.35;
   font-weight: 400;
@@ -61,7 +61,7 @@
 
 .texto-presentacion p {
   font-size: clamp(1rem, 1.05vw, 1.08rem);
-  color: #333;
+  color: var(--texto);
   line-height: 1.6;
   margin-bottom: 0.9rem;
 }
@@ -73,7 +73,7 @@
 }
 
 .social-icons a {
-  color: #14213D;
+  color: var(--navy);
   font-size: 1.5rem;
   transition: transform 0.3s ease;
 }
@@ -82,7 +82,7 @@
 .social-icons a:focus,
 .social-icons a:active {
   transform: translateY(-3px) scale(1.1);
-  color: #14213D !important;
+  color: var(--navy) !important;
 }
 
 @media (max-width: 1024px) {
@@ -133,7 +133,7 @@
 }
 
 .social-icons a:focus-visible {
-  outline: 3px solid #3D5A80;
+  outline: 3px solid var(--azul);
   outline-offset: 3px;
   border-radius: 6px;
 }
@@ -147,17 +147,17 @@
 .hero-cv a {
   font-size: 0.95rem;
   font-weight: 600;
-  color: #14213D;
-  border-bottom: 1.5px solid #3D5A80;
+  color: var(--navy);
+  border-bottom: 1.5px solid var(--azul);
   padding-bottom: 2px;
 }
 
 .hero-cv a:hover {
-  color: #3D5A80;
+  color: var(--azul);
 }
 
 .hero-cv a:focus-visible {
-  outline: 3px solid #3D5A80;
+  outline: 3px solid var(--azul);
   outline-offset: 3px;
   border-radius: 3px;
 }

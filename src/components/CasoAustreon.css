@@ -1,13 +1,12 @@
 .caso {
-  background-color: #14213D;
-  color: #E8EEF5;
+  background-color: var(--navy);
+  color: var(--azul-palido);
   max-width: none;
   padding: clamp(4rem, 7vw, 7rem) 2rem;
 }
 
-.caso-header,
-.caso-texto {
-  max-width: 1100px;
+.caso-header {
+  max-width: var(--ancho);
   margin: 0 auto;
 }
 
@@ -21,12 +20,12 @@
   font-weight: 700;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: #8FB0D4;
+  color: var(--azul-claro);
   margin-bottom: 1rem;
 }
 
 .caso .subtitulo {
-  color: #FFFFFF;
+  color: var(--blanco);
   font-size: clamp(1.7rem, 3.2vw, 2.4rem);
   line-height: 1.2;
   max-width: 18ch;
@@ -35,21 +34,26 @@
 
 /* ===== Texto corrido ===== */
 .caso-texto {
-  max-width: 62ch;
+  max-width: var(--ancho);
   margin: 0 auto;
   padding-top: 2.5rem;
   border-top: 1px solid rgba(143, 176, 212, 0.25);
 }
 
+.caso-texto p,
+.caso-texto h3 {
+  max-width: 62ch;
+}
+
 .caso-texto p {
   font-size: 1rem;
   line-height: 1.65;
-  color: #C9D6E6;
+  color: var(--texto-claro);
   margin: 0 0 1.1rem 0;
 }
 
 .caso-texto h3 {
-  color: #FFFFFF;
+  color: var(--blanco);
   font-size: 1.25rem;
   font-weight: 700;
   margin: 2.75rem 0 1.5rem 0;
@@ -58,7 +62,7 @@
 .caso-nota {
   font-size: 0.88rem !important;
   line-height: 1.7 !important;
-  color: #93A6BE !important;
+  color: var(--texto-tenue) !important;
   margin: 2.5rem 0 0 0 !important;
   padding-top: 1.5rem;
   border-top: 1px solid rgba(143, 176, 212, 0.2);

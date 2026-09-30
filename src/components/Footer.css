@@ -1,7 +1,7 @@
 /* ===== Footer unificado ===== */
 footer {
-  background-color: #F5F5F0; /* mismo fondo claro que Presentación */
-  color: #333;
+  background-color: var(--crema); /* mismo fondo claro que Presentación */
+  color: var(--texto);
   font-family: 'Montserrat', sans-serif;
   padding: 3rem 2rem 2rem;
   text-align: center;
@@ -17,19 +17,19 @@ footer {
 }
 
 .iconos-contacto a {
-  color: #14213D; /* azul principal coherente con Presentación/Proyectos */
+  color: var(--navy); /* azul principal coherente con Presentación/Proyectos */
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .iconos-contacto a:hover {
-  color: #3D5A80; /* azul secundario para hover */
+  color: var(--azul); /* azul secundario para hover */
   transform: scale(1.2);
 }
 
 /* ===== Texto del copyright ===== */
 footer p {
   font-size: 0.95rem;
-  color: #333;
+  color: var(--texto);
   margin-top: 0.5rem;
   letter-spacing: 0.5px;
 }
@@ -49,20 +49,20 @@ footer p {
   display: inline-block;
   font-size: clamp(1.05rem, 2vw, 1.35rem);
   font-weight: 600;
-  color: #14213D;
-  border-bottom: 2px solid #3D5A80;
+  color: var(--navy);
+  border-bottom: 2px solid var(--azul);
   padding-bottom: 2px;
   margin-bottom: 2rem;
   word-break: break-all;
 }
 
 .footer-email:hover {
-  color: #3D5A80;
+  color: var(--azul);
 }
 
 .iconos-contacto a:focus-visible,
 .footer-email:focus-visible {
-  outline: 3px solid #3D5A80;
+  outline: 3px solid var(--azul);
   outline-offset: 4px;
   border-radius: 4px;
 }

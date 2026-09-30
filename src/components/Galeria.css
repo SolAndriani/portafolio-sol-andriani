@@ -15,7 +15,7 @@
 .galeria-header h2 {
   font-size: 2.5rem;       /* igual a otras secciones */
   font-weight: 600;
-  color: #14213D;
+  color: var(--navy);
   margin-bottom: 0.5rem;
   text-align: center;
 }
@@ -23,7 +23,7 @@
 /* Párrafo: mismo que en Tecnologías */
 .galeria-header p {
   font-size: 1.1rem;       /* igual a otras secciones */
-  color: #555;
+  color: var(--texto-suave);
   text-align: center;
   margin-bottom: 2rem;
 }
@@ -86,7 +86,7 @@
 
 .cerrar, .prev, .next {
   position: absolute;
-  color: #fff;
+  color: var(--blanco);
   font-size: 2.5rem;
   cursor: pointer;
   transition: color 0.3s;
@@ -96,7 +96,7 @@
 .prev, .next { top: 50%; transform: translateY(-50%); }
 .prev { left: 2rem; }
 .next { right: 2rem; }
-.cerrar:hover, .prev:hover, .next:hover { color: #3D5A80; }
+.cerrar:hover, .prev:hover, .next:hover { color: var(--azul); }
 
 /* ===== Responsive ===== */
 @media (max-width: 1024px) {
@@ -148,7 +148,7 @@
 }
 
 .galeria-boton:focus-visible {
-  outline: 3px solid #3D5A80;
+  outline: 3px solid var(--azul);
   outline-offset: 3px;
 }
 
@@ -166,7 +166,7 @@
 .cerrar:focus-visible,
 .prev:focus-visible,
 .next:focus-visible {
-  outline: 3px solid #fff;
+  outline: 3px solid var(--blanco);
   outline-offset: 4px;
   border-radius: 6px;
 }
@@ -181,7 +181,7 @@
   left: 50%;
   transform: translateX(-50%);
   margin: 0;
-  color: #fff;
+  color: var(--blanco);
   font-size: 0.9rem;
   letter-spacing: 1px;
   opacity: 0.85;
