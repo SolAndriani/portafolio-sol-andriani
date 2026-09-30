@@ -13,123 +13,19 @@
 }
 
 
-.sobre-mi-contenedor {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-
-.trabajo-card {
-  background-color: #F5F5F0;
-  flex: 1 1 250px;
-  padding: 1.8rem 1.5rem;
-  border-radius: 16px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-  display: flex;
-  flex-direction: row;      
-  align-items: flex-start; 
-  gap: 1rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.trabajo-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
-}
-
-
-.numero {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #3D5A80;
-  flex-shrink: 0;
-}
-
-
-.trabajo-card p {
-  font-size: 1.1rem;
-  line-height: 1.7;
-  color: #333;
-  margin: 0;
-  text-align: left;  
-}
-
-
-@media (max-width: 768px) {
-
-  .sobre-mi-contenedor {
-    display: grid;
-    grid-template-columns: 1fr; 
-    gap: 1.5rem;
-    max-width: 400px;
-    margin: 0 auto;
-  }
-
-
-  .trabajo-card {
-    flex-direction: row;
-    width: 100%;
-    flex: none;
-    align-items: flex-start;
-    text-align: left;
-  }
-}
-
-/* ===== Las tarjetas pasaron de "paso numerado" a capacidad con título =====
-   Ya no hay .numero, así que el contenido va en columna y en grilla 2x2. */
-.sobre-mi-contenedor {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
-  max-width: 1000px;
+.sobre-mi-texto {
+  max-width: 62ch;
   margin: 0 auto;
   text-align: left;
 }
 
-.sobre-mi .trabajo-card {
-  flex: none;
-  flex-direction: column;
-  align-items: stretch;
-  gap: 0.7rem;
-  padding: 1.75rem;
+.sobre-mi-texto p {
+  font-size: 1.02rem;
+  line-height: 1.85;
+  color: #444;
+  margin: 0 0 1.4rem 0;
 }
 
-.sobre-mi .trabajo-card h3 {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #14213D;
-  margin: 0;
-  line-height: 1.35;
-  text-align: left;
-}
-
-.sobre-mi .trabajo-card p {
-  font-size: 0.95rem;
-  line-height: 1.75;
-  color: #555;
-}
-
-@media (max-width: 800px) {
-  .sobre-mi-contenedor {
-    grid-template-columns: 1fr;
-    max-width: 520px;
-  }
-
-  .sobre-mi .trabajo-card {
-    flex-direction: column;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .trabajo-card {
-    transition: none;
-  }
-
-  .trabajo-card:hover {
-    transform: none;
-  }
+.sobre-mi-texto p:last-child {
+  margin-bottom: 0;
 }

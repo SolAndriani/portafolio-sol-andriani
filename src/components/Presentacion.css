@@ -199,3 +199,26 @@
   border-radius: 6px;
 }
 
+
+/* Link al CV */
+.hero-cv {
+  margin-bottom: 1.5rem;
+}
+
+.hero-cv a {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #14213D;
+  border-bottom: 1.5px solid #3D5A80;
+  padding-bottom: 2px;
+}
+
+.hero-cv a:hover {
+  color: #3D5A80;
+}
+
+.hero-cv a:focus-visible {
+  outline: 3px solid #3D5A80;
+  outline-offset: 3px;
+  border-radius: 3px;
+}

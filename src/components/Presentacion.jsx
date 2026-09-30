@@ -16,12 +16,23 @@ export default function Presentacion() {
 
         <div className="texto-presentacion">
           <h1><span>Sol Andriani</span></h1>
-          <h2>Desarrolladora Full Stack · Automatización con IA</h2>
+          <h2>AI Engineer · Automatización de agentes de IA & Full Stack</h2>
           <p>
-            Construyo sistemas de <strong>atención automatizada por WhatsApp</strong>:
-            el bot que responde, el panel donde el equipo toma el control cuando hace
-            falta una persona, y las <strong>métricas</strong> que muestran qué
-            mejorar. Hoy en producción, con clínicas usándolo todos los días.
+            Construyo sistemas de <strong>atención automatizada por WhatsApp</strong>
+            para clínicas: el bot que responde, el panel donde el equipo toma el
+            control cuando hace falta una persona, y las métricas que muestran qué
+            mejorar. Hoy en producción.
+          </p>
+          <p>
+            Antes de programar estudié <strong>Diagnóstico por Imágenes</strong>. Por
+            eso, cuando automatizo la atención de una clínica, entiendo de qué se
+            está hablando del otro lado.
+          </p>
+
+          <p className="hero-cv">
+            <a href="/Sol-Andriani-CV.pdf" target="_blank" rel="noreferrer">
+              Descargar CV (PDF)
+            </a>
           </p>
 
           <div className="social-icons">
