@@ -6,9 +6,7 @@
 }
 
 .caso-header,
-.caso-bloques,
-.caso-decisiones,
-.caso-cierre {
+.caso-texto {
   max-width: 1100px;
   margin: 0 auto;
 }
@@ -35,110 +33,39 @@
   margin-bottom: 1.5rem;
 }
 
-.caso-intro {
-  font-size: clamp(1.05rem, 1.4vw, 1.2rem);
-  line-height: 1.8;
-  color: #C9D6E6;
-  max-width: 68ch;
-  margin: 0;
-}
 
-/* ===== Tres bloques narrativos ===== */
-.caso-bloques {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.caso-bloques--dos {
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2.5rem;
-  margin-bottom: 4rem;
+/* ===== Texto corrido ===== */
+.caso-texto {
+  max-width: 62ch;
+  margin: 0 auto;
   padding-top: 2.5rem;
   border-top: 1px solid rgba(143, 176, 212, 0.25);
 }
 
-.caso-bloque h3 {
-  color: #8FB0D4;
-  font-size: 1.05rem;
-  font-weight: 700;
-  margin-bottom: 0.75rem;
-}
-
-.caso-bloque p {
-  font-size: 0.95rem;
-  line-height: 1.75;
+.caso-texto p {
+  font-size: 1.02rem;
+  line-height: 1.85;
   color: #C9D6E6;
-  margin: 0;
+  margin: 0 0 1.5rem 0;
 }
 
-.caso-subtitulo {
+.caso-texto h3 {
   color: #FFFFFF;
-  font-size: 1.35rem;
+  font-size: 1.25rem;
   font-weight: 700;
-  margin-bottom: 1.5rem;
-}
-
-/* ===== Decisiones técnicas ===== */
-.caso-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.25rem;
-  list-style: none;
-  padding: 0;
-  margin: 0 0 4rem 0;
-}
-
-.caso-card {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(143, 176, 212, 0.2);
-  border-radius: 12px;
-  padding: 1.5rem;
-}
-
-.caso-card h4 {
-  color: #FFFFFF;
-  font-size: 1rem;
-  font-weight: 700;
-  margin: 0 0 0.6rem 0;
-  line-height: 1.3;
-}
-
-.caso-card p {
-  font-size: 0.9rem;
-  line-height: 1.7;
-  color: #B8C8DC;
-  margin: 0;
-}
-
-/* ===== Cierre ===== */
-.caso-cierre--simple {
-  display: block;
-  max-width: 68ch;
-  padding-top: 3rem;
-  border-top: 1px solid rgba(143, 176, 212, 0.25);
-}
-
-.caso-remate {
-  font-size: 1.05rem;
-  line-height: 1.8;
-  color: #C9D6E6;
-  margin: 0 0 1.25rem 0;
+  margin: 2.75rem 0 1.5rem 0;
 }
 
 .caso-nota {
-  font-size: 0.88rem;
-  line-height: 1.7;
-  color: #93A6BE;
-  margin: 0;
-  font-style: italic;
+  font-size: 0.88rem !important;
+  line-height: 1.7 !important;
+  color: #93A6BE !important;
+  margin: 2.5rem 0 0 0 !important;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(143, 176, 212, 0.2);
 }
 
 @media (max-width: 900px) {
-  .caso-bloques {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
   .caso .subtitulo {
     max-width: none;
   }

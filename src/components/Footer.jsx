@@ -7,12 +7,6 @@ const EMAIL = 'solagustinaandriani@gmail.com';
 export default function Footer() {
   return (
     <footer id="contacto">
-      <h2 className="footer-titulo">Trabajemos juntos</h2>
-      <p className="footer-bajada">
-        Contame qué necesitás y te respondo a la brevedad.
-      </p>
-
-      {/* Email visible en texto plano: se puede copiar sin abrir nada */}
       <a className="footer-email" href={`mailto:${EMAIL}`}>
         {EMAIL}
       </a>

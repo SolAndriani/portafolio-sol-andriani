@@ -43,15 +43,7 @@ footer p {
 }
 
 /* ===== Cierre de contacto ===== */
-.footer-titulo {
-  font-size: clamp(1.6rem, 3vw, 2.2rem);
-  margin-bottom: 0.5rem;
-}
 
-.footer-bajada {
-  max-width: 480px;
-  margin: 0 auto 1.5rem;
-}
 
 .footer-email {
   display: inline-block;
