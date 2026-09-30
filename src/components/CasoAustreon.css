@@ -1,12 +1,13 @@
-.caso {
+section.caso {
   background-color: var(--navy);
   color: var(--azul-palido);
   max-width: none;
   padding: clamp(4rem, 7vw, 7rem) 2rem;
 }
 
-.caso-header {
-  max-width: var(--ancho);
+.caso-header,
+.caso-texto {
+  max-width: 640px;
   margin: 0 auto;
 }
 
@@ -28,21 +29,13 @@
   color: var(--blanco);
   font-size: clamp(1.7rem, 3.2vw, 2.4rem);
   line-height: 1.2;
-  max-width: 18ch;
   margin-bottom: 1.5rem;
 }
 
 /* ===== Texto corrido ===== */
 .caso-texto {
-  max-width: var(--ancho);
-  margin: 0 auto;
   padding-top: 2.5rem;
   border-top: 1px solid rgba(143, 176, 212, 0.25);
-}
-
-.caso-texto p,
-.caso-texto h3 {
-  max-width: 62ch;
 }
 
 .caso-texto p {

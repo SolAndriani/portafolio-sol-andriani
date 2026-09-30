@@ -1,6 +1,6 @@
 #presentacion {
   background-color: var(--crema);
-  padding: clamp(3rem, 5vw, 6rem) 2rem;
+  padding: clamp(2.5rem, 4vw, 4.5rem) 2rem;
   box-sizing: border-box;
 }
 
@@ -15,7 +15,7 @@
 }
 
 .foto-lateral {
-  flex: 0 0 300px;
+  flex: 0 0 260px;
 }
 
 .foto-lateral img {
@@ -87,7 +87,7 @@
 
 @media (max-width: 1024px) {
   .foto-lateral {
-    flex: 0 0 250px;
+    flex: 0 0 220px;
   }
 
   .texto-presentacion h1 {
