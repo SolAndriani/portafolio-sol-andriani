@@ -78,3 +78,58 @@
     text-align: left;
   }
 }
+
+/* ===== Las tarjetas pasaron de "paso numerado" a capacidad con título =====
+   Ya no hay .numero, así que el contenido va en columna y en grilla 2x2. */
+.sobre-mi-contenedor {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.sobre-mi .trabajo-card {
+  flex: none;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.7rem;
+  padding: 1.75rem;
+}
+
+.sobre-mi .trabajo-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #14213D;
+  margin: 0;
+  line-height: 1.35;
+  text-align: left;
+}
+
+.sobre-mi .trabajo-card p {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: #555;
+}
+
+@media (max-width: 800px) {
+  .sobre-mi-contenedor {
+    grid-template-columns: 1fr;
+    max-width: 520px;
+  }
+
+  .sobre-mi .trabajo-card {
+    flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .trabajo-card {
+    transition: none;
+  }
+
+  .trabajo-card:hover {
+    transform: none;
+  }
+}

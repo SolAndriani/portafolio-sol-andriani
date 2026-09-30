@@ -18,18 +18,22 @@ export default function Presentacion() {
         </div>
 
         <div className="texto-presentacion">
-          <h1>¡Hola! Soy <span>Sol Andriani</span></h1>
-          <h2>Desarrolladora Full Stack · Automatización e IA</h2>
+          <h1><span>Sol Andriani</span></h1>
+          <h2>Desarrolladora Full Stack · Automatización con IA</h2>
           <p>
-            Construyo aplicaciones web <strong>completas y funcionales</strong>, desde 
-            interfaces en React hasta sistemas con <strong>IA conversacional</strong> y{" "}
-            <strong>automatización de procesos</strong>.
+            Construyo sistemas de <strong>atención automatizada por WhatsApp</strong>:
+            el bot que responde, el panel donde el equipo toma el control cuando hace
+            falta una persona, y las <strong>métricas</strong> que muestran qué
+            mejorar. Hoy en producción, con clínicas usándolo todos los días.
           </p>
 
         <div className="botones-presentacion">
   <button className="btn-contacto" onClick={() => setModalOpen(true)}>
     Trabajemos juntos
   </button>
+  <a className="btn-secundario" href="#caso-austreon">
+    Ver un caso en detalle
+  </a>
 </div>
 
           <div className="social-icons">

@@ -190,3 +190,21 @@
     transform: none;
   }
 }
+
+/* ===== Acciones de la tarjeta ===== */
+.proyecto-acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  align-items: center;
+  margin-top: auto;
+}
+
+.proyecto-acciones .proyecto-link {
+  margin-top: 0;
+}
+
+.proyecto-link--caso {
+  color: #14213D;
+  border-bottom-color: #14213D;
+}

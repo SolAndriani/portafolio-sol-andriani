@@ -1,0 +1,173 @@
+.caso {
+  background-color: #14213D;
+  color: #E8EEF5;
+  max-width: none;
+  padding: clamp(4rem, 7vw, 7rem) 2rem;
+}
+
+.caso-header,
+.caso-bloques,
+.caso-decisiones,
+.caso-cierre {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.caso-header {
+  margin-bottom: 3.5rem;
+}
+
+.caso-etiqueta {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #8FB0D4;
+  margin-bottom: 1rem;
+}
+
+.caso .subtitulo {
+  color: #FFFFFF;
+  font-size: clamp(1.7rem, 3.2vw, 2.4rem);
+  line-height: 1.2;
+  max-width: 18ch;
+  margin-bottom: 1.5rem;
+}
+
+.caso-intro {
+  font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+  line-height: 1.8;
+  color: #C9D6E6;
+  max-width: 68ch;
+  margin: 0;
+}
+
+/* ===== Tres bloques narrativos ===== */
+.caso-bloques {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  margin-bottom: 4rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid rgba(143, 176, 212, 0.25);
+}
+
+.caso-bloque h3 {
+  color: #8FB0D4;
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.caso-bloque p {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: #C9D6E6;
+  margin: 0;
+}
+
+.caso-subtitulo {
+  color: #FFFFFF;
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+/* ===== Decisiones técnicas ===== */
+.caso-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.25rem;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 4rem 0;
+}
+
+.caso-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(143, 176, 212, 0.2);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.caso-card h4 {
+  color: #FFFFFF;
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0 0 0.6rem 0;
+  line-height: 1.3;
+}
+
+.caso-card p {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: #B8C8DC;
+  margin: 0;
+}
+
+/* ===== Cierre: métricas y stack ===== */
+.caso-cierre {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  padding-top: 3rem;
+  border-top: 1px solid rgba(143, 176, 212, 0.25);
+}
+
+.caso-metricas,
+.caso-stack {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.25rem 0;
+}
+
+.caso-metricas li,
+.caso-stack li {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #C9D6E6;
+  padding: 0.6rem 0 0.6rem 1.5rem;
+  border-bottom: 1px solid rgba(143, 176, 212, 0.15);
+  position: relative;
+}
+
+.caso-metricas li::before,
+.caso-stack li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 1.15rem;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #8FB0D4;
+}
+
+.caso-stack strong {
+  color: #FFFFFF;
+}
+
+.caso-nota {
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: #93A6BE;
+  margin: 0;
+  font-style: italic;
+}
+
+@media (max-width: 900px) {
+  .caso-bloques {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .caso-cierre {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .caso .subtitulo {
+    max-width: none;
+  }
+}

@@ -4,18 +4,19 @@ import './Proyectos.css';
 const proyectos = [
   {
     numero: "01",
-    titulo: "Austreon — Automatización para Clínicas Dentales",
-    descripcion: "Sistema completo con IA conversacional conectada a WhatsApp, agenda inteligente y triage médico automático (Rojo/Amarillo/Verde). Odontograma digital, formulario post-atención y landing page bilingüe en React + Vite.",
+    titulo: "Austreon — Atención automatizada para clínicas dentales",
+    descripcion: "Las clínicas perdían consultas fuera de horario y resolvían las urgencias por el celular personal de recepción. Construí el sistema que atiende por WhatsApp con IA, agenda turnos, clasifica urgencias por gravedad y le pasa la conversación a una persona cuando el bot no debe seguir solo. Multi-clínica, en producción.",
     url: "https://austreon.com",
     img: "/imagenes/austreon.webp",
-    alt: "Captura del sistema Austreon para clínicas dentales",
-    tags: ["n8n", "Groq/LLaMA", "Twilio", "React", "Airtable"],
+    alt: "Captura del sitio de Austreon, sistema de automatización para clínicas dentales",
+    tags: ["n8n", "Groq/LLaMA", "Supabase", "Twilio", "React"],
     destacado: true,
+    caso: "#caso-austreon",
   },
   {
     numero: "02",
     titulo: "Landing Comercial Río Hondo",
-    descripcion: "Desarrollo de landing page junto al equipo de UXnicorp. Web clara que refleja la identidad de la empresa y facilita el contacto comercial.",
+    descripcion: "La empresa necesitaba una presencia web que transmitiera su identidad y convirtiera visitas en consultas comerciales. Desarrollé la landing junto al equipo de UXnicorp, partiendo de su diseño.",
     url: "https://lnkd.in/dcs-_KHz",
     img: "/imagenes/riohondo.webp",
     alt: "Captura de la landing comercial de Río Hondo",
@@ -24,20 +25,11 @@ const proyectos = [
   {
     numero: "03",
     titulo: "Portfolio Fotográfico",
-    descripcion: "Sitio web personalizado para mostrar fotografías organizadas por categorías. Carga y almacenamiento de imágenes con Cloudinary, rutas públicas y protegidas.",
+    descripcion: "El cliente necesitaba publicar y administrar su archivo de fotos sin depender de terceros cada vez que quería subir material. Sitio con carga de imágenes a Cloudinary, organización por categorías y un área privada de gestión.",
     url: "https://biologofotos.vercel.app/",
     img: "/imagenes/biologo.webp",
     alt: "Captura del portfolio fotográfico",
     tags: ["Node.js", "MongoDB", "Cloudinary"],
-  },
-  {
-    numero: "04",
-    titulo: "Sistema de Gestión de Libros",
-    descripcion: "Aplicación fullstack con autenticación JWT, CRUD completo con paginación y rutas privadas por usuario. Backend en FastAPI con PostgreSQL, SQLAlchemy y Pydantic.",
-    url: "https://sistema-libros-frontend.vercel.app/",
-    img: "/imagenes/libros.webp",
-    alt: "Captura del sistema de gestión de libros",
-    tags: ["FastAPI", "PostgreSQL", "JWT", "React"],
   },
 ];
 
@@ -76,14 +68,21 @@ function TarjetaProyecto({ proyecto }) {
           ))}
         </ul>
 
-        <a
-          href={proyecto.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="proyecto-link"
-        >
-          Ver proyecto <span aria-hidden="true">&#8599;</span>
-        </a>
+        <div className="proyecto-acciones">
+          {proyecto.caso && (
+            <a href={proyecto.caso} className="proyecto-link proyecto-link--caso">
+              Ver el caso en detalle
+            </a>
+          )}
+          <a
+            href={proyecto.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="proyecto-link"
+          >
+            Ver proyecto <span aria-hidden="true">&#8599;</span>
+          </a>
+        </div>
       </div>
     </article>
   );
