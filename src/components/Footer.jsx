@@ -7,6 +7,7 @@ const EMAIL = 'solagustinaandriani@gmail.com';
 export default function Footer() {
   return (
     <footer id="contacto">
+      <div className="footer-inner">
       <a className="footer-email" href={`mailto:${EMAIL}`}>
         {EMAIL}
       </a>
@@ -37,7 +38,8 @@ export default function Footer() {
         </a>
       </div>
 
-      <p>© {new Date().getFullYear()} Sol Andriani</p>
+        <p>© {new Date().getFullYear()} Sol Andriani</p>
+      </div>
     </footer>
   );
 }

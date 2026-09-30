@@ -3,14 +3,14 @@ footer {
   background-color: var(--crema); /* mismo fondo claro que Presentación */
   color: var(--texto);
   font-family: 'Montserrat', sans-serif;
-  padding: 2.5rem 2rem 2rem;
-  text-align: center;
+  padding: 2.5rem 2rem 3rem;
+  text-align: left;
 }
 
 /* ===== Iconos de contacto ===== */
 .iconos-contacto {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 2rem;
   font-size: var(--t-xl);
   margin-bottom: 1rem;
@@ -65,4 +65,9 @@ footer p {
   outline: 3px solid var(--azul);
   outline-offset: 4px;
   border-radius: var(--r-sm);
+}
+
+.footer-inner {
+  max-width: var(--ancho);
+  margin: 0 auto;
 }
