@@ -9,7 +9,7 @@
 }
 
 .subtitulo {
-  font-size: 2rem;
+  font-size: var(--t-xl);
   font-weight: 600;
   color: var(--navy);
   margin: 0;
@@ -30,16 +30,16 @@
   display: flex;
   flex-direction: column;
   background-color: var(--blanco);
-  border-radius: 14px;
+  border-radius: var(--r-md);
   overflow: hidden;
   padding: 0;
-  box-shadow: 0 4px 16px rgba(20, 33, 61, 0.08);
+  box-shadow: var(--sombra-md);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .proyectos .proyecto-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 28px rgba(20, 33, 61, 0.14);
+  box-shadow: var(--sombra-lg);
 }
 
 /* El destacado ocupa el ancho completo y va en dos columnas */
@@ -87,7 +87,7 @@
 }
 
 .proyecto-numero {
-  font-size: 0.75rem;
+  font-size: var(--t-xs);
   font-weight: 700;
   color: var(--azul);
   letter-spacing: 3px;
@@ -95,7 +95,7 @@
 }
 
 .proyecto-titulo {
-  font-size: 1.3rem;
+  font-size: var(--t-lg);
   font-weight: 700;
   color: var(--navy);
   margin: 0;
@@ -111,7 +111,7 @@
 }
 
 .proyecto-descripcion {
-  font-size: 0.93rem;
+  font-size: var(--t-sm);
   line-height: 1.6;
   color: var(--texto-suave);
   margin: 0;
@@ -127,11 +127,11 @@
 }
 
 .proyecto-tag {
-  font-size: 0.72rem;
+  font-size: var(--t-xs);
   background: var(--azul-palido);
   color: var(--azul);
   padding: 4px 12px;
-  border-radius: 20px;
+  border-radius: var(--r-full);
   font-weight: 600;
   letter-spacing: 0.3px;
 }
@@ -140,7 +140,7 @@
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  font-size: 0.9rem;
+  font-size: var(--t-sm);
   color: var(--azul);
   font-weight: 700;
   text-decoration: none;
@@ -159,7 +159,7 @@
 .proyecto-link:focus-visible {
   outline: 3px solid var(--azul);
   outline-offset: 3px;
-  border-radius: 3px;
+  border-radius: var(--r-sm);
 }
 
 @media (max-width: 900px) {

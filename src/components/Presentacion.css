@@ -21,10 +21,10 @@
 .foto-lateral img {
   width: 100%;
   height: auto;
-  border-radius: 16px;
+  border-radius: var(--r-lg);
   object-fit: cover;
   display: block;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  box-shadow: var(--sombra-md);
   transition: transform 0.4s ease;
 }
 
@@ -52,7 +52,7 @@
 }
 
 .texto-presentacion h2 {
-  font-size: 1.1rem;
+  font-size: var(--t-md);
   color: var(--gris);
   margin-bottom: 0.8rem;
   line-height: 1.35;
@@ -74,7 +74,7 @@
 
 .social-icons a {
   color: var(--navy);
-  font-size: 1.5rem;
+  font-size: var(--t-lg);
   transition: transform 0.3s ease;
 }
 
@@ -91,11 +91,11 @@
   }
 
   .texto-presentacion h1 {
-    font-size: 2.4rem;
+    font-size: var(--t-2xl);
   }
 
   .texto-presentacion p {
-    font-size: 1.2rem;
+    font-size: var(--t-md);
   }
 }
 
@@ -114,11 +114,11 @@
   }
 
   .texto-presentacion h1 {
-    font-size: 2rem;
+    font-size: var(--t-xl);
   }
 
   .texto-presentacion p {
-    font-size: 1.1rem;
+    font-size: var(--t-md);
   }
 
   .social-icons {
@@ -128,14 +128,14 @@
 
 @media (max-width: 400px) {
   .social-icons a {
-    font-size: 1.5rem;
+    font-size: var(--t-lg);
   }
 }
 
 .social-icons a:focus-visible {
   outline: 3px solid var(--azul);
   outline-offset: 3px;
-  border-radius: 6px;
+  border-radius: var(--r-sm);
 }
 
 /* Link al CV */
@@ -145,7 +145,7 @@
 }
 
 .hero-cv a {
-  font-size: 0.95rem;
+  font-size: var(--t-sm);
   font-weight: 600;
   color: var(--navy);
   border-bottom: 1.5px solid var(--azul);
@@ -159,5 +159,5 @@
 .hero-cv a:focus-visible {
   outline: 3px solid var(--azul);
   outline-offset: 3px;
-  border-radius: 3px;
+  border-radius: var(--r-sm);
 }

@@ -4,7 +4,7 @@
 }
 
 .tecnologias .subtitulo {
-  font-size: 2rem;
+  font-size: var(--t-xl);
   font-weight: 600;
   color: var(--navy);
   margin-bottom: 2.5rem;
@@ -29,7 +29,7 @@
 }
 
 .tec-fila dt {
-  font-size: 0.8rem;
+  font-size: var(--t-xs);
   font-weight: 700;
   letter-spacing: 1.5px;
   text-transform: uppercase;
@@ -39,7 +39,7 @@
 
 .tec-fila dd {
   margin: 0;
-  font-size: 0.98rem;
+  font-size: var(--t-base);
   line-height: 1.6;
   color: var(--texto);
 }
