@@ -18,12 +18,8 @@ export default function Presentacion() {
           <h1><span>Sol Andriani</span></h1>
           <h2>AI Engineer · Automatización de agentes de IA & Full Stack</h2>
           <p>
-            Armo agentes de IA que atienden por WhatsApp. Hoy trabajo en Austreon,
-            automatizando la atención de clínicas.
-          </p>
-          <p>
-            Antes de programar estudié Diagnóstico por Imágenes en la UNC. Ayuda
-            bastante cuando lo que estás automatizando es una clínica.
+            Trabajo en Austreon armando agentes de IA que atienden clínicas por
+            WhatsApp. Antes de programar estudié Diagnóstico por Imágenes en la UNC.
           </p>
 
           <p className="hero-cv">
