@@ -43,9 +43,9 @@ export default function CasoAustreon() {
         </p>
 
         <p>
-          Varias clínicas sobre el mismo sistema. Cada una tiene que ver únicamente
-          a sus pacientes, y eso no podés dejarlo librado a que el frontend filtre
-          bien. Está resuelto en la base de datos.
+          El sistema tiene que soportar varias clínicas a la vez, y cada una tiene
+          que ver únicamente a sus pacientes. Eso no podés dejarlo librado a que el
+          frontend filtre bien: está resuelto en la base de datos.
         </p>
 
         <p>
