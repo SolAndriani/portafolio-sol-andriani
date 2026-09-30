@@ -69,11 +69,9 @@ export default function CasoAustreon() {
         </p>
 
         <p className="caso-cierre-contacto">
-          Si tenés algo parecido entre manos, escribime a{" "}
           <a href="mailto:solagustinaandriani@gmail.com">
             solagustinaandriani@gmail.com
           </a>
-          .
         </p>
 
         <p className="caso-nota">
