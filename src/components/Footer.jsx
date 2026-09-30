@@ -2,7 +2,7 @@ import React from 'react';
 import { FaEnvelope, FaLinkedin, FaGithub } from 'react-icons/fa';
 import './Footer.css';
 
-const EMAIL = 'solagustinaandriani2@gmail.com';
+const EMAIL = 'solagustinaandriani@gmail.com';
 
 export default function Footer() {
   return (

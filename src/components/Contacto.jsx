@@ -2,7 +2,7 @@ import { useCallback, useState } from "react";
 import useModalAccesible from "../hooks/useModalAccesible";
 import "./Contacto.css";
 
-const EMAIL = "solagustinaandriani2@gmail.com";
+const EMAIL = "solagustinaandriani@gmail.com";
 const ENDPOINT = "https://portafolio-sol-andriani-backend.onrender.com/api/contact";
 
 export default function Contacto({ modalOpen, setModalOpen }) {
