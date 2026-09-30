@@ -19,7 +19,7 @@ export default function Presentacion() {
           <h2>AI Engineer · Automatización de agentes de IA & Full Stack</h2>
           <p>
             Armo agentes de IA que atienden por WhatsApp. Hoy trabajo en Austreon,
-            automatizando la atención de clínicas dentales.
+            automatizando la atención de clínicas dentales y veterinarias.
           </p>
           <p>
             Antes de programar estudié Diagnóstico por Imágenes en la UNC. Ayuda

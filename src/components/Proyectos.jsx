@@ -4,12 +4,12 @@ import './Proyectos.css';
 const proyectos = [
   {
     numero: "01",
-    titulo: "Austreon: atención automatizada para clínicas dentales",
-    descripcion: "Las clínicas perdían consultas fuera de horario y resolvían las urgencias por el celular personal de recepción. Construí el sistema que atiende por WhatsApp con IA, agenda turnos, clasifica urgencias por gravedad y le pasa la conversación a una persona cuando el bot no debe seguir solo. Multi-clínica, en producción.",
+    titulo: "Austreon: atención automatizada por WhatsApp para clínicas",
+    descripcion: "Bots de WhatsApp para clínicas dentales y veterinarias que agendan turnos y responden consultas, con un panel donde el equipo toma el control de una conversación cuando el bot no alcanza y se la devuelve al terminar.",
     url: "https://austreon.com",
     img: "/imagenes/austreon.webp",
-    alt: "Captura del sitio de Austreon, sistema de automatización para clínicas dentales",
-    tags: ["n8n", "IA conversacional", "WhatsApp", "React"],
+    alt: "Captura del sitio de Austreon, sistema de automatización para clínicas",
+    tags: ["n8n", "IA conversacional", "WhatsApp", "Supabase"],
     destacado: true,
     caso: "#caso-austreon",
   },
