@@ -26,7 +26,7 @@ export default function Contacto({ modalOpen, setModalOpen }) {
   const mailtoRescate = () => {
     const asunto = encodeURIComponent(form.subject || "Contacto desde el portafolio");
     const cuerpo = encodeURIComponent(
-      `${form.message}\n\n—\n${form.name}\n${form.from}`
+      `${form.message}\n\n--\n${form.name}\n${form.from}`
     );
     return `mailto:${EMAIL}?subject=${asunto}&body=${cuerpo}`;
   };

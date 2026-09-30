@@ -4,7 +4,7 @@ import './Proyectos.css';
 const proyectos = [
   {
     numero: "01",
-    titulo: "Austreon — Atención automatizada para clínicas dentales",
+    titulo: "Austreon: atención automatizada para clínicas dentales",
     descripcion: "Las clínicas perdían consultas fuera de horario y resolvían las urgencias por el celular personal de recepción. Construí el sistema que atiende por WhatsApp con IA, agenda turnos, clasifica urgencias por gravedad y le pasa la conversación a una persona cuando el bot no debe seguir solo. Multi-clínica, en producción.",
     url: "https://austreon.com",
     img: "/imagenes/austreon.webp",

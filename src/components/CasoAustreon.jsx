@@ -5,7 +5,7 @@ const decisiones = [
   {
     titulo: "Aislamiento de datos por clínica",
     texto:
-      "Cada clínica opera sobre la misma base pero solo alcanza a sus propios pacientes. El aislamiento se resuelve en la capa de datos, no en el frontend: aunque alguien manipule el cliente, no hay forma de leer conversaciones ajenas.",
+      "Cada clínica opera sobre la misma base pero solo alcanza a sus propios pacientes. El aislamiento está resuelto en la capa de datos, así que aunque alguien manipule el cliente no puede leer las conversaciones de otra clínica.",
   },
   {
     titulo: "Un solo estado para el bot y la persona",
@@ -15,17 +15,17 @@ const decisiones = [
   {
     titulo: "Ninguna conversación queda colgada",
     texto:
-      "Si el equipo toma un chat y se olvida de devolverlo, el bot lo retoma solo a las 2 horas sin respuesta. Es la diferencia entre un traspaso que funciona en la demo y uno que sobrevive a un día real de trabajo.",
+      "Si el equipo toma un chat y se olvida de devolverlo, el bot lo retoma solo después de un tiempo sin respuesta. Sin eso, un traspaso que anda bien en la demo se rompe en un día normal de trabajo.",
   },
   {
     titulo: "La ventana de 24 horas de WhatsApp",
     texto:
-      "WhatsApp no permite escribirle a alguien que no escribió en las últimas 24 horas. En vez de dejar que el envío falle sin explicación, el panel detecta la ventana vencida y lo avisa antes de que la persona escriba el mensaje.",
+      "WhatsApp no permite escribirle a alguien que no escribió en las últimas 24 horas. El panel detecta la ventana vencida y lo avisa antes de que la persona redacte el mensaje, para que el envío no falle sin explicación.",
   },
   {
     titulo: "Retención de datos por normativa",
     texto:
-      "Los mensajes se eliminan automáticamente a los 30 días. Son conversaciones con datos de salud: la retención es un requisito legal, no una optimización de espacio.",
+      "Los mensajes se eliminan automáticamente a los 30 días. Son conversaciones con datos de salud, así que la retención responde a un requisito legal.",
   },
   {
     titulo: "Acceso segmentado por rol",
@@ -55,7 +55,7 @@ export default function CasoAustreon() {
           momentos en los que no debe seguir solo: una urgencia, un paciente que
           pide hablar con alguien, una pregunta fuera de su alcance. Construí el
           sistema que le permite a una persona de la clínica entrar a esa
-          conversación de WhatsApp, responder y devolvérsela al bot — sin que el
+          conversación de WhatsApp, responder y devolvérsela al bot, sin que el
           paciente note el cambio.
         </p>
       </header>
@@ -86,8 +86,8 @@ export default function CasoAustreon() {
           <h3>Qué ve el equipo</h3>
           <p>
             Un panel web con todos los chats de la clínica actualizándose en vivo,
-            sin recargar. Cada conversación lleva etiquetas — turno reservado,
-            urgencia, sin respuesta del bot — y filtros para llegar rápido a lo
+            sin recargar. Cada conversación lleva etiquetas (turno reservado,
+            urgencia, sin respuesta del bot) y filtros para llegar rápido a lo
             que importa: no leídos, piden persona, urgencias. Tomar control,
             responder y devolver al bot son tres clics.
           </p>
@@ -124,10 +124,10 @@ export default function CasoAustreon() {
         <div className="caso-cierre-col">
           <h3 className="caso-subtitulo">Stack</h3>
           <ul className="caso-stack">
-            <li><strong>n8n</strong> — orquestación de los bots y la lógica de derivación</li>
-            <li><strong>Supabase</strong> — datos del panel y aislamiento por clínica</li>
-            <li><strong>WhatsApp Business</strong> — canal de entrada y salida</li>
-            <li><strong>React</strong> — panel de operación en tiempo real</li>
+            <li><strong>n8n</strong>: orquestación de los bots y la lógica de derivación</li>
+            <li><strong>Supabase</strong>: datos del panel y aislamiento por clínica</li>
+            <li><strong>WhatsApp Business</strong>: canal de entrada y salida</li>
+            <li><strong>React</strong>: panel de operación en tiempo real</li>
           </ul>
           <p className="caso-nota">
             El panel es una herramienta interna de las clínicas y requiere
