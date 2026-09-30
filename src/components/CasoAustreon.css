@@ -47,6 +47,10 @@
 .caso-bloques {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+}
+
+.caso-bloques--dos {
+  grid-template-columns: repeat(2, 1fr);
   gap: 2.5rem;
   margin-bottom: 4rem;
   padding-top: 2.5rem;
@@ -106,46 +110,19 @@
   margin: 0;
 }
 
-/* ===== Cierre: métricas y stack ===== */
-.caso-cierre {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
+/* ===== Cierre ===== */
+.caso-cierre--simple {
+  display: block;
+  max-width: 68ch;
   padding-top: 3rem;
   border-top: 1px solid rgba(143, 176, 212, 0.25);
 }
 
-.caso-metricas,
-.caso-stack {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 1.25rem 0;
-}
-
-.caso-metricas li,
-.caso-stack li {
-  font-size: 0.95rem;
-  line-height: 1.6;
+.caso-remate {
+  font-size: 1.05rem;
+  line-height: 1.8;
   color: #C9D6E6;
-  padding: 0.6rem 0 0.6rem 1.5rem;
-  border-bottom: 1px solid rgba(143, 176, 212, 0.15);
-  position: relative;
-}
-
-.caso-metricas li::before,
-.caso-stack li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 1.15rem;
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #8FB0D4;
-}
-
-.caso-stack strong {
-  color: #FFFFFF;
+  margin: 0 0 1.25rem 0;
 }
 
 .caso-nota {
@@ -160,11 +137,6 @@
   .caso-bloques {
     grid-template-columns: 1fr;
     gap: 2rem;
-  }
-
-  .caso-cierre {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
   }
 
   .caso .subtitulo {

@@ -9,7 +9,7 @@ const proyectos = [
     url: "https://austreon.com",
     img: "/imagenes/austreon.webp",
     alt: "Captura del sitio de Austreon, sistema de automatización para clínicas dentales",
-    tags: ["n8n", "Groq/LLaMA", "Supabase", "Twilio", "React"],
+    tags: ["n8n", "IA conversacional", "WhatsApp", "React"],
     destacado: true,
     caso: "#caso-austreon",
   },

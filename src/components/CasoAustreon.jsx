@@ -3,14 +3,14 @@ import "./CasoAustreon.css";
 
 const decisiones = [
   {
-    titulo: "Aislamiento de datos por clínica",
+    titulo: "Aislamiento de datos entre clientes",
     texto:
-      "Cada clínica opera sobre la misma base pero solo alcanza a sus propios pacientes. El aislamiento está resuelto en la capa de datos, así que aunque alguien manipule el cliente no puede leer las conversaciones de otra clínica.",
+      "Varias clínicas operan sobre el mismo sistema y cada una alcanza solo a sus propios pacientes. El aislamiento está resuelto en la capa de datos, así que no depende de que el frontend se comporte bien.",
   },
   {
     titulo: "Un solo estado para el bot y la persona",
     texto:
-      "Cuando recepción toma el control, el bot se silencia en esa conversación y deja de responder. El motor de automatización consulta ese estado antes de cada mensaje, así que nunca hay dos voces escribiéndole al paciente al mismo tiempo.",
+      "Cuando alguien toma el control, el bot se silencia en esa conversación. El motor de automatización consulta ese estado antes de cada mensaje, así nunca hay dos voces escribiéndole al paciente al mismo tiempo.",
   },
   {
     titulo: "Ninguna conversación queda colgada",
@@ -18,28 +18,10 @@ const decisiones = [
       "Si el equipo toma un chat y se olvida de devolverlo, el bot lo retoma solo después de un tiempo sin respuesta. Sin eso, un traspaso que anda bien en la demo se rompe en un día normal de trabajo.",
   },
   {
-    titulo: "La ventana de 24 horas de WhatsApp",
+    titulo: "Los límites de la API de WhatsApp",
     texto:
-      "WhatsApp no permite escribirle a alguien que no escribió en las últimas 24 horas. El panel detecta la ventana vencida y lo avisa antes de que la persona redacte el mensaje, para que el envío no falle sin explicación.",
+      "WhatsApp no permite escribirle a alguien que no escribió en las últimas 24 horas. El panel detecta esa situación y la avisa antes de que la persona redacte el mensaje, para que el envío no falle sin explicación.",
   },
-  {
-    titulo: "Retención de datos por normativa",
-    texto:
-      "Los mensajes se eliminan automáticamente a los 30 días. Son conversaciones con datos de salud, así que la retención responde a un requisito legal.",
-  },
-  {
-    titulo: "Acceso segmentado por rol",
-    texto:
-      "Las métricas se pueden abrir a perfiles de marketing sin darles acceso a ninguna conversación. Los números que ve Austreon están agregados y anonimizados, sin nombres ni teléfonos.",
-  },
-];
-
-const metricas = [
-  "Resolución automática",
-  "Turnos y turnos fuera de horario",
-  "Tiempo de respuesta del equipo",
-  "Urgencias y cancelaciones",
-  "Derivaciones por motivo",
 ];
 
 export default function CasoAustreon() {
@@ -60,36 +42,24 @@ export default function CasoAustreon() {
         </p>
       </header>
 
-      <div className="caso-bloques">
+      <div className="caso-bloques caso-bloques--dos">
         <article className="caso-bloque">
           <h3>El problema</h3>
           <p>
             Sin una salida hacia una persona, las conversaciones que el bot no
             puede resolver se pierden o terminan derivadas al celular personal de
-            alguien de recepción. La clínica queda sin registro, sin métricas y
-            sin control sobre qué se le respondió al paciente.
+            alguien de recepción. La clínica queda sin registro y sin control
+            sobre qué se le respondió al paciente.
           </p>
         </article>
 
         <article className="caso-bloque">
-          <h3>Cómo se dispara la derivación</h3>
+          <h3>Qué construí</h3>
           <p>
-            Por dos caminos. El bot deriva solo cuando detecta una urgencia, un
-            pedido explícito de hablar con alguien, que ningún horario disponible
-            le sirve al paciente o una consulta que no sabe responder: avisa a
-            recepción y marca el chat con el motivo. O interviene el equipo por
-            decisión propia, viendo la conversación en vivo.
-          </p>
-        </article>
-
-        <article className="caso-bloque">
-          <h3>Qué ve el equipo</h3>
-          <p>
-            Un panel web con todos los chats de la clínica actualizándose en vivo,
-            sin recargar. Cada conversación lleva etiquetas (turno reservado,
-            urgencia, sin respuesta del bot) y filtros para llegar rápido a lo
-            que importa: no leídos, piden persona, urgencias. Tomar control,
-            responder y devolver al bot son tres clics.
+            Un panel web donde el equipo ve las conversaciones en vivo, toma el
+            control de una cuando hace falta, responde desde ahí y se la devuelve
+            al bot al terminar. Los mensajes salen por el mismo número de siempre,
+            así que del lado del paciente no cambia nada.
           </p>
         </article>
       </div>
@@ -106,34 +76,18 @@ export default function CasoAustreon() {
         </ul>
       </div>
 
-      <div className="caso-cierre">
-        <div className="caso-cierre-col">
-          <h3 className="caso-subtitulo">Qué mide</h3>
-          <ul className="caso-metricas">
-            {metricas.map((m) => (
-              <li key={m}>{m}</li>
-            ))}
-          </ul>
-          <p className="caso-nota">
-            Las derivaciones por motivo cierran el circuito: muestran por qué el
-            bot tuvo que pasar cada chat a una persona, y con eso se decide qué
-            mejorar del bot en la próxima iteración.
-          </p>
-        </div>
-
-        <div className="caso-cierre-col">
-          <h3 className="caso-subtitulo">Stack</h3>
-          <ul className="caso-stack">
-            <li><strong>n8n</strong>: orquestación de los bots y la lógica de derivación</li>
-            <li><strong>Supabase</strong>: datos del panel y aislamiento por clínica</li>
-            <li><strong>WhatsApp Business</strong>: canal de entrada y salida</li>
-            <li><strong>React</strong>: panel de operación en tiempo real</li>
-          </ul>
-          <p className="caso-nota">
-            El panel es una herramienta interna de las clínicas y requiere
-            usuario, así que no es público.
-          </p>
-        </div>
+      <div className="caso-cierre caso-cierre--simple">
+        <p className="caso-remate">
+          El sistema mide su propio desempeño: cuánto resuelve el bot sin ayuda,
+          cuánto tarda el equipo cuando interviene y por qué motivo hubo que
+          derivar. Con eso se decide qué mejorar en la próxima iteración.
+        </p>
+        <p className="caso-nota">
+          Construido con n8n para la orquestación, React para el panel y una base
+          gestionada con las reglas de acceso en la capa de datos. El panel es una
+          herramienta interna de las clínicas y requiere usuario, así que no es
+          público.
+        </p>
       </div>
     </section>
   );
