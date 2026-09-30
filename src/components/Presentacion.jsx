@@ -1,18 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
-import Contacto from "./Contacto";
 import "./Presentacion.css";
 
 export default function Presentacion() {
-  const [modalOpen, setModalOpen] = useState(false);
-
   return (
     <section id="presentacion" className="presentacion">
       <div className="presentacion-contenedor">
         <div className="foto-lateral">
-          <img 
-            src="/imagenes/foto-sol.webp" 
-            alt="Sol Andriani, desarrolladora web" 
+          <img
+            src="/imagenes/foto-sol.webp"
+            alt="Sol Andriani, desarrolladora web"
             className="foto-sol"
           />
         </div>
@@ -27,15 +24,6 @@ export default function Presentacion() {
             mejorar. Hoy en producción, con clínicas usándolo todos los días.
           </p>
 
-        <div className="botones-presentacion">
-  <button className="btn-contacto" onClick={() => setModalOpen(true)}>
-    Trabajemos juntos
-  </button>
-  <a className="btn-secundario" href="#caso-austreon">
-    Ver un caso en detalle
-  </a>
-</div>
-
           <div className="social-icons">
             <a href="https://www.linkedin.com/in/solandriani" target="_blank" rel="noreferrer" aria-label="Perfil de LinkedIn">
               <FaLinkedin />
@@ -46,8 +34,6 @@ export default function Presentacion() {
           </div>
         </div>
       </div>
-
-      <Contacto modalOpen={modalOpen} setModalOpen={setModalOpen} />
     </section>
   );
 }
