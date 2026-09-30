@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
 import Contacto from "./Contacto";
 import "./Presentacion.css";
 
@@ -32,11 +33,11 @@ export default function Presentacion() {
 </div>
 
           <div className="social-icons">
-            <a href="https://www.linkedin.com/in/solandriani" target="_blank" rel="noreferrer">
-              <i className="fab fa-linkedin"></i>
+            <a href="https://www.linkedin.com/in/solandriani" target="_blank" rel="noreferrer" aria-label="Perfil de LinkedIn">
+              <FaLinkedin />
             </a>
-            <a href="https://github.com/solandriani" target="_blank" rel="noreferrer">
-              <i className="fab fa-github"></i>
+            <a href="https://github.com/solandriani" target="_blank" rel="noreferrer" aria-label="Perfil de GitHub">
+              <FaGithub />
             </a>
           </div>
         </div>

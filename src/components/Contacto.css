@@ -94,3 +94,60 @@ button[type="submit"]:active {
     font-size: 1rem;
   }
 }
+
+/* ===== Estados del formulario ===== */
+.estado {
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+.estado p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.estado--ok {
+  background-color: #eaf5ee;
+  color: #1d6b3a;
+}
+
+.estado--error {
+  background-color: #fdeeee;
+  color: #8c2f2f;
+}
+
+.estado-alternativa {
+  margin-top: 0.5rem !important;
+}
+
+.estado-alternativa a {
+  color: inherit;
+  font-weight: 600;
+  text-decoration: underline;
+  word-break: break-all;
+}
+
+/* ===== Vía directa, siempre visible ===== */
+.contacto-directo {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid #ddd;
+  font-size: 0.9rem;
+  color: #555;
+  text-align: center;
+}
+
+.contacto-directo a {
+  color: #14213D;
+  font-weight: 600;
+  text-decoration: underline;
+  word-break: break-all;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
