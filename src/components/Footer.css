@@ -4,13 +4,13 @@ footer {
   color: var(--texto);
   font-family: 'Montserrat', sans-serif;
   padding: 2.5rem 2rem 3rem;
-  text-align: left;
+  text-align: center;
 }
 
 /* ===== Iconos de contacto ===== */
 .iconos-contacto {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 2rem;
   font-size: var(--t-xl);
   margin-bottom: 1rem;
