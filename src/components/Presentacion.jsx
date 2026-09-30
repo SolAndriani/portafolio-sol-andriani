@@ -18,8 +18,14 @@ export default function Presentacion() {
           <h1><span>Sol Andriani</span></h1>
           <h2>AI Engineer · Automatización de agentes de IA & Full Stack</h2>
           <p>
-            Trabajo en Austreon armando agentes de IA que atienden clínicas por
-            WhatsApp. Antes de programar estudié Diagnóstico por Imágenes en la UNC.
+            Construyo sistemas que conectan IA con procesos reales de negocio:
+            agentes conversacionales en WhatsApp, flujos automáticos con n8n y
+            dashboards de gestión en tiempo real.
+          </p>
+          <p>
+            Mi formación en Diagnóstico por Imágenes me da además una mirada
+            distinta a la hora de trabajar en proyectos vinculados a salud,
+            entendiendo tanto la parte clínica como la técnica.
           </p>
 
           <p className="hero-cv">
