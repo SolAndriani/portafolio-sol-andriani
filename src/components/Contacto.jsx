@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
+import useModalAccesible from "../hooks/useModalAccesible";
 import "./Contacto.css";
 
 const EMAIL = "solagustinaandriani2@gmail.com";
@@ -14,7 +15,8 @@ export default function Contacto({ modalOpen, setModalOpen }) {
   const [status, setStatus] = useState(null);
   const [enviando, setEnviando] = useState(false);
 
-  if (!modalOpen) return null;
+  const cerrar = useCallback(() => setModalOpen(false), [setModalOpen]);
+  const modalRef = useModalAccesible(modalOpen, cerrar);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -45,38 +47,56 @@ export default function Contacto({ modalOpen, setModalOpen }) {
         setStatus({ tipo: "ok", texto: "¡Listo! Tu mensaje llegó. Te respondo a la brevedad." });
         setForm({ name: "", from: "", subject: "", message: "" });
       } else {
-        setStatus({
-          tipo: "error",
-          texto: "No pude enviar el mensaje desde acá.",
-        });
+        setStatus({ tipo: "error", texto: "No pude enviar el mensaje desde acá." });
       }
     } catch (error) {
-      setStatus({
-        tipo: "error",
-        texto: "No pude enviar el mensaje desde acá.",
-      });
+      setStatus({ tipo: "error", texto: "No pude enviar el mensaje desde acá." });
     } finally {
       setEnviando(false);
     }
   };
 
+  if (!modalOpen) return null;
+
   return (
-    <div className="modal-overlay" onClick={() => setModalOpen(false)}>
-      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+    <div className="modal-overlay" onClick={cerrar}>
+      <div
+        className="modal-content"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="titulo-contacto"
+        ref={modalRef}
+        tabIndex={-1}
+        onClick={(e) => e.stopPropagation()}
+      >
         <button
+          type="button"
           className="cerrar-modal"
-          onClick={() => setModalOpen(false)}
-          aria-label="Cerrar formulario de contacto"
+          onClick={cerrar}
+          aria-label="Cerrar el formulario de contacto"
         >
           ✖
         </button>
-        <h2>Contacto</h2>
+
+        <h2 id="titulo-contacto">Contacto</h2>
 
         <form onSubmit={handleSubmit}>
-          <input type="text" name="name" placeholder="Nombre" value={form.name} onChange={handleChange} required />
-          <input type="email" name="from" placeholder="Email" value={form.from} onChange={handleChange} required />
-          <input type="text" name="subject" placeholder="Asunto" value={form.subject} onChange={handleChange} required />
-          <textarea name="message" placeholder="Mensaje" value={form.message} onChange={handleChange} required />
+          <label className="visualmente-oculto" htmlFor="contacto-nombre">Nombre</label>
+          <input id="contacto-nombre" type="text" name="name" placeholder="Nombre"
+                 value={form.name} onChange={handleChange} autoComplete="name" required />
+
+          <label className="visualmente-oculto" htmlFor="contacto-email">Email</label>
+          <input id="contacto-email" type="email" name="from" placeholder="Email"
+                 value={form.from} onChange={handleChange} autoComplete="email" required />
+
+          <label className="visualmente-oculto" htmlFor="contacto-asunto">Asunto</label>
+          <input id="contacto-asunto" type="text" name="subject" placeholder="Asunto"
+                 value={form.subject} onChange={handleChange} required />
+
+          <label className="visualmente-oculto" htmlFor="contacto-mensaje">Mensaje</label>
+          <textarea id="contacto-mensaje" name="message" placeholder="Mensaje"
+                    value={form.message} onChange={handleChange} required />
+
           <button type="submit" disabled={enviando}>
             {enviando ? "Enviando..." : "Enviar"}
           </button>

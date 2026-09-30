@@ -11,7 +11,7 @@ export default function Presentacion() {
       <div className="presentacion-contenedor">
         <div className="foto-lateral">
           <img 
-            src="/imagenes/foto sol.jpg" 
+            src="/imagenes/foto-sol.webp" 
             alt="Sol Andriani, desarrolladora web" 
             className="foto-sol"
           />

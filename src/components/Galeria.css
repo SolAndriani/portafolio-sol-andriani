@@ -120,3 +120,91 @@
     column-gap: 0;
   }
 }
+
+/* ===== Ajustes de accesibilidad y semántica =====
+   La grilla pasó a <ul>/<li> y los disparadores a <button>,
+   así que reseteo los estilos que traen por defecto. */
+.galeria-masonry {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.galeria-item {
+  cursor: default;
+}
+
+.galeria-boton {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  border-radius: 12px;
+  overflow: hidden;
+  font: inherit;
+  color: inherit;
+}
+
+.galeria-boton:focus-visible {
+  outline: 3px solid #3D5A80;
+  outline-offset: 3px;
+}
+
+/* Los controles del lightbox ahora son <button>: saco el chrome del navegador */
+.cerrar,
+.prev,
+.next {
+  background: none;
+  border: none;
+  padding: 0.25rem 0.75rem;
+  line-height: 1;
+  font-family: inherit;
+}
+
+.cerrar:focus-visible,
+.prev:focus-visible,
+.next:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 4px;
+  border-radius: 6px;
+}
+
+.lightbox:focus {
+  outline: none;
+}
+
+.lightbox-contador {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  color: #fff;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  opacity: 0.85;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .galeria-item img,
+  .galeria-item,
+  .lightbox {
+    transition: none;
+  }
+
+  .galeria-item:hover img {
+    transform: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .prev,
+  .next {
+    font-size: 2rem;
+  }
+
+  .prev { left: 0.5rem; }
+  .next { right: 0.5rem; }
+}
