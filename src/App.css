@@ -9,7 +9,7 @@ body {
   margin: 0;
   padding: 0;
   padding-top: 70px;
-  line-height: 1.7;
+  line-height: 1.55;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -23,10 +23,10 @@ h2 { font-size: clamp(2rem, 3vw, 2.8rem); font-weight: 700; }
 h3 { font-size: clamp(1.4rem, 2vw, 1.8rem); font-weight: 600; }
 
 p {
-  font-size: clamp(1.1rem, 1.2vw, 1.3rem);
+  font-size: clamp(1rem, 1.1vw, 1.12rem);
   color: #333;
-  margin-bottom: 1rem;
-  line-height: 1.8;
+  margin-bottom: 0.9rem;
+  line-height: 1.6;
 }
 
 a {
@@ -106,7 +106,7 @@ img {
   h1 { font-size: 1.9rem; }
   h2 { font-size: 1.6rem; }
   h3 { font-size: 1.3rem; }
-  p { font-size: 1.1rem; line-height: 1.6; }
+  p { font-size: 1rem; line-height: 1.55; }
   .proyectos-grid, .galeria-fotos {
     grid-template-columns: 1fr;
   }

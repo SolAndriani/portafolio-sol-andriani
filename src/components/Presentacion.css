@@ -41,8 +41,8 @@
 .texto-presentacion h1 {
   font-size: clamp(2.2rem, 3vw, 3rem);
   color: #14213D;
-  line-height: 1.3;
-  margin-bottom: 0.5rem;
+  line-height: 1.2;
+  margin-bottom: 0.3rem;
   font-weight: 600;
 }
 
@@ -52,78 +52,29 @@
 }
 
 .texto-presentacion h2 {
-  font-size: 1.4rem;
+  font-size: 1.15rem;
   color: #4B5563;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.1rem;
+  line-height: 1.35;
   font-weight: 400;
 }
 
 .texto-presentacion p {
-  font-size: clamp(1.1rem, 1.2vw, 1.3rem);
+  font-size: clamp(1rem, 1.05vw, 1.08rem);
   color: #333;
-  line-height: 1.7;
-  margin-bottom: 2rem;
-}
-
-
-.btn-contacto {
-  display: inline-block;
-  background-color: #14213D;
-  color: #fff !important;
-  padding: 0.8rem 1.6rem;
-  border-radius: 9999px;
-  font-weight: 500;
-  text-decoration: none;
-  letter-spacing: 0.3px;
-  box-shadow: 0 4px 12px rgba(20,33,61,0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  outline: none;
-  border: none;
-}
-
-.btn-contacto:hover,
-.btn-contacto:focus,
-.btn-contacto:active {
-  transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 8px 20px rgba(20,33,61,0.3);
-  color: #fff !important;
-  text-decoration: none;
-}
-
-.btn-cv {
-  display: inline-block;
-  background-color: transparent;
-  color: #14213D !important;
-  padding: 0.8rem 1.6rem;
-  border-radius: 9999px;
-  font-weight: 500;
-  text-decoration: none;
-  letter-spacing: 0.3px;
-  border: 1.5px solid #14213D;
-  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
-  cursor: pointer;
-}
-
-.btn-cv:hover {
-  background-color: #14213D;
-  color: #fff !important;
-  transform: translateY(-3px);
+  line-height: 1.6;
+  margin-bottom: 0.9rem;
 }
 
 .social-icons {
   display: flex;
-  gap: 1rem;
-  margin-top: 1.5rem;
+  gap: 0.9rem;
+  margin-top: 1.1rem;
 }
 
 .social-icons a {
   color: #14213D;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   transition: transform 0.3s ease;
 }
 
@@ -170,28 +121,16 @@
     font-size: 1.1rem;
   }
 
-  .botones-presentacion {
-    justify-content: center;
-  }
-
   .social-icons {
     justify-content: center;
   }
 }
 
 @media (max-width: 400px) {
-  .btn-contacto,
-  .btn-cv {
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
-  }
-
   .social-icons a {
     font-size: 1.5rem;
   }
 }
-/* Botón secundario hacia el caso de estudio */
-
 
 .social-icons a:focus-visible {
   outline: 3px solid #3D5A80;
@@ -199,10 +138,10 @@
   border-radius: 6px;
 }
 
-
 /* Link al CV */
 .hero-cv {
-  margin-bottom: 1.5rem;
+  margin-top: 1.4rem;
+  margin-bottom: 0;
 }
 
 .hero-cv a {
