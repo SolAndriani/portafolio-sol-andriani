@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { useT, useIdioma } from "../idioma";
 import Escritura from "./Escritura";
 import "./Presentacion.css";
@@ -11,6 +11,41 @@ const FRASES = {
 export default function Presentacion() {
   const t = useT();
   const { idioma } = useIdioma();
+  const foto = useRef(null);
+
+  /* Cuando la foto de React ya cargó y terminó el zoom de entrada de la
+     foto precargada (2,2 s), se quita la precarga del HTML. */
+  useEffect(() => {
+    const precarga = document.querySelector(".hero-precarga");
+    if (!precarga) {
+      document.documentElement.classList.remove("precarga-activa");
+      return;
+    }
+    let timer;
+    let hecho = false;
+    const sacar = () => {
+      if (hecho) return;
+      hecho = true;
+      document.documentElement.classList.remove("precarga-activa");
+      precarga.remove();
+    };
+    // Espera a que termine el zoom de entrada de la foto precargada (en
+    // celulares lentos termina más tarde); 4 s como máximo por las dudas.
+    const quitar = () => {
+      const imgPre = precarga.querySelector("img");
+      const anims = imgPre && imgPre.getAnimations ? imgPre.getAnimations() : [];
+      timer = window.setTimeout(sacar, 4000);
+      if (anims.length) Promise.all(anims.map((a) => a.finished)).then(sacar, sacar);
+      else sacar();
+    };
+    const img = foto.current;
+    if (img && img.complete) quitar();
+    else if (img) img.addEventListener("load", quitar, { once: true });
+    return () => {
+      window.clearTimeout(timer);
+      if (img) img.removeEventListener("load", quitar);
+    };
+  }, []);
 
   return (
     <section id="presentacion" className="hero">
@@ -24,6 +59,7 @@ export default function Presentacion() {
                 celulares con pantalla de alta densidad una versión chica
                 se ve borrosa */}
             <img
+              ref={foto}
               src="/imagenes/sol-hero.webp"
               srcSet="/imagenes/sol-hero-960.webp 960w, /imagenes/sol-hero.webp 1440w"
               sizes="(max-width: 767px) 140vw, (max-width: 1100px) 58vw, 75vh"
@@ -32,7 +68,6 @@ export default function Presentacion() {
               height="1920"
               loading="eager"
               fetchPriority="high"
-              decoding="async"
             />
           </picture>
         </div>

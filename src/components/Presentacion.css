@@ -512,6 +512,27 @@
   }
 }
 
+/* Foto precargada en el HTML (index.html): ocupa el mismo lugar que la
+   del hero y se dibuja antes de que cargue React. Mientras está, la foto
+   de React queda oculta; al quitarla, la de React ya está en su lugar,
+   sin animación, así el cambio no se nota. */
+.hero-precarga {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.precarga-activa .layout-principal .hero-foto {
+  visibility: hidden;
+}
+
+.layout-principal .hero-foto img {
+  animation: none;
+}
+
 /* Etiqueta arriba del titular: mismo estilo que tenía la ubicación */
 .hero-etiqueta {
   display: inline-flex;
