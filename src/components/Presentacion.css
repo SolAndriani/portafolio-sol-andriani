@@ -298,86 +298,78 @@
   }
 }
 
-/* Hasta 900px (celulares y tablets) la foto pasa a ser el fondo del hero
-   a pantalla completa y el texto va encima, abajo, como en desktop:
-   la primera pantalla muestra foto, título, bajada y botones juntos. */
+/* Hasta 900px (celulares y tablets) se mantiene el mismo diseño que en
+   desktop, en chico: foto a la izquierda a todo el alto y texto a la
+   derecha. Solo se achican las letras y los espacios. */
 @media (max-width: 900px) {
   .hero-inner {
     height: 100vh;
     height: 100svh;
-    min-height: 640px;
+    min-height: 560px;
   }
 
   .hero-foto {
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 62%;
-    aspect-ratio: auto;
+    width: 58%;
   }
 
   .hero-foto img {
-    height: 100%;
-    object-fit: cover;
-    object-position: 30% 22%;
-  }
-
-  .hero-foto::after {
-    display: none;
+    object-position: 12% 60%;
   }
 
   .hero-contenido {
-    top: auto;
-    right: var(--lateral);
-    bottom: 40px;
-    left: var(--lateral);
-    transform: none;
-    width: auto;
-    max-width: 560px;
-    gap: 14px;
+    right: 4.5%;
+    width: 47%;
+    gap: 12px;
   }
 
   .hero-titulo {
-    font-size: 38px;
-    line-height: 1.08;
-    letter-spacing: -1.3px;
+    font-size: clamp(21px, 6vw, 44px);
+    line-height: 1.1;
+    letter-spacing: -0.6px;
   }
 
-  .hero-descripcion {
-    font-size: 15px;
-    line-height: 1.5;
+  .escritura {
+    letter-spacing: -0.3px;
+  }
+
+  .escritura-cursor {
+    width: 2px;
+    margin-left: 3px;
   }
 
   .hero-etiqueta {
-    font-size: 13px;
+    gap: 6px;
+    font-size: clamp(9px, 2.6vw, 14px);
+  }
+
+  .hero-linea {
+    width: 14px;
+  }
+
+  .hero-descripcion {
+    font-size: clamp(11px, 3vw, 16px);
+    line-height: 1.45;
   }
 
   .hero-acciones {
-    gap: 12px 20px;
-    margin-top: 4px;
-  }
-
-  .hero-scroll {
-    display: none;
-  }
-}
-
-@media (max-width: 767px) {
-  .hero-titulo {
-    font-size: 34px;
+    gap: 8px 12px;
   }
 
   .hero-acciones .btn {
-    width: 100%;
-    justify-content: center;
+    height: 36px;
+    padding: 0 14px;
+    gap: 6px;
+    font-size: 12px;
   }
-}
 
-@media (max-width: 380px) {
-  .hero-titulo {
-    font-size: 30px;
-    letter-spacing: -1.1px;
+  .hero-link {
+    font-size: 12px;
+  }
+
+  .hero-scroll {
+    right: 4.5%;
+    bottom: 5%;
+    font-size: 10px;
   }
 }
 

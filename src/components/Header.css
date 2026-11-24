@@ -116,7 +116,11 @@
   .header,
   .header--fondo {
     padding: 16px 0;
-    /* en celular el header siempre lleva fondo: abajo está la foto */
+  }
+
+  /* Igual que en desktop: transparente sobre el hero y con fondo crema
+     una vez que se scrollea */
+  .header--fondo {
     background: rgba(245, 243, 239, 0.92);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -160,12 +164,6 @@
   text-shadow: none;
 }
 
-@media (max-width: 760px) {
-  .header-marca {
-    color: var(--tinta);
-    text-shadow: none;
-  }
-}
 
 /* --- Marca animada (estilo dennissnellenberg.com) ---
    "© Code by Sol": al pasar el mouse el © gira y el texto sube
