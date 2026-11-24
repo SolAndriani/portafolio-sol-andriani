@@ -70,7 +70,6 @@ const TEXTOS = {
       "Los límites de WhatsApp, que no dejan escribirle a alguien que no escribió en las últimas 24 horas. El panel avisa antes de que la persona redacte, así no se entera cuando el envío ya falló.",
       "Los datos de salud. Las conversaciones se borran solas a los 30 días y las métricas se guardan sin nombres ni teléfonos.",
     ],
-    capturas: "En la demo",
     capturaWa:
       "Lo que ve la tutora en WhatsApp: manda un audio, elige un horario de la lista y el turno queda confirmado.",
     capturaWaAlt: "Conversación de WhatsApp con el asistente de Austreon Vet: audio, lista de horarios y turno confirmado",
@@ -123,7 +122,6 @@ const TEXTOS = {
       "WhatsApp's limits, which don't let you message someone who hasn't written in the last 24 hours. The dashboard warns before the person starts typing, so they don't find out after the message has already failed.",
       "Health data. Conversations are deleted automatically after 30 days and metrics are stored without names or phone numbers.",
     ],
-    capturas: "In the demo",
     capturaWa:
       "What the pet owner sees on WhatsApp: sends a voice note, picks a time from the list and the appointment is confirmed.",
     capturaWaAlt: "WhatsApp conversation with the Austreon Vet assistant: voice note, list of times and confirmed appointment",
@@ -185,39 +183,6 @@ export default function CasoAustreon() {
         ))}
       </ol>
 
-      {/* Capturas reales de la demo de Austreon Vet */}
-      <div className="caso-capturas">
-        <h3 className="caso-decisiones-titulo">{tx.capturas}</h3>
-        <div className="caso-capturas-grid">
-          <figure className="caso-captura">
-            <a href="/imagenes/caso-vet-whatsapp.webp" target="_blank" rel="noopener noreferrer">
-              <img
-                src="/imagenes/caso-vet-whatsapp.webp"
-                alt={tx.capturaWaAlt}
-                width="1316"
-                height="816"
-                loading="lazy"
-                decoding="async"
-              />
-            </a>
-            <figcaption>{tx.capturaWa}</figcaption>
-          </figure>
-          <figure className="caso-captura">
-            <a href="/imagenes/caso-vet-panel.webp" target="_blank" rel="noopener noreferrer">
-              <img
-                src="/imagenes/caso-vet-panel.webp"
-                alt={tx.capturaPanelAlt}
-                width="1600"
-                height="719"
-                loading="lazy"
-                decoding="async"
-              />
-            </a>
-            <figcaption>{tx.capturaPanel}</figcaption>
-          </figure>
-        </div>
-      </div>
-
       <div className="caso-decisiones">
         <h3 className="caso-decisiones-titulo">{tx.decisiones}</h3>
         <ul className="caso-decisiones-lista">
@@ -277,6 +242,38 @@ export default function CasoAustreon() {
         {tx.parrafos1.map((p) => (
           <p key={p}>{p}</p>
         ))}
+
+        {/* Capturas reales de la demo de Austreon Vet */}
+        <div className="caso-capturas">
+          <div className="caso-capturas-grid">
+            <figure className="caso-captura">
+              <a href="/imagenes/caso-vet-whatsapp.webp" target="_blank" rel="noopener noreferrer">
+                <img
+                  src="/imagenes/caso-vet-whatsapp.webp"
+                  alt={tx.capturaWaAlt}
+                  width="1316"
+                  height="816"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </a>
+              <figcaption>{tx.capturaWa}</figcaption>
+            </figure>
+            <figure className="caso-captura">
+              <a href="/imagenes/caso-vet-panel.webp" target="_blank" rel="noopener noreferrer">
+                <img
+                  src="/imagenes/caso-vet-panel.webp"
+                  alt={tx.capturaPanelAlt}
+                  width="1600"
+                  height="719"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </a>
+              <figcaption>{tx.capturaPanel}</figcaption>
+            </figure>
+          </div>
+        </div>
 
         <h3>{tx.resolver}</h3>
         {tx.parrafos2.map((p) => (
