@@ -12,6 +12,13 @@ export default function CasoAustreon() {
       </header>
 
       <div className="caso-texto">
+        <ol className="caso-flujo" aria-label="Arquitectura del sistema">
+          <li><strong>WhatsApp</strong><span>Cloud API de Meta</span></li>
+          <li><strong>n8n</strong><span>Orquestación y reglas</span></li>
+          <li><strong>OpenAI</strong><span>Respuestas del asistente</span></li>
+          <li><strong>Panel del equipo</strong><span>Supabase · traspaso a humano</span></li>
+        </ol>
+
         <p>
           Armé bots de WhatsApp para clínicas que agendan
           turnos y responden consultas solos. El problema aparece cuando el bot no
@@ -59,6 +66,20 @@ export default function CasoAustreon() {
           métricas se guardan sin nombres ni teléfonos.
         </p>
 
+        <h3>Decisiones técnicas</h3>
+
+        <p>
+          El motor conversacional empezó con LLaMA sobre Groq. Lo migré a OpenAI
+          después de comparar calidad de respuesta, latencia y costo con
+          conversaciones reales de prueba.
+        </p>
+
+        <p>
+          El modelo no decide todo. Los pasos que no pueden fallar, como agendar
+          un turno o derivar una urgencia, van por flujos fijos en n8n, y el modelo
+          se usa para entender lo que escribe el paciente y redactar la respuesta.
+        </p>
+
         <h3>Qué se mide</h3>
 
         <p>
@@ -68,8 +89,14 @@ export default function CasoAustreon() {
           respuesta, urgencia, reclamo). Con eso se decide qué mejorar después.
         </p>
 
+        <p className="caso-demos">
+          Demos: <a href="https://dent.austreon.cl" target="_blank" rel="noopener noreferrer">dent.austreon.cl</a>
+          {" · "}
+          <a href="https://vet.austreon.cl" target="_blank" rel="noopener noreferrer">vet.austreon.cl</a>
+        </p>
+
         <p className="caso-nota">
-          Hecho con n8n, JavaScript y Supabase. El panel es una herramienta interna
+          Hecho con n8n, OpenAI, WhatsApp Cloud API, Airtable, JavaScript y Supabase. El panel es una herramienta interna
           de las clínicas y requiere usuario, así que no es público.
         </p>
       </div>

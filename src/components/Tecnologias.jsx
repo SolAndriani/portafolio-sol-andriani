@@ -4,9 +4,11 @@ import "./Tecnologias.css";
 const grupos = [
   { rol: "Lenguajes", items: "Python · JavaScript / TypeScript" },
   { rol: "Desarrollo", items: "React · Node.js · FastAPI · APIs REST · Git" },
-  { rol: "IA y agentes", items: "LLMs (Groq / LLaMA) · Agentes conversacionales" },
-  { rol: "Automatización", items: "n8n · WhatsApp Business API · Twilio · Airtable · Webhooks" },
+  { rol: "IA y agentes", items: "OpenAI · Gemini · Agentes conversacionales · Prompting" },
+  { rol: "Automatización", items: "n8n · WhatsApp Cloud API (Meta) · Airtable · Webhooks" },
   { rol: "Datos", items: "PostgreSQL · Supabase · MongoDB" },
+  { rol: "Despliegue", items: "Hetzner · Vercel · Netlify" },
+  { rol: "Desarrollo con IA", items: "Claude Code · Codex · GitHub Copilot" },
 ];
 
 export default function Tecnologias() {

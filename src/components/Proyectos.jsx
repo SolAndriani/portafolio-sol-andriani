@@ -6,7 +6,7 @@ const proyectos = [
     numero: "01",
     titulo: "Austreon: atención automatizada por WhatsApp para clínicas",
     descripcion: "Bots de WhatsApp para clínicas que agendan turnos y responden consultas, con un panel donde el equipo toma el control de una conversación cuando el bot no alcanza y se la devuelve al terminar.",
-    url: "https://austreon.com",
+    url: "https://austreon.cl",
     img: "/imagenes/austreon.webp",
     alt: "Captura del sitio de Austreon, sistema de automatización para clínicas",
     tags: ["n8n", "IA conversacional", "WhatsApp", "Supabase"],
