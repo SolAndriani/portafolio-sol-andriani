@@ -62,6 +62,7 @@
   <body>
     <!-- Foto del hero en el HTML: se dibuja apenas llega el CSS, sin esperar
          a React. Cuando React monta su hero, este bloque se quita (Presentacion.jsx). -->
+    <style>.hero-precarga{visibility:hidden;position:absolute;width:0;height:0;overflow:hidden}</style>
     <div class="hero-precarga" aria-hidden="true">
       <div class="hero-inner">
         <div class="hero-foto">

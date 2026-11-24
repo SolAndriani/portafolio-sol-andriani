@@ -516,12 +516,19 @@
    del hero y se dibuja antes de que cargue React. Mientras está, la foto
    de React queda oculta; al quitarla, la de React ya está en su lugar,
    sin animación, así el cambio no se nota. */
-.hero-precarga {
+/* "html" sube la especificidad para ganarle al estilo en línea de
+   index.html, que la oculta mientras no llegó este CSS (en desarrollo los
+   estilos llegan por JS y la foto se vería un instante gigante). */
+html .hero-precarga {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  visibility: visible;
   pointer-events: none;
 }
 
