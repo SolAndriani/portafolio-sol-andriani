@@ -53,7 +53,7 @@ const TEXTOS = {
   es: {
     eyebrow: "Caso de estudio",
     titulo: "Cómo funciona un asistente",
-    tituloSerif: "de punta a punta",
+    tituloSerif: "de principio a fin",
     intro:
       "Soy la líder técnica de Austreon: diseñé la arquitectura, los flujos, el modelo de datos y los prompts. El sistema está en etapa de lanzamiento y hoy se puede ver en las dos demos.",
     demos: "Probá las demos:",
@@ -99,7 +99,7 @@ const TEXTOS = {
   en: {
     eyebrow: "Case study",
     titulo: "How an assistant works",
-    tituloSerif: "end to end",
+    tituloSerif: "from start to finish",
     intro:
       "I'm the technical lead at Austreon: I designed the architecture, the workflows, the data model and the prompts. The system is in its launch stage and can be seen today in the two demos.",
     demos: "Try the demos:",
