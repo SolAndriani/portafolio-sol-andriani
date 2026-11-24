@@ -293,3 +293,58 @@
     gap: 24px;
   }
 }
+
+/* --- Capturas reales de la demo --- */
+.caso-capturas {
+  margin-bottom: 56px;
+}
+
+/* Las dos capturas quedan a la misma altura: cada columna es
+   proporcional al ancho de su imagen. */
+.caso-capturas-grid {
+  display: grid;
+  grid-template-columns: 1.61fr 2.22fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.caso-captura {
+  margin: 0;
+}
+
+.caso-captura img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--oscuro-borde);
+  border-radius: 10px;
+}
+
+.caso-captura figcaption {
+  margin-top: 12px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--oscuro-texto);
+}
+
+@media (max-width: 900px) {
+  .caso-capturas-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
+@media (max-width: 760px) {
+  .caso-capturas {
+    margin-bottom: var(--e-5);
+  }
+}
+
+.caso-captura a {
+  display: block;
+  cursor: zoom-in;
+}
+
+.caso-captura a:hover img {
+  border-color: var(--crema);
+}
