@@ -348,11 +348,6 @@
     width: 18px;
   }
 
-  .hero-etiqueta-extra,
-  .hero-link-extra {
-    display: none;
-  }
-
   .hero-descripcion {
     font-size: clamp(13px, 3.5vw, 16px);
     line-height: 1.45;
@@ -388,6 +383,71 @@
     right: 4.5%;
     bottom: 5%;
     font-size: 11px;
+  }
+}
+
+/* Celulares: la columna lateral queda muy angosta, así que la foto pasa
+   arriba, grande y a todo el ancho, y se desvanece hacia el texto, que
+   va debajo a todo el ancho. Todo entra en la primera pantalla. */
+@media (max-width: 767px) {
+  .hero-inner {
+    min-height: 560px;
+  }
+
+  .hero-foto {
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 56%;
+  }
+
+  /* Encuadre más cerrado: la foto es de cuerpo entero y a todo el ancho
+     la cara quedaría chica. Se amplía y se centra en la cara. */
+  .hero-foto img {
+    width: 140%;
+    max-width: none;
+    margin-left: -10%;
+    object-position: 30% 50%;
+  }
+
+  .hero-contenido {
+    top: auto;
+    right: var(--lateral);
+    bottom: calc(24px + env(safe-area-inset-bottom));
+    left: var(--lateral);
+    width: auto;
+    transform: none;
+    gap: 14px;
+  }
+
+  .hero-titulo {
+    font-size: clamp(30px, 9vw, 40px);
+    letter-spacing: -1px;
+  }
+
+  .hero .hero-etiqueta {
+    font-size: 13px;
+  }
+
+  .hero-descripcion {
+    font-size: 15px;
+  }
+
+  .hero-acciones {
+    gap: 4px 22px;
+  }
+
+  .hero-scroll {
+    display: none;
+  }
+}
+
+/* Celulares muy angostos (320px): la etiqueta caería sobre la foto y
+   no se leería; es la línea menos importante del hero, así que se oculta. */
+@media (max-width: 360px) {
+  .hero .hero-etiqueta {
+    display: none;
   }
 }
 

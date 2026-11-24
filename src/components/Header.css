@@ -261,3 +261,23 @@
     order: 3;
   }
 }
+
+/* En celular el hero lleva la foto arriba a todo el ancho: mientras el
+   header está sobre la foto (sin scrollear y con el menú cerrado), el
+   idioma y el menú van en blanco, igual que la marca. */
+@media (max-width: 767px) {
+  .header:not(.header--fondo):not(.header--menu) .idioma,
+  .header:not(.header--fondo):not(.header--menu) .idioma button {
+    color: rgba(255, 255, 255, 0.75);
+    text-shadow: 0 1px 10px rgba(0, 0, 0, 0.35);
+  }
+
+  .header:not(.header--fondo):not(.header--menu) .idioma button.activo {
+    color: #ffffff;
+  }
+
+  .header:not(.header--fondo):not(.header--menu) .bar {
+    background-color: #ffffff;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+  }
+}

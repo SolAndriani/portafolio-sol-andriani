@@ -84,78 +84,129 @@ export default function FondoShader() {
 
   useEffect(() => {
     const canvas = canvasRef.current;
-    // En celulares y tablets también se activa, pero a menor resolución
-    const esMovil = window.matchMedia("(max-width: 900px), (hover: none)").matches;
     if (!canvas) return;
-    const gl = canvas.getContext("webgl", { antialias: false });
-    if (!gl) return;
-    const vs = compilar(gl, gl.VERTEX_SHADER, VERT);
-    const fs = compilar(gl, gl.FRAGMENT_SHADER, FRAG);
-    if (!vs || !fs) return;
-    const prog = gl.createProgram();
-    gl.attachShader(prog, vs);
-    gl.attachShader(prog, fs);
-    gl.linkProgram(prog);
-    if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) return;
-    gl.useProgram(prog);
+    let limpiar = null;
+    let cancelado = false;
 
-    const buf = gl.createBuffer();
-    gl.bindBuffer(gl.ARRAY_BUFFER, buf);
-    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]), gl.STATIC_DRAW);
-    const aPos = gl.getAttribLocation(prog, "aPos");
-    gl.enableVertexAttribArray(aPos);
-    gl.vertexAttribPointer(aPos, 2, gl.FLOAT, false, 0, 0);
-
-    const uRes = gl.getUniformLocation(prog, "uRes");
-    const uTime = gl.getUniformLocation(prog, "uTime");
-    const uMouse = gl.getUniformLocation(prog, "uMouse");
-    const uFuerza = gl.getUniformLocation(prog, "uFuerza");
-
-    const sinMovimiento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    // se dibuja a baja resolución: es un degradé suave (más baja en celular)
-    const ESCALA = esMovil ? 0.35 : 0.5;
-
-    const mouse = { x: 0.5, y: 0.5 };
-    let suave = { x: 0.5, y: 0.5 };
-    let fuerza = 0;
-    const fuerzaObj = 0;
-    let frame;
-    const inicio = performance.now();
-
-    const medir = () => {
-      canvas.width = Math.round(window.innerWidth * ESCALA);
-      canvas.height = Math.round(window.innerHeight * ESCALA);
-      gl.viewport(0, 0, canvas.width, canvas.height);
-      gl.uniform2f(uRes, canvas.width, canvas.height);
+    // El fondo arranca recién cuando la página terminó de cargar y el
+    // navegador está libre: así no compite con la foto y el texto del
+    // hero, que son lo primero que se tiene que ver.
+    const iniciar = () => {
+      if (cancelado) return;
+      limpiar = arrancarFondo(canvas);
     };
-
-    const dibujar = (ahora) => {
-      suave.x += (mouse.x - suave.x) * 0.06;
-      suave.y += (mouse.y - suave.y) * 0.06;
-      fuerza += (fuerzaObj - fuerza) * 0.05;
-      gl.uniform1f(uTime, (ahora - inicio) / 1000);
-      gl.uniform2f(uMouse, suave.x, suave.y);
-      gl.uniform1f(uFuerza, fuerza);
-      gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
-      if (!sinMovimiento) frame = requestAnimationFrame(dibujar);
+    let idle;
+    const programar = () => {
+      idle = window.requestIdleCallback
+        ? window.requestIdleCallback(iniciar, { timeout: 2500 })
+        : window.setTimeout(iniciar, 1200);
     };
+    if (document.readyState === "complete") programar();
+    else window.addEventListener("load", programar, { once: true });
 
-    const visibilidad = () => {
-      cancelAnimationFrame(frame);
-      if (!document.hidden && !sinMovimiento) frame = requestAnimationFrame(dibujar);
-    };
-
-    medir();
-    frame = requestAnimationFrame(dibujar);
-    window.addEventListener("resize", medir);
-    // sin interacción con el mouse: las olas solo fluyen
-    document.addEventListener("visibilitychange", visibilidad);
     return () => {
-      cancelAnimationFrame(frame);
-      window.removeEventListener("resize", medir);
-      document.removeEventListener("visibilitychange", visibilidad);
+      cancelado = true;
+      window.removeEventListener("load", programar);
+      if (window.cancelIdleCallback) window.cancelIdleCallback(idle);
+      window.clearTimeout(idle);
+      if (limpiar) limpiar();
     };
   }, []);
 
   return <canvas className="fondo-shader" ref={canvasRef} aria-hidden="true" />;
+}
+
+function arrancarFondo(canvas) {
+  // En celulares y tablets también se activa, pero a menor resolución
+  const esMovil = window.matchMedia("(max-width: 900px), (hover: none)").matches;
+  const gl = canvas.getContext("webgl", { antialias: false });
+  if (!gl) return;
+  const vs = compilar(gl, gl.VERTEX_SHADER, VERT);
+  const fs = compilar(gl, gl.FRAGMENT_SHADER, FRAG);
+  if (!vs || !fs) return;
+  const prog = gl.createProgram();
+  gl.attachShader(prog, vs);
+  gl.attachShader(prog, fs);
+  gl.linkProgram(prog);
+  if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) return;
+  gl.useProgram(prog);
+
+  const buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]), gl.STATIC_DRAW);
+  const aPos = gl.getAttribLocation(prog, "aPos");
+  gl.enableVertexAttribArray(aPos);
+  gl.vertexAttribPointer(aPos, 2, gl.FLOAT, false, 0, 0);
+
+  const uRes = gl.getUniformLocation(prog, "uRes");
+  const uTime = gl.getUniformLocation(prog, "uTime");
+  const uMouse = gl.getUniformLocation(prog, "uMouse");
+  const uFuerza = gl.getUniformLocation(prog, "uFuerza");
+
+  const sinMovimiento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  // se dibuja a baja resolución: es un degradé suave (más baja en celular)
+  const ESCALA = esMovil ? 0.35 : 0.5;
+
+  const mouse = { x: 0.5, y: 0.5 };
+  let suave = { x: 0.5, y: 0.5 };
+  let fuerza = 0;
+  const fuerzaObj = 0;
+  let frame;
+  const inicio = performance.now();
+
+  // Solo se vuelve a medir si cambia el ancho o el alto cambia mucho:
+  // en iPhone la barra de direcciones aparece y se esconde al scrollear,
+  // y rearmar el canvas en cada cambio lo hace parpadear.
+  let anchoPrevio = 0;
+  let altoPrevio = 0;
+  const medir = () => {
+    const ancho = window.innerWidth;
+    const alto = window.innerHeight;
+    if (ancho === anchoPrevio && Math.abs(alto - altoPrevio) < 160) return;
+    anchoPrevio = ancho;
+    altoPrevio = alto;
+    canvas.width = Math.round(ancho * ESCALA);
+    canvas.height = Math.round(alto * ESCALA);
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    gl.uniform2f(uRes, canvas.width, canvas.height);
+  };
+
+  // En celular se dibuja a 30 cuadros por segundo: en un degradé lento
+  // no se nota y gasta la mitad de batería
+  const intervalo = esMovil ? 1000 / 30 : 0;
+  let ultimo = 0;
+
+  const dibujar = (ahora) => {
+    if (intervalo && ahora - ultimo < intervalo) {
+      frame = requestAnimationFrame(dibujar);
+      return;
+    }
+    ultimo = ahora;
+    suave.x += (mouse.x - suave.x) * 0.06;
+    suave.y += (mouse.y - suave.y) * 0.06;
+    fuerza += (fuerzaObj - fuerza) * 0.05;
+    gl.uniform1f(uTime, (ahora - inicio) / 1000);
+    gl.uniform2f(uMouse, suave.x, suave.y);
+    gl.uniform1f(uFuerza, fuerza);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    if (!sinMovimiento) frame = requestAnimationFrame(dibujar);
+  };
+
+  const visibilidad = () => {
+    cancelAnimationFrame(frame);
+    if (!document.hidden && !sinMovimiento) frame = requestAnimationFrame(dibujar);
+  };
+
+  medir();
+  frame = requestAnimationFrame(dibujar);
+  // aparece con un fundido suave en vez de saltar de golpe
+  canvas.classList.add("fondo-shader--listo");
+  window.addEventListener("resize", medir);
+  // sin interacción con el mouse: las olas solo fluyen
+  document.addEventListener("visibilitychange", visibilidad);
+  return () => {
+    cancelAnimationFrame(frame);
+    window.removeEventListener("resize", medir);
+    document.removeEventListener("visibilitychange", visibilidad);
+  };
 }

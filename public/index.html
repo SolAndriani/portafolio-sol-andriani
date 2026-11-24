@@ -10,6 +10,8 @@
     <link rel="icon" href="%PUBLIC_URL%/favicon-32.png" type="image/png" sizes="32x32" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/apple-touch-icon.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!-- La foto del hero es lo primero que se ve: se pide antes que el JS -->
+    <link rel="preload" as="image" href="/imagenes/sol-hero.webp" imagesrcset="/imagenes/sol-hero-960.webp 960w, /imagenes/sol-hero.webp 1440w" imagesizes="(max-width: 767px) 140vw, (max-width: 1100px) 58vw, 75vh" fetchpriority="high" />
     <link rel="canonical" href="https://portafolio-sol-andriani.vercel.app/" />
     <meta name="theme-color" content="#3B2A21" />
 

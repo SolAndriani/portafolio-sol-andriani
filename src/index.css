@@ -8,7 +8,7 @@
   --crema-hover: #ECE8E1;  /* fondo de fila al pasar el mouse */
   --tinta: #1F1712;        /* texto principal: negro cálido, con un toque marrón */
   --gris: #4A4A4A;         /* texto secundario */
-  --gris-tenue: #8A8780;   /* etiquetas, números, carrusel */
+  --gris-tenue: #6E6B65;   /* etiquetas, números, carrusel (contraste AA sobre crema) */
   --borde: #DDD9D1;
   --borde-tag: #D3CEC5;
   --punto: #CFCAC1;        /* separador del carrusel */

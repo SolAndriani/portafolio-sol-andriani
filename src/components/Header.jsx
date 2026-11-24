@@ -44,7 +44,7 @@ export default function Header() {
   }, []);
 
   return (
-    <header className={`header ${scrolleado ? "header--fondo" : ""}`}>
+    <header className={`header ${scrolleado ? "header--fondo" : ""} ${menuAbierto ? "header--menu" : ""}`}>
       <div className="header-inner">
         <a className="header-marca" href="#presentacion" aria-label={idioma === "en" ? "Sol Andriani, back to top" : "Sol Andriani, ir al inicio"}>
           <span className="marca-copy" aria-hidden="true">©</span>

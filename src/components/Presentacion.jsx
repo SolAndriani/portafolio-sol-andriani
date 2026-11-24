@@ -20,13 +20,13 @@ export default function Presentacion() {
       <div className="hero-inner">
         <div className="hero-foto">
           <picture>
-            {/* En celular la versión liviana; en desktop la vertical completa */}
-            <source
-              media="(max-width: 767px)"
-              srcSet="/imagenes/sol-hero-mobile.webp"
-            />
+            {/* Misma foto en alta calidad para todas las pantallas: en
+                celulares con pantalla de alta densidad una versión chica
+                se ve borrosa */}
             <img
               src="/imagenes/sol-hero.webp"
+              srcSet="/imagenes/sol-hero-960.webp 960w, /imagenes/sol-hero.webp 1440w"
+              sizes="(max-width: 767px) 140vw, (max-width: 1100px) 58vw, 75vh"
               alt={t("Retrato de Sol Andriani", "Portrait of Sol Andriani")}
               width="1440"
               height="1920"
@@ -43,11 +43,12 @@ export default function Presentacion() {
 
           <p className="hero-etiqueta u">
             <span className="hero-linea" aria-hidden="true" />
-            {"AI\u00A0Engineer"}
-            {/* En celular la etiqueta queda solo en "AI Engineer" */}
-            <span className="hero-etiqueta-extra">
-              {" · "}
-              {t("IA y automatización", "AI & automation")}
+            <span>
+              {"AI\u00A0Engineer"}
+              <span>
+                {" · "}
+                {t("IA y automatización", "AI & automation")}
+              </span>
             </span>
           </p>
 
@@ -76,9 +77,7 @@ export default function Presentacion() {
               target="_blank"
               rel="noreferrer"
             >
-              {/* En celular se muestra solo "CV" para que los tres links
-                  entren en una línea con letra legible */}
-              <span className="hero-link-extra">{t("Descargar ", "Download ")}</span>
+              {t("Descargar\u00A0", "Download\u00A0")}
               CV
             </a>
             <a
