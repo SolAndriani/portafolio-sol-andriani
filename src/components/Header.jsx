@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from "react";
+import { useIdioma } from "../idioma";
 import "./Header.css";
 
 const SECCIONES = [
-  { id: "proyectos", texto: "Trabajo" },
-  { id: "caso-austreon", texto: "Caso Austreon" },
-  { id: "como-trabajo", texto: "Cómo trabajo" },
-  { id: "contacto", texto: "Contacto" },
+  { id: "proyectos", es: "Trabajo", en: "Work" },
+  { id: "sobre-mi", es: "Sobre mí", en: "About" },
+  { id: "contacto", es: "Contacto", en: "Contact" },
 ];
 
 export default function Header() {
   const [menuAbierto, setMenuAbierto] = useState(false);
+  const { idioma, setIdioma } = useIdioma();
   const [scrolleado, setScrolleado] = useState(false);
   const [activa, setActiva] = useState("");
 
@@ -45,12 +46,12 @@ export default function Header() {
   return (
     <header className={`header ${scrolleado ? "header--fondo" : ""}`}>
       <div className="header-inner">
-        <a className="header-marca" href="#presentacion" aria-label="Sol Andriani, ir al inicio">
+        <a className="header-marca" href="#presentacion" aria-label={idioma === "en" ? "Sol Andriani, back to top" : "Sol Andriani, ir al inicio"}>
           <span className="marca-copy" aria-hidden="true">©</span>
           <span className="marca-mask" aria-hidden="true">
             <span className="marca-track">
-              <span>Code by Sol</span>
               <span>Sol Andriani</span>
+              <span>Code by Sol</span>
             </span>
           </span>
         </a>
@@ -73,18 +74,47 @@ export default function Header() {
           className={`header-nav ${menuAbierto ? "open" : ""}`}
           aria-label="Navegación principal"
         >
-          {SECCIONES.map(({ id, texto }) => (
+          {SECCIONES.map(({ id, es, en }) => {
+            const texto = idioma === "en" ? en : es;
+            return (
             <a
               key={id}
               className={`link ${activa === id ? "activa" : ""}`}
               href={`#${id}`}
               aria-current={activa === id ? "true" : undefined}
-              onClick={() => setMenuAbierto(false)}
+              onClick={(e) => {
+                e.preventDefault();
+                setMenuAbierto(false);
+                window.dispatchEvent(
+                  new CustomEvent("cortina", { detail: { id, texto } })
+                );
+              }}
             >
               {texto}
             </a>
-          ))}
+            );
+          })}
         </nav>
+
+        <div className="idioma" role="group" aria-label="Idioma / Language">
+          <button
+            type="button"
+            className={idioma === "es" ? "activo" : ""}
+            aria-pressed={idioma === "es"}
+            onClick={() => setIdioma("es")}
+          >
+            ES
+          </button>
+          <span aria-hidden="true">/</span>
+          <button
+            type="button"
+            className={idioma === "en" ? "activo" : ""}
+            aria-pressed={idioma === "en"}
+            onClick={() => setIdioma("en")}
+          >
+            EN
+          </button>
+        </div>
       </div>
     </header>
   );

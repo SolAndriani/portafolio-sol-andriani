@@ -1,5 +1,5 @@
 /* ===== Carrusel de herramientas =====
-   Una sola fila, sin líneas arriba ni abajo. Se frena al pasar el mouse. */
+   Una sola fila, sin líneas arriba ni abajo. No se frena: sigue aunque pase el mouse. */
 
 .tools {
   padding: 30px 0;
@@ -18,11 +18,6 @@
   animation: mq 60s linear infinite;
 }
 
-.tools:hover .mq,
-.tools:focus-within .mq {
-  animation-play-state: paused;
-}
-
 @keyframes mq {
   from {
     transform: translateX(0);
@@ -33,11 +28,20 @@
 }
 
 .tool {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-right: 20px;
   transition: color 0.3s;
 }
 
+.tool-icono {
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
 .tool:hover {
-  color: var(--azul);
+  color: var(--tinta);
 }
 
 .tool-punto {

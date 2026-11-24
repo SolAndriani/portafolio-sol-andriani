@@ -1,0 +1,92 @@
+.cortina {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #3b2a21;
+  color: #f5f3ef;
+  pointer-events: none;
+  transform: translateY(100%);
+  /* borde superior curvo mientras sube */
+  border-radius: 50% 50% 0 0 / 12vh 12vh 0 0;
+  visibility: hidden;
+}
+
+.cortina--entrando {
+  visibility: visible;
+  pointer-events: auto;
+  animation: cortina-entra 0.55s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+}
+
+.cortina--saliendo {
+  visibility: visible;
+  animation: cortina-sale 0.55s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+}
+
+@keyframes cortina-entra {
+  from {
+    transform: translateY(100%);
+    border-radius: 50% 50% 0 0 / 12vh 12vh 0 0;
+  }
+  to {
+    transform: translateY(0);
+    border-radius: 0;
+  }
+}
+
+@keyframes cortina-sale {
+  from {
+    transform: translateY(0);
+    border-radius: 0;
+  }
+  to {
+    transform: translateY(-100%);
+    border-radius: 0 0 50% 50% / 0 0 12vh 12vh;
+  }
+}
+
+.cortina-texto {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  font-size: clamp(28px, 4vw, 48px);
+  font-weight: 500;
+  letter-spacing: -1px;
+  opacity: 0;
+}
+
+.cortina--entrando .cortina-texto {
+  animation: cortina-texto 0.4s 0.25s ease forwards;
+}
+
+.cortina--saliendo .cortina-texto {
+  opacity: 1;
+  animation: cortina-texto-sale 0.25s ease forwards;
+}
+
+.cortina-punto {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #f5f3ef;
+}
+
+@keyframes cortina-texto {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes cortina-texto-sale {
+  to {
+    opacity: 0;
+    transform: translateY(-16px);
+  }
+}

@@ -46,7 +46,7 @@
 
 .pie-redes {
   display: flex;
-  gap: 24px;
+  gap: 10px;
   color: var(--tinta);
   font-weight: 500;
 }
@@ -91,5 +91,43 @@
     align-items: flex-start;
     gap: var(--e-2);
     text-align: left;
+  }
+}
+
+/* Íconos de redes en el pie: monocromo, sutiles */
+.pie-icono {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--borde);
+  color: var(--tinta);
+  font-size: 17px;
+  transition: background 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.pie-icono:hover {
+  background: var(--tinta);
+  border-color: var(--tinta);
+  color: var(--crema);
+}
+
+/* Email directo, debajo del título */
+.contacto-mail {
+  display: inline-block;
+  margin: -16px 0 36px;
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: -0.4px;
+  color: var(--tinta);
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 640px) {
+  .contacto-mail {
+    margin: -8px 0 28px;
+    font-size: 18px;
   }
 }

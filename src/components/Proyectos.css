@@ -29,17 +29,32 @@
   text-align: left;
   text-decoration: none;
   cursor: pointer;
-  transition: padding 0.45s cubic-bezier(0.2, 0.7, 0.2, 1), background 0.45s;
+  transition: border-color 0.45s ease;
 }
 
 .row--ultimo {
   border-bottom: 1px solid var(--borde);
 }
 
+/* Hover limpio: sin caja de color (que tapaba el fondo de olas) ni
+   cambios de tamaño. La línea de arriba se oscurece y el título se
+   corre apenas a la derecha en el marrón de la paleta. */
 .row:hover {
-  padding-left: 18px;
-  padding-right: 18px;
-  background: var(--crema-hover);
+  border-top-color: var(--tinta);
+}
+
+.row-titulo,
+.row-numero {
+  transition: transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1), color 0.4s ease;
+}
+
+.row:hover .row-titulo {
+  transform: translateX(10px);
+  color: var(--oscuro);
+}
+
+.row:hover .row-numero {
+  color: var(--tinta);
 }
 
 .row-numero {
@@ -180,4 +195,37 @@
   .row-panel {
     padding: 0 0 24px;
   }
+}
+
+/* Línea discreta con los trabajos web más simples */
+.proyectos-otros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 10px;
+  margin: 28px 0 0;
+  font-size: 15px;
+  color: var(--gris);
+}
+
+.proyectos-otros .link {
+  color: var(--tinta);
+}
+
+/* Mi rol, debajo de la descripción */
+.row-rol {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--tinta);
+}
+
+.row-rol-label {
+  flex: none;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--gris);
 }

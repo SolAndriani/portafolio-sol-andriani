@@ -25,9 +25,11 @@
 
 /* Mismo ancho y alineación que el hero */
 .header-inner {
-  max-width: var(--ancho-hero);
-  margin: 0 auto;
-  padding: 0 80px;
+  /* El header ocupa todo el ancho: la marca va en la esquina izquierda
+     y el menú en la derecha, en cualquier pantalla. */
+  max-width: none;
+  margin: 0;
+  padding: 0 56px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -213,5 +215,51 @@
   .marca-copy,
   .marca-track {
     transition: none;
+  }
+}
+
+/* --- Selector de idioma ES / EN --- */
+.idioma {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 36px;
+  font-size: 13px;
+  color: var(--gris);
+}
+
+.idioma button {
+  padding: 4px 2px;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: var(--gris);
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.idioma button:hover,
+.idioma button.activo {
+  color: var(--tinta);
+}
+
+.idioma button.activo {
+  font-weight: 600;
+}
+
+/* El menú va a la derecha, junto al selector de idioma */
+.header-nav {
+  margin-left: auto;
+}
+
+@media (max-width: 760px) {
+  .idioma {
+    order: 2;
+    margin-left: auto;
+    margin-right: 12px;
+  }
+
+  .hamburger {
+    order: 3;
   }
 }

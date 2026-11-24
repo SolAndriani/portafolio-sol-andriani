@@ -1,13 +1,15 @@
 import React, { useState } from "react";
+import { useIdioma } from "../idioma";
 import "./Proyectos.css";
 
-const proyectos = [
+const ES = [
   {
     numero: "01",
     titulo: "Austreon Dent y Austreon Vet",
     descripcion:
-      "Líder técnica del producto. Asistentes de WhatsApp para clínicas dentales y veterinarias: turnos, preguntas frecuentes, detección de urgencias y un panel para que el equipo tome la conversación.",
-    tags: ["n8n", "OpenAI", "WhatsApp Cloud API", "Supabase", "En lanzamiento"],
+      "Asistentes de WhatsApp para clínicas dentales y veterinarias: turnos, preguntas frecuentes, detección de urgencias y un panel para que el equipo tome la conversación.",
+    rol: "Líder técnica: arquitectura, flujos, modelo de datos y prompts.",
+    tags: ["n8n", "OpenAI", "WhatsApp\u00A0Cloud\u00A0API", "Supabase", "En lanzamiento"],
     tipo: "ancla",
     href: "#caso-austreon",
   },
@@ -16,20 +18,22 @@ const proyectos = [
     titulo: "Oportunidades en Mercado Público",
     descripcion:
       "Automatización que descarga a diario unas 4.250 Compras Ágiles del Estado chileno, las filtra por palabras clave del área comercial y le envía al equipo un resumen de oportunidades.",
-    tags: ["n8n", "API REST", "En puesta en marcha"],
+    rol: "Diseño e integración de la automatización.",
+    tags: ["n8n", "API REST", "Interno"],
     tipo: "acordeon",
     detalle:
-      "Problema: el equipo comercial revisaba a mano las compras públicas y se perdía oportunidades. Solución: un flujo en n8n consulta la API de Mercado Público todos los días, filtra por palabras clave que administra el área comercial y envía un resumen. Mi rol: diseño e integración de la automatización. Sistema interno, no público.",
+      "Problema: el equipo comercial revisaba a mano las compras públicas y se perdía oportunidades. Solución: un flujo en n8n consulta la API de Mercado Público todos los días, filtra por palabras clave que administra el área comercial y envía un resumen. Sistema interno, no público.",
   },
   {
     numero: "03",
     titulo: "Seguimiento comercial con cotización automática",
     descripcion:
       "Herramienta para seguir clientes potenciales con responsables y próximos pasos, que genera la cotización sola.",
-    tags: ["n8n", "Airtable"],
+    rol: "Diseño de la herramienta y automatización.",
+    tags: ["n8n", "Airtable", "Interno"],
     tipo: "acordeon",
     detalle:
-      "Problema: el seguimiento de clientes potenciales estaba disperso. Solución: una herramienta con responsables, próximos pasos y cotización generada automáticamente. Mi rol: diseño y automatización. Sistema interno, no público.",
+      "Problema: el seguimiento de clientes potenciales estaba disperso. Solución: una herramienta con responsables, próximos pasos y cotización generada automáticamente. Sistema interno, no público.",
   },
   {
     numero: "04",
@@ -42,20 +46,71 @@ const proyectos = [
   {
     numero: "05",
     titulo: "Portfolio fotográfico",
-    descripcion: "Sitio para un fotógrafo.",
-    tags: ["React", "Vercel"],
+    descripcion:
+      "Sitio a medida para un fotógrafo: organiza las fotos por categoría, guarda las imágenes en Cloudinary y tiene un panel protegido para gestionar el contenido.",
+    tags: ["React", "Node.js", "MongoDB", "Cloudinary"],
     tipo: "externo",
     href: "https://biologofotos.vercel.app/",
   },
 ];
 
-function Cuerpo({ numero, titulo, descripcion, tags, flecha }) {
+const EN = [
+  {
+    ...ES[0],
+    titulo: "Austreon Dent & Austreon Vet",
+    descripcion:
+      "WhatsApp assistants for dental and veterinary clinics: appointments, FAQs, urgency detection and a dashboard so the team can take over the conversation.",
+    rol: "Technical lead: architecture, workflows, data model and prompts.",
+    tags: ["n8n", "OpenAI", "WhatsApp\u00A0Cloud\u00A0API", "Supabase", "Launching"],
+  },
+  {
+    ...ES[1],
+    titulo: "Public procurement opportunities (Chile)",
+    descripcion:
+      "Automation that downloads around 4,250 public purchase requests from the Chilean government every day, filters them by the sales team's keywords and sends the team a summary of opportunities.",
+    rol: "Design and integration of the automation.",
+    tags: ["n8n", "REST API", "Internal"],
+    detalle:
+      "Problem: the sales team reviewed public purchases by hand and missed opportunities. Solution: an n8n workflow queries the Mercado Público API every day, filters by keywords managed by the sales team and sends a summary. Internal system, not public.",
+  },
+  {
+    ...ES[2],
+    titulo: "Sales pipeline with automatic quotes",
+    descripcion:
+      "A tool to track leads with owners and next steps, which generates the quote automatically.",
+    rol: "Tool design and automation.",
+    tags: ["n8n", "Airtable", "Internal"],
+    detalle:
+      "Problem: lead tracking was scattered. Solution: a tool with owners, next steps and automatically generated quotes. Internal system, not public.",
+  },
+  {
+    ...ES[3],
+    descripcion: "Website built at UXnicorp.",
+  },
+  {
+    ...ES[4],
+    titulo: "Photography portfolio",
+    descripcion:
+      "Custom website for a photographer: organizes photos by category, stores images on Cloudinary and has a protected dashboard to manage the content.",
+  },
+];
+
+function Cuerpo({ numero, titulo, descripcion, rol, tags, flecha }) {
+  const { idioma } = useIdioma();
   return (
     <>
       <span className="row-numero">{numero}</span>
       <div className="row-texto">
         <strong className="row-titulo">{titulo}</strong>
         <span className="row-descripcion">{descripcion}</span>
+        {rol && (
+          <span className="row-rol">
+            <span className="row-rol-label">
+              {idioma === "en" ? "My role" : "Mi rol"}
+            </span>
+            {rol}
+          </span>
+        )}
       </div>
       <div className="row-tags">
         {tags.map((t) => (
@@ -73,6 +128,7 @@ function Cuerpo({ numero, titulo, descripcion, tags, flecha }) {
 
 function Fila({ proyecto, ultimo }) {
   const [abierto, setAbierto] = useState(false);
+  const { idioma } = useIdioma();
   const { numero, tipo, href, detalle } = proyecto;
   const clase = `row row--${tipo} ${ultimo ? "row--ultimo" : ""}`;
   const panelId = `proyecto-${numero}-detalle`;
@@ -95,7 +151,7 @@ function Fila({ proyecto, ultimo }) {
           className="row-panel"
           hidden={!abierto}
           role="region"
-          aria-label={`Detalle de ${proyecto.titulo}`}
+          aria-label={`${idioma === "en" ? "Details:" : "Detalle de"} ${proyecto.titulo}`}
         >
           <p>{detalle}</p>
         </div>
@@ -126,19 +182,24 @@ function Fila({ proyecto, ultimo }) {
 }
 
 export default function Proyectos() {
+  const { idioma } = useIdioma();
+  const en = idioma === "en";
+  const todos = en ? EN : ES;
+  // Los tres proyectos principales van en la lista; los sitios web más
+  // simples quedan en una línea discreta al final.
+  const proyectos = todos.filter((p) => p.tipo !== "externo");
+  const otros = todos.filter((p) => p.tipo === "externo");
+
   return (
     <section id="proyectos" className="proyectos seccion">
       <div className="seccion-header">
         <div className="seccion-titulo-wrap">
-          <span className="eyebrow">Trabajo</span>
+          <span className="eyebrow">{en ? "Work" : "Trabajo"}</span>
           <h2 className="seccion-titulo">
-            Proyectos <span className="serif">seleccionados</span>
+            {en ? "Selected" : "Proyectos"}{" "}
+            <span className="serif">{en ? "projects" : "seleccionados"}</span>
           </h2>
         </div>
-        <span className="seccion-bajada">
-          IA, automatización y desarrollo web. Sistemas que uso o construí para
-          equipos reales.
-        </span>
       </div>
 
       <div className="proyectos-lista">
@@ -150,6 +211,18 @@ export default function Proyectos() {
           />
         ))}
       </div>
+
+      <p className="proyectos-otros">
+        <span>{en ? "Other web work:" : "Otros trabajos web:"}</span>
+        {otros.map((p, i) => (
+          <React.Fragment key={p.numero}>
+            {i > 0 && <span aria-hidden="true"> · </span>}
+            <a className="link" href={p.href} target="_blank" rel="noopener noreferrer">
+              {p.titulo} ↗
+            </a>
+          </React.Fragment>
+        ))}
+      </p>
     </section>
   );
 }

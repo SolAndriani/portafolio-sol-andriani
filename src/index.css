@@ -6,7 +6,7 @@
   /* --- Color --- */
   --crema: #F5F3EF;        /* fondo general */
   --crema-hover: #ECE8E1;  /* fondo de fila al pasar el mouse */
-  --tinta: #141414;        /* texto principal y botones */
+  --tinta: #1F1712;        /* texto principal: negro cálido, con un toque marrón */
   --gris: #4A4A4A;         /* texto secundario */
   --gris-tenue: #8A8780;   /* etiquetas, números, carrusel */
   --borde: #DDD9D1;
@@ -16,10 +16,10 @@
   --verde: #22A06B;        /* punto de disponibilidad */
 
   /* Bloque oscuro del caso */
-  --oscuro: #1C1A17;
-  --oscuro-borde: #3A362F;
-  --oscuro-texto: #C9C3B8;
-  --oscuro-tenue: #A39E95;
+  --oscuro: #3B2A21;
+  --oscuro-borde: #5A4436;
+  --oscuro-texto: #E3D6CA;
+  --oscuro-tenue: #BCA898;
 
   --blanco: #FFFFFF;
 
@@ -143,7 +143,7 @@ img {
   height: 220%;
   z-index: -1;
   border-radius: 50%;
-  background: var(--azul);
+  background: #243063;
   transition: top 0.5s cubic-bezier(0.7, 0, 0.3, 1),
     border-radius 0.5s cubic-bezier(0.7, 0, 0.3, 1);
 }
@@ -153,13 +153,30 @@ img {
   border-radius: 0;
 }
 
-.btn:hover {
+/* Relleno según el tipo de botón: tonos de la paleta, sin azul */
+.btn--oscuro:hover {
   color: #ffffff;
-  border-color: var(--azul);
+  border-color: #243063;
+}
+
+.btn--borde::before {
+  background: #243063;
+}
+
+.btn--borde:hover {
+  border-color: #243063;
+}
+
+.btn--borde:hover {
+  color: var(--crema);
+}
+
+.btn--claro::before {
+  background: #e6e1d8;
 }
 
 .btn--oscuro {
-  background: var(--tinta);
+  background: var(--oscuro);
   color: var(--blanco);
 }
 
@@ -220,4 +237,36 @@ img {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* Cortes de línea prolijos en todo el sitio: los títulos reparten las
+   palabras en líneas parejas y los párrafos evitan dejar una palabra
+   sola al final o partir expresiones como "full stack". */
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+p,
+li,
+figcaption,
+.row-descripcion,
+.step-texto,
+.trabajo-fila-texto,
+.seccion-bajada {
+  text-wrap: pretty;
+}
+
+/* --- Títulos que se destapan al scrollear (ver revelar.js) --- */
+.revelar {
+  clip-path: inset(0 0 100% 0);
+  transform: translateY(40px);
+  transition: clip-path 1s cubic-bezier(0.7, 0, 0.2, 1),
+    transform 1s cubic-bezier(0.7, 0, 0.2, 1);
+}
+
+.revelar.revelado {
+  clip-path: inset(0 0 -10% 0);
+  transform: none;
 }

@@ -16,6 +16,8 @@ export default function useScrollSuave() {
       anchors: { offset: -80 },
     });
 
+    window.__lenis = lenis;
+
     let id;
     const raf = (tiempo) => {
       lenis.raf(tiempo);
@@ -26,6 +28,7 @@ export default function useScrollSuave() {
     return () => {
       cancelAnimationFrame(id);
       lenis.destroy();
+      window.__lenis = undefined;
     };
   }, []);
 }

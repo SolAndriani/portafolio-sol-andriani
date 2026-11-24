@@ -1,7 +1,17 @@
 import React from "react";
+import { useT, useIdioma } from "../idioma";
+import Escritura from "./Escritura";
 import "./Presentacion.css";
 
+const FRASES = {
+  es: ["asistentes de IA", "agentes inteligentes", "automatizaciones"],
+  en: ["AI assistants", "smart agents", "automations"],
+};
+
 export default function Presentacion() {
+  const t = useT();
+  const { idioma } = useIdioma();
+
   return (
     <section id="presentacion" className="hero">
       {/* Todo el hero vive dentro de este contenedor: la foto se mide
@@ -17,7 +27,7 @@ export default function Presentacion() {
             />
             <img
               src="/imagenes/sol-hero.webp"
-              alt="Retrato de Sol Andriani"
+              alt={t("Retrato de Sol Andriani", "Portrait of Sol Andriani")}
               width="1440"
               height="1920"
               loading="eager"
@@ -30,45 +40,38 @@ export default function Presentacion() {
         <div className="hero-fundido" aria-hidden="true" />
 
         <div className="hero-contenido">
-          <p className="hero-estado u">
-            <span className="hero-punto" aria-hidden="true" />
-            Disponible para trabajo remoto
+
+          <p className="hero-etiqueta u">
+            <span className="hero-linea" aria-hidden="true" />
+            {t("AI Engineer · IA y automatización", "AI Engineer · AI & automation")}
           </p>
 
           <h1 className="hero-titulo u u2">
-            Construyo
+            {t("Construyo", "I build")}
             <br />
-            <span className="words">
-              <span>
-                asistentes de IA
-                <br />
-                agentes que entienden
-                <br />
-                automatizaciones
-                <br />
-                asistentes de IA
-              </span>
-            </span>
+            <Escritura frases={FRASES[idioma]} />
             <br />
-            que trabajan solos.
+            {t("que ahorran horas de\u00A0trabajo.", "that save hours of\u00A0work.")}
           </h1>
 
           <p className="hero-descripcion u u2">
-            AI Engineer. Desarrollo agentes de IA, automatizaciones y
-            aplicaciones full stack: del diseño del proceso al deploy.
+            {t(
+              "Desarrollo agentes de IA, automatizaciones y aplicaciones full stack, de la idea a producción.",
+              "I develop AI agents, automations and full stack applications, from idea to production."
+            )}
           </p>
 
           <div className="hero-acciones u u3">
             <a className="btn btn--oscuro" href="#proyectos">
-              Ver proyectos <span aria-hidden="true">→</span>
+              {t("Ver proyectos", "View projects")} <span aria-hidden="true">→</span>
             </a>
             <a
               className="link hero-link"
-              href="/Sol-Andriani-CV.pdf"
+              href={t("/Sol-Andriani-CV.pdf", "/Sol-Andriani-CV-EN.pdf")}
               target="_blank"
               rel="noreferrer"
             >
-              Descargar CV
+              {t("Descargar CV", "Download CV")}
             </a>
             <a
               className="link hero-link"
@@ -90,7 +93,7 @@ export default function Presentacion() {
         </div>
 
         <span className="hero-scroll" aria-hidden="true">
-          Scroll ↓
+          {t("Scroll", "Scroll")} ↓
         </span>
       </div>
     </section>

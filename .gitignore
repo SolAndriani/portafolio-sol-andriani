@@ -24,3 +24,6 @@ yarn-error.log*
 
 # Mockups de referencia del rediseño (no se publican)
 diseno-referencia/
+
+# Archivos descartados
+*.bak

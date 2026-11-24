@@ -54,25 +54,30 @@
 
 /* ===== Responsive ===== */
 
-@media (max-width: 1100px) {
+/* Hasta 1200px: una sola columna. El título y la bio arriba,
+   la lista ocupa todo el ancho para que no quede apretada. */
+@media (max-width: 1200px) {
   .trabajo {
-    grid-template-columns: 320px 1fr;
+    grid-template-columns: 1fr;
     gap: 56px;
   }
 
+  .trabajo-intro {
+    max-width: 680px;
+  }
+
   .trabajo-titulo {
-    font-size: 42px;
+    font-size: 44px;
     letter-spacing: -1.4px;
   }
 
   .trabajo-fila {
-    grid-template-columns: 180px 1fr;
+    grid-template-columns: 220px 1fr;
   }
 }
 
-@media (max-width: 860px) {
+@media (max-width: 640px) {
   .trabajo {
-    grid-template-columns: 1fr;
     gap: var(--e-5);
   }
 
@@ -89,5 +94,48 @@
 
   .trabajo-fila-texto {
     font-size: 16px;
+  }
+}
+
+.trabajo-bio {
+  margin: 24px 0 0;
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--gris);
+}
+
+.trabajo-bio + .trabajo-bio {
+  margin-top: 14px;
+}
+
+/* Stack agrupado por categoría: el título va arriba y los grupos
+   ocupan todo el ancho, para que no queden apretados. */
+.trabajo-fila--ultima {
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+.trabajo-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  line-height: 1.5;
+}
+
+.stack-linea {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 20px;
+}
+
+.stack-grupo {
+  color: var(--tinta);
+  font-weight: 500;
+}
+
+@media (max-width: 480px) {
+  .stack-linea {
+    grid-template-columns: 1fr;
+    gap: 2px;
   }
 }
