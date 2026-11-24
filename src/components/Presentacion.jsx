@@ -43,7 +43,12 @@ export default function Presentacion() {
 
           <p className="hero-etiqueta u">
             <span className="hero-linea" aria-hidden="true" />
-            {t("AI Engineer · IA y automatización", "AI Engineer · AI & automation")}
+            {"AI\u00A0Engineer"}
+            {/* En celular la etiqueta queda solo en "AI Engineer" */}
+            <span className="hero-etiqueta-extra">
+              {" · "}
+              {t("IA y automatización", "AI & automation")}
+            </span>
           </p>
 
           <h1 className="hero-titulo u u2">
@@ -71,7 +76,10 @@ export default function Presentacion() {
               target="_blank"
               rel="noreferrer"
             >
-              {t("Descargar CV", "Download CV")}
+              {/* En celular se muestra solo "CV" para que los tres links
+                  entren en una línea con letra legible */}
+              <span className="hero-link-extra">{t("Descargar ", "Download ")}</span>
+              CV
             </a>
             <a
               className="link hero-link"
