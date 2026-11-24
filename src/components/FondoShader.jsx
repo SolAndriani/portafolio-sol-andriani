@@ -84,9 +84,9 @@ export default function FondoShader() {
 
   useEffect(() => {
     const canvas = canvasRef.current;
-    // En celulares y tablets no se activa: ahí priorizamos que todo vaya fluido
+    // En celulares y tablets también se activa, pero a menor resolución
     const esMovil = window.matchMedia("(max-width: 900px), (hover: none)").matches;
-    if (!canvas || esMovil) return;
+    if (!canvas) return;
     const gl = canvas.getContext("webgl", { antialias: false });
     if (!gl) return;
     const vs = compilar(gl, gl.VERTEX_SHADER, VERT);
@@ -112,7 +112,8 @@ export default function FondoShader() {
     const uFuerza = gl.getUniformLocation(prog, "uFuerza");
 
     const sinMovimiento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const ESCALA = 0.5; // se dibuja a media resolución: es un degradé suave
+    // se dibuja a baja resolución: es un degradé suave (más baja en celular)
+    const ESCALA = esMovil ? 0.35 : 0.5;
 
     const mouse = { x: 0.5, y: 0.5 };
     let suave = { x: 0.5, y: 0.5 };

@@ -39,10 +39,3 @@
     mask-image: linear-gradient(to bottom, #000 72%, transparent 100%);
   }
 }
-
-/* En celulares y tablets el fondo es crema liso */
-@media (max-width: 900px), (hover: none) {
-  .fondo-shader {
-    display: none;
-  }
-}
