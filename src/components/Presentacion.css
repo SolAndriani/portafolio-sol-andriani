@@ -317,8 +317,8 @@
   }
 
   .hero-contenido {
-    right: 4.5%;
-    width: 47%;
+    right: 4%;
+    width: 50%;
     gap: 12px;
   }
 
@@ -328,31 +328,45 @@
     letter-spacing: -0.6px;
   }
 
-  .escritura {
+  .hero .escritura {
     letter-spacing: -0.3px;
   }
 
-  .escritura-cursor {
+  .hero .escritura-cursor {
     width: 2px;
     margin-left: 3px;
   }
 
-  .hero-etiqueta {
+  /* La etiqueta y los links van siempre en una sola línea: la letra se
+     achica con el ancho de la pantalla en vez de cortarse. */
+  .hero .hero-etiqueta {
     gap: 6px;
-    font-size: clamp(9px, 2.6vw, 14px);
+    font-size: clamp(8px, 2.4vw, 14px);
+    white-space: nowrap;
   }
 
-  .hero-linea {
+  .hero .hero-linea {
     width: 14px;
   }
 
+  .hero-titulo {
+    text-wrap: balance;
+  }
+
   .hero-descripcion {
-    font-size: clamp(11px, 3vw, 16px);
+    font-size: clamp(10.5px, 2.9vw, 16px);
     line-height: 1.45;
+    text-wrap: pretty;
   }
 
   .hero-acciones {
-    gap: 8px 12px;
+    gap: 10px clamp(8px, 2.6vw, 18px);
+  }
+
+  /* El botón va en su fila y los tres links juntos en la de abajo */
+  .hero-acciones .btn {
+    flex-basis: 100%;
+    max-width: max-content;
   }
 
   .hero-acciones .btn {
@@ -363,7 +377,8 @@
   }
 
   .hero-link {
-    font-size: 12px;
+    font-size: clamp(10px, 2.9vw, 15px);
+    white-space: nowrap;
   }
 
   .hero-scroll {
