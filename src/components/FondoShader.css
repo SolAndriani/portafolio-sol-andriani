@@ -46,3 +46,11 @@
     mask-image: linear-gradient(to bottom, #000 58%, transparent 98%);
   }
 }
+
+/* Celular en horizontal: la foto va al costado y se funde hacia la derecha */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero-foto {
+    -webkit-mask-image: linear-gradient(to right, #000 60%, transparent 98%);
+    mask-image: linear-gradient(to right, #000 60%, transparent 98%);
+  }
+}

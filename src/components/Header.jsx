@@ -22,6 +22,23 @@ export default function Header() {
     return () => window.removeEventListener("scroll", alScrollear);
   }, []);
 
+  // Con el menú abierto (celular) la página de atrás no scrollea y
+  // Escape lo cierra.
+  useEffect(() => {
+    if (!menuAbierto) return;
+    const raiz = document.documentElement;
+    const previo = raiz.style.overflow;
+    raiz.style.overflow = "hidden";
+    const alTeclear = (e) => {
+      if (e.key === "Escape") setMenuAbierto(false);
+    };
+    window.addEventListener("keydown", alTeclear);
+    return () => {
+      raiz.style.overflow = previo;
+      window.removeEventListener("keydown", alTeclear);
+    };
+  }, [menuAbierto]);
+
   // Marca en el nav la sección que se está viendo.
   useEffect(() => {
     const nodos = SECCIONES.map(({ id }) => document.getElementById(id)).filter(
@@ -94,6 +111,28 @@ export default function Header() {
             </a>
             );
           })}
+
+          {/* Solo en el menú de celular: contacto al pie del panel */}
+          <div className="header-nav-pie">
+            <a className="header-nav-mail" href="mailto:solagustinaandriani@gmail.com">
+              solagustinaandriani@gmail.com
+            </a>
+            <div className="header-nav-redes">
+              <a href="https://www.linkedin.com/in/solandriani/" target="_blank" rel="noreferrer">
+                LinkedIn
+              </a>
+              <a href="https://github.com/SolAndriani" target="_blank" rel="noreferrer">
+                GitHub
+              </a>
+              <a
+                href={idioma === "en" ? "/Sol-Andriani-CV-EN.pdf" : "/Sol-Andriani-CV.pdf"}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {idioma === "en" ? "Download CV" : "Descargar CV"}
+              </a>
+            </div>
+          </div>
         </nav>
 
         <div className="idioma" role="group" aria-label="Idioma / Language">
