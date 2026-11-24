@@ -1,210 +1,183 @@
-.proyectos {
-  background-color: var(--crema);
-  padding: clamp(4rem, 6vw, 6rem) 2rem;
+/* El carrusel de arriba ya aporta aire: los 120px del mockup dejaban hueco */
+.proyectos.seccion {
+  padding-top: 32px;
 }
 
-.proyectos-header {
-  max-width: var(--ancho);
-  margin: 0 auto 3rem auto;
+@media (max-width: 760px) {
+  .proyectos.seccion {
+    padding-top: 24px;
+  }
 }
 
-.subtitulo {
-  font-size: var(--t-xl);
-  font-weight: 600;
-  color: var(--navy);
-  margin: 0;
-}
+/* ===== Proyectos =====
+   Lista de filas. Al pasar el mouse la fila se desplaza, toma fondo
+   y la flecha se mueve. Ninguna fila con flecha queda sin acción:
+   01 baja al caso, 02 y 03 despliegan detalle, 04 y 05 abren el sitio. */
 
-/* ===== Grilla: todos los proyectos visibles a la vez ===== */
-/* Selector con el padre para ganarle a la regla generica de App.css */
-.proyectos .proyectos-grid {
+.row {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-  max-width: var(--ancho);
-  margin: 0 auto;
-  align-items: stretch;
-}
-
-.proyectos .proyecto-card {
-  display: flex;
-  flex-direction: column;
-  background-color: var(--blanco);
-  border-radius: var(--r-md);
-  overflow: hidden;
-  padding: 0;
-  box-shadow: var(--sombra-md);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.proyectos .proyecto-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--sombra-lg);
-}
-
-/* El destacado ocupa el ancho completo y va en dos columnas */
-.proyectos .proyecto-card--destacado {
-  grid-column: 1 / -1;
-  flex-direction: row;
-}
-
-.proyectos .proyecto-card--destacado .proyecto-imagen-wrap {
-  flex: 1 1 55%;
-  aspect-ratio: auto;
-}
-
-.proyectos .proyecto-card--destacado .proyecto-contenido {
-  flex: 1 1 45%;
-  justify-content: center;
-}
-
-.proyecto-imagen-wrap {
-  display: block;
-  overflow: hidden;
-  aspect-ratio: 16 / 10;
-  background: var(--azul-palido);
-}
-
-.proyecto-imagen {
+  grid-template-columns: 70px 1fr 380px 40px;
+  gap: 24px;
+  align-items: start;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  border-radius: 0;
-  transition: transform 0.4s ease;
+  padding: 34px 0;
+  border: none;
+  border-top: 1px solid var(--borde);
+  background: none;
+  font: inherit;
+  color: var(--tinta);
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+  transition: padding 0.45s cubic-bezier(0.2, 0.7, 0.2, 1), background 0.45s;
 }
 
-.proyecto-card:hover .proyecto-imagen {
-  transform: scale(1.04);
+.row--ultimo {
+  border-bottom: 1px solid var(--borde);
 }
 
-.proyecto-contenido {
+.row:hover {
+  padding-left: 18px;
+  padding-right: 18px;
+  background: var(--crema-hover);
+}
+
+.row-numero {
+  font-size: 15px;
+  color: var(--gris-tenue);
+  padding-top: 6px;
+}
+
+.row-texto {
   display: flex;
   flex-direction: column;
-  gap: 0.85rem;
-  padding: 1.5rem;
-  flex: 1;
+  gap: 10px;
 }
 
-.proyecto-numero {
-  font-size: var(--t-xs);
-  font-weight: 700;
-  color: var(--azul);
-  letter-spacing: 3px;
-  opacity: 0.6;
+.row-titulo {
+  font-size: 30px;
+  font-weight: 500;
+  letter-spacing: -0.6px;
+  line-height: 1.15;
 }
 
-.proyecto-titulo {
-  font-size: var(--t-lg);
-  font-weight: 700;
-  color: var(--navy);
-  margin: 0;
-  line-height: 1.25;
-}
-
-.proyecto-titulo a {
-  color: inherit;
-}
-
-.proyecto-titulo a:hover {
-  color: var(--azul);
-}
-
-.proyecto-descripcion {
-  font-size: var(--t-sm);
+.row-descripcion {
+  font-size: 17px;
   line-height: 1.6;
-  color: var(--texto-suave);
-  margin: 0;
+  color: var(--gris);
 }
 
-.proyecto-tags {
+.row-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  list-style: none;
-  padding: 0;
-  margin: 0;
+  padding-top: 6px;
 }
 
-.proyecto-tag {
-  font-size: var(--t-xs);
-  background: var(--azul-palido);
-  color: var(--azul);
-  padding: 4px 12px;
-  border-radius: var(--r-full);
-  font-weight: 600;
-  letter-spacing: 0.3px;
+/* --- Flecha --- */
+
+.arrow {
+  font-size: 24px;
+  line-height: 1;
+  padding-top: 6px;
+  justify-self: end;
+  transition: transform 0.45s cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
-.proyecto-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  font-size: var(--t-sm);
-  color: var(--azul);
-  font-weight: 700;
-  text-decoration: none;
-  border-bottom: 1.5px solid var(--azul);
-  padding-bottom: 2px;
-  width: fit-content;
-  margin-top: auto;
-  transition: opacity 0.2s ease;
+.row:hover .arrow {
+  transform: translateX(8px) rotate(-45deg);
 }
 
-.proyecto-link:hover {
-  opacity: 0.65;
+/* El link externo ya tiene la flecha en diagonal: solo se despega */
+.row--externo:hover .arrow {
+  transform: translate(4px, -4px);
 }
 
-.proyecto-titulo a:focus-visible,
-.proyecto-link:focus-visible {
-  outline: 3px solid var(--azul);
-  outline-offset: 3px;
-  border-radius: var(--r-sm);
+/* El acordeón no gira en diagonal: baja 90° cuando se abre */
+.row--acordeon:hover .arrow {
+  transform: translateX(8px);
 }
 
-@media (max-width: 900px) {
-  .proyectos .proyectos-grid {
-    grid-template-columns: 1fr;
+.row--acordeon.row--abierta .arrow,
+.row--acordeon.row--abierta:hover .arrow {
+  transform: rotate(90deg);
+}
+
+/* --- Panel desplegable --- */
+
+.row-panel {
+  padding: 0 0 32px 94px;
+  max-width: 900px;
+}
+
+.row-panel p {
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--gris);
+}
+
+/* ===== Responsive ===== */
+
+@media (max-width: 1100px) {
+  .row {
+    grid-template-columns: 50px 1fr 280px 32px;
+    gap: 18px;
   }
 
-  .proyectos .proyecto-card--destacado {
-    flex-direction: column;
+  .row-titulo {
+    font-size: 26px;
   }
 
-  .proyectos .proyecto-card--destacado .proyecto-imagen-wrap {
-    aspect-ratio: 16 / 10;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .proyectos .proyecto-card,
-  .proyecto-imagen {
-    transition: none;
-  }
-
-  .proyectos .proyecto-card:hover {
-    transform: none;
-  }
-
-  .proyecto-card:hover .proyecto-imagen {
-    transform: none;
+  .row-panel {
+    padding-left: 68px;
   }
 }
 
-/* ===== Acciones de la tarjeta ===== */
-.proyecto-acciones {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.25rem;
-  align-items: center;
-  margin-top: auto;
-}
+@media (max-width: 860px) {
+  /* Los proyectos se apilan: número y flecha arriba, texto y tags debajo */
+  .row {
+    grid-template-columns: 1fr auto;
+    gap: 12px;
+    padding: 26px 0;
+  }
 
-.proyecto-acciones .proyecto-link {
-  margin-top: 0;
-}
+  .row-numero {
+    padding-top: 0;
+    grid-row: 1;
+    grid-column: 1;
+  }
 
-.proyecto-link--caso {
-  color: var(--navy);
-  border-bottom-color: var(--navy);
+  .arrow {
+    grid-row: 1;
+    grid-column: 2;
+    padding-top: 0;
+    font-size: 20px;
+  }
+
+  .row-texto,
+  .row-tags {
+    grid-column: 1 / -1;
+  }
+
+  .row-tags {
+    padding-top: 2px;
+  }
+
+  .row-titulo {
+    font-size: 24px;
+  }
+
+  .row-descripcion {
+    font-size: 16px;
+  }
+
+  /* El desplazamiento lateral en pantalla chica aprieta el texto */
+  .row:hover {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .row-panel {
+    padding: 0 0 24px;
+  }
 }

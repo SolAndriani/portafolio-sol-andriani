@@ -1,52 +1,56 @@
-.tecnologias {
-  background-color: var(--crema);
-  padding: clamp(3.5rem, 5vw, 5rem) 2rem 3rem;
+/* ===== Carrusel de herramientas =====
+   Una sola fila, sin líneas arriba ni abajo. Se frena al pasar el mouse. */
+
+.tools {
+  padding: 30px 0;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
-.tecnologias .subtitulo {
-  font-size: var(--t-xl);
-  font-weight: 600;
-  color: var(--navy);
-  margin-bottom: 2.5rem;
-  text-align: center;
+.mq {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  gap: 28px;
+  font-size: 16px;
+  letter-spacing: 0.2px;
+  color: var(--gris-tenue);
+  animation: mq 60s linear infinite;
 }
 
-.tec-lista {
-  max-width: 760px;
-  margin: 0 auto;
+.tools:hover .mq,
+.tools:focus-within .mq {
+  animation-play-state: paused;
 }
 
-.tec-fila {
-  display: grid;
-  grid-template-columns: 160px 1fr;
-  gap: 1.5rem;
-  padding: 0.9rem 0;
-  border-bottom: 1px solid var(--borde);
+@keyframes mq {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
-.tec-fila:last-child {
-  border-bottom: none;
+.tool {
+  transition: color 0.3s;
 }
 
-.tec-fila dt {
-  font-size: var(--t-xs);
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
+.tool:hover {
   color: var(--azul);
-  padding-top: 0.15rem;
 }
 
-.tec-fila dd {
-  margin: 0;
-  font-size: var(--t-base);
-  line-height: 1.6;
-  color: var(--texto);
+.tool-punto {
+  color: var(--punto);
 }
 
-@media (max-width: 600px) {
-  .tec-fila {
-    grid-template-columns: 1fr;
-    gap: 0.35rem;
+@media (max-width: 760px) {
+  .tools {
+    padding: 22px 0;
+  }
+
+  .mq {
+    font-size: 15px;
+    gap: 20px;
   }
 }

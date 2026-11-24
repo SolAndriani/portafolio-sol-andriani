@@ -1,59 +1,223 @@
+/* ============================================================
+   Base del rediseño — paleta y escalas del mockup aprobado
+   ============================================================ */
+
 :root {
-  --navy: #14213D;
-  --azul: #3D5A80;
-  --azul-claro: #8FB0D4;
-  --crema: #F5F5F0;
+  /* --- Color --- */
+  --crema: #F5F3EF;        /* fondo general */
+  --crema-hover: #ECE8E1;  /* fondo de fila al pasar el mouse */
+  --tinta: #141414;        /* texto principal y botones */
+  --gris: #4A4A4A;         /* texto secundario */
+  --gris-tenue: #8A8780;   /* etiquetas, números, carrusel */
+  --borde: #DDD9D1;
+  --borde-tag: #D3CEC5;
+  --punto: #CFCAC1;        /* separador del carrusel */
+  --azul: #2F4FD8;         /* acento: cursivas y hover del carrusel */
+  --verde: #22A06B;        /* punto de disponibilidad */
+
+  /* Bloque oscuro del caso */
+  --oscuro: #1C1A17;
+  --oscuro-borde: #3A362F;
+  --oscuro-texto: #C9C3B8;
+  --oscuro-tenue: #A39E95;
+
   --blanco: #FFFFFF;
-  --texto: #333;
-  --texto-suave: #555;
-  --texto-claro: #C9D6E6;
-  --texto-tenue: #93A6BE;
-  --azul-palido: #E8EEF5;
-  --gris: #4B5563;
-  --borde: #E0DDD5;
-  --ancho: 1100px;
 
-  /* Escala tipográfica */
-  --t-xs: 0.78rem;
-  --t-sm: 0.9rem;
-  --t-base: 1rem;
-  --t-md: 1.15rem;
-  --t-lg: 1.4rem;
-  --t-xl: 2rem;
-  --t-2xl: clamp(2.2rem, 4vw, 2.8rem);
+  /* --- Tipografía --- */
+  --fuente: 'Inter Variable', Inter, system-ui, -apple-system, sans-serif;
+  --fuente-serif: 'Instrument Serif', Georgia, serif;
 
-  /* Radios */
-  --r-sm: 6px;
-  --r-md: 12px;
-  --r-lg: 16px;
-  --r-full: 999px;
+  /* --- Medidas --- */
+  --ancho: 1440px;
+  --lateral: 120px;  /* margen lateral de las secciones en desktop */
+  --ancho-hero: 1440px; /* hero y header comparten este ancho */
+  --alto-header: 88px; /* medido: 32px de padding arriba y abajo + la línea de texto */
 
-  /* Sombras, todas con el mismo tinte azulado */
-  --sombra-sm: 0 2px 10px rgba(20, 33, 61, 0.06);
-  --sombra-md: 0 4px 16px rgba(20, 33, 61, 0.09);
-  --sombra-lg: 0 12px 28px rgba(20, 33, 61, 0.15);
+  /* --- Espaciado, múltiplos de 8px --- */
+  --e-1: 0.5rem;
+  --e-2: 1rem;
+  --e-3: 1.5rem;
+  --e-4: 2rem;
+  --e-5: 2.5rem;
+  --e-6: 3rem;
+  --e-8: 4rem;
+  --e-10: 5rem;
+  --e-12: 6rem;
+  --e-15: 7.5rem;
 }
 
-body {
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  padding: 0;
 }
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: var(--e-6);
+  -webkit-text-size-adjust: 100%;
 }
 
-* {
-  box-sizing: border-box;
+body {
   margin: 0;
-  padding: 0;
+  font-family: var(--fuente);
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--tinta);
+  background-color: var(--crema);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-synthesis-weight: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Cursiva serif azul: el acento tipográfico del diseño */
+.serif {
+  font-family: var(--fuente-serif);
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* Etiqueta chica en versalita sobre cada sección */
+.eyebrow {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gris-tenue);
+}
+
+/* Subrayado que crece al pasar el mouse */
+.link {
+  background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px
+    no-repeat;
+  transition: background-size 0.4s;
+  text-decoration: none;
+  color: inherit;
+}
+
+.link:hover {
+  background-size: 100% 1px;
+}
+
+/* Botón pastilla */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  height: 56px;
+  padding: 0 28px;
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1),
+    background 0.3s, color 0.3s;
+}
+
+/* Relleno que sube desde abajo al pasar el mouse (como Dennis) */
+.btn {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  left: -10%;
+  right: -10%;
+  top: 100%;
+  height: 220%;
+  z-index: -1;
+  border-radius: 50%;
+  background: var(--azul);
+  transition: top 0.5s cubic-bezier(0.7, 0, 0.3, 1),
+    border-radius 0.5s cubic-bezier(0.7, 0, 0.3, 1);
+}
+
+.btn:hover::before {
+  top: -60%;
+  border-radius: 0;
+}
+
+.btn:hover {
+  color: #ffffff;
+  border-color: var(--azul);
+}
+
+.btn--oscuro {
+  background: var(--tinta);
+  color: var(--blanco);
+}
+
+.btn--claro {
+  background: var(--crema);
+  color: var(--oscuro);
+  font-weight: 600;
+}
+
+.btn--borde {
+  border-color: var(--tinta);
+  color: var(--tinta);
+  background: transparent;
+}
+
+/* Etiqueta de tecnología */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  height: 28px;
+  padding: 0 12px;
+  border-radius: 999px;
+  border: 1px solid var(--borde-tag);
+  font-size: 13px;
+  color: var(--gris);
+  white-space: nowrap;
+}
+
+/* Foco visible y consistente */
+:focus-visible {
+  outline: 2px solid var(--azul);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.caso :focus-visible {
+  outline-color: var(--crema);
+}
+
+/* En celular el header es más bajo */
+@media (max-width: 767px) {
+  :root {
+    /* medido: 16px de padding arriba y abajo + los 40px del botón de menú */
+    --alto-header: 72px;
+  }
+}
+
+/* Quien pidió menos movimiento no ve ninguna animación */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

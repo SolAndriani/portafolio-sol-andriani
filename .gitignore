@@ -21,3 +21,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Mockups de referencia del rediseño (no se publican)
+diseno-referencia/

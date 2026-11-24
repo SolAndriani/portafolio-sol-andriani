@@ -1,0 +1,93 @@
+/* ===== Cómo trabajo ===== */
+
+.trabajo {
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 100px;
+}
+
+.trabajo-intro {
+  /* el título queda arriba del todo, alineado con la primera fila */
+  align-self: start;
+}
+
+.trabajo-titulo {
+  margin: 0;
+  font-size: 52px;
+  font-weight: 500;
+  letter-spacing: -1.8px;
+  line-height: 1.05;
+}
+
+.trabajo-lista {
+  display: flex;
+  flex-direction: column;
+}
+
+.trabajo-fila {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 24px;
+  padding: 26px 0;
+  border-top: 1px solid var(--borde);
+}
+
+.trabajo-fila--ultima {
+  border-bottom: 1px solid var(--borde);
+}
+
+.trabajo-fila-titulo {
+  font-size: 19px;
+  font-weight: 500;
+}
+
+.trabajo-fila-texto {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--gris);
+}
+
+.trabajo-stack {
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+/* ===== Responsive ===== */
+
+@media (max-width: 1100px) {
+  .trabajo {
+    grid-template-columns: 320px 1fr;
+    gap: 56px;
+  }
+
+  .trabajo-titulo {
+    font-size: 42px;
+    letter-spacing: -1.4px;
+  }
+
+  .trabajo-fila {
+    grid-template-columns: 180px 1fr;
+  }
+}
+
+@media (max-width: 860px) {
+  .trabajo {
+    grid-template-columns: 1fr;
+    gap: var(--e-5);
+  }
+
+  .trabajo-titulo {
+    font-size: 34px;
+    letter-spacing: -1px;
+  }
+
+  .trabajo-fila {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 20px 0;
+  }
+
+  .trabajo-fila-texto {
+    font-size: 16px;
+  }
+}

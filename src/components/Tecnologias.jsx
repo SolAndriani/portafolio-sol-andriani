@@ -1,28 +1,43 @@
 import React from "react";
 import "./Tecnologias.css";
 
-const grupos = [
-  { rol: "Lenguajes", items: "Python · JavaScript / TypeScript" },
-  { rol: "Desarrollo", items: "React · Node.js · FastAPI · APIs REST · Git" },
-  { rol: "IA y agentes", items: "OpenAI · Gemini · Agentes conversacionales · Prompting" },
-  { rol: "Automatización", items: "n8n · WhatsApp Cloud API (Meta) · Airtable · Webhooks" },
-  { rol: "Datos", items: "PostgreSQL · Supabase · MongoDB" },
-  { rol: "Despliegue", items: "Hetzner · Vercel · Netlify" },
-  { rol: "Desarrollo con IA", items: "Claude Code · Codex · GitHub Copilot" },
+const HERRAMIENTAS = [
+  "Python",
+  "JavaScript",
+  "TypeScript",
+  "React",
+  "Node.js",
+  "FastAPI",
+  "n8n",
+  "OpenAI",
+  "Gemini",
+  "WhatsApp Cloud API",
+  "Airtable",
+  "PostgreSQL",
+  "Supabase",
+  "Vercel",
+  "Claude Code",
 ];
+
+function Fila() {
+  return HERRAMIENTAS.map((h) => (
+    <React.Fragment key={h}>
+      <span className="tool">{h}</span>
+      <span className="tool-punto" aria-hidden="true">
+        ·
+      </span>
+    </React.Fragment>
+  ));
+}
 
 export default function Tecnologias() {
   return (
-    <section id="tecnologias" className="tecnologias seccion">
-      <h2 className="subtitulo">Con qué trabajo</h2>
-      <dl className="tec-lista">
-        {grupos.map((g) => (
-          <div className="tec-fila" key={g.rol}>
-            <dt>{g.rol}</dt>
-            <dd>{g.items}</dd>
-          </div>
-        ))}
-      </dl>
+    <section className="tools" aria-label="Herramientas con las que trabajo">
+      <div className="mq">
+        {/* La lista va dos veces: al desplazarse el 50% el bucle es invisible */}
+        <Fila />
+        <Fila />
+      </div>
     </section>
   );
 }

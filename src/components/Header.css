@@ -1,106 +1,217 @@
+/* ===== Header =====
+   Transparente sobre el hero (como en el mockup) y con fondo crema
+   una vez que se scrollea, para que siga siendo legible. */
+
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: var(--blanco);
-  box-shadow: var(--sombra-sm);
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  z-index: 999;
-  box-sizing: border-box;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  right: 0;
+  z-index: 50;
+  padding: 32px 0;
+  font-size: 15px;
+  font-weight: 500;
+  background: transparent;
+  transition: background 0.3s ease, padding 0.3s ease, box-shadow 0.3s ease;
 }
 
-.header-left {
+.header--fondo {
+  padding: 18px 0;
+  background: rgba(245, 243, 239, 0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 1px 0 var(--borde);
+}
+
+/* Mismo ancho y alineación que el hero */
+.header-inner {
+  max-width: var(--ancho-hero);
+  margin: 0 auto;
+  padding: 0 80px;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 0.5rem;
 }
 
-.logo {
-  height: 40px;
+/* En tinta, no en blanco: el ángulo superior izquierdo de esta foto es
+   el mosaico claro, donde el blanco no se lee. */
+.header-marca {
+  color: #ffffff;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.35);
+  text-decoration: none;
+  font-weight: 600;
 }
 
-.header-left span {
-  font-weight: bold;
-  font-size: var(--t-md);
-  color: var(--navy);
-}
-
-.header-nav ul {
+.header-nav {
   display: flex;
-  gap: 1.5rem;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+  gap: 40px;
 }
 
 .header-nav a {
+  color: var(--tinta);
   text-decoration: none;
-  color: var(--texto);
   font-weight: 500;
-  transition: color 0.3s;
 }
 
-.header-nav a:hover,
-.header-nav a:focus {
-  color: var(--azul);
+/* La sección actual queda subrayada de forma permanente */
+.header-nav a.activa {
+  background-size: 100% 1px;
 }
+
+/* --- Botón hamburguesa --- */
 
 .hamburger {
   display: none;
   flex-direction: column;
-  cursor: pointer;
+  justify-content: center;
   gap: 5px;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 .bar {
-  width: 25px;
-  height: 3px;
-  background-color: var(--texto);
-  transition: 0.3s;
+  display: block;
+  width: 22px;
+  height: 2px;
+  margin: 0 auto;
+  border-radius: 2px;
+  background-color: var(--tinta);
+  transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
 .bar.open:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
+  transform: translateY(7px) rotate(45deg);
 }
+
 .bar.open:nth-child(2) {
   opacity: 0;
 }
+
 .bar.open:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
+  transform: translateY(-7px) rotate(-45deg);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1240px) {
+  .header-inner {
+    padding: 0 56px;
+  }
+
   .header-nav {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background-color: var(--blanco);
-    width: 100%;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-in-out;
-    box-shadow: var(--sombra-sm);
-    border-top: 1px solid var(--borde);
-    display: flex;
-    flex-direction: column;
+    gap: 28px;
+  }
+}
+
+@media (max-width: 760px) {
+  .header-inner {
+    max-width: none;
+    padding: 0 var(--lateral);
   }
 
-  .header-nav.open {
-    max-height: 300px;
-    padding: 1rem;
-  }
-
-  .header-nav ul {
-    flex-direction: column;
-    gap: 1rem;
+  .header,
+  .header--fondo {
+    padding: 16px 0;
+    /* en celular el header siempre lleva fondo: abajo está la foto */
+    background: rgba(245, 243, 239, 0.92);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
   }
 
   .hamburger {
     display: flex;
+  }
+
+  .header-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    max-height: 0;
+    overflow: hidden;
+    background: var(--crema);
+    transition: max-height 0.25s ease;
+  }
+
+  .header-nav.open {
+    max-height: 320px;
+    border-bottom: 1px solid var(--borde);
+  }
+
+  .header-nav a {
+    padding: 14px var(--lateral);
+    background-image: none;
+  }
+
+  .header-nav a.activa {
+    color: var(--azul);
+  }
+}
+
+/* Al scrollear (fondo crema) y en celular la marca va en tinta */
+.header--fondo .header-marca {
+  color: var(--tinta);
+  text-shadow: none;
+}
+
+@media (max-width: 760px) {
+  .header-marca {
+    color: var(--tinta);
+    text-shadow: none;
+  }
+}
+
+/* --- Marca animada (estilo dennissnellenberg.com) ---
+   "© Code by Sol": al pasar el mouse el © gira y el texto sube
+   para mostrar "Sol Andriani". */
+.header-marca {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+  letter-spacing: -0.1px;
+}
+
+.marca-copy {
+  display: inline-block;
+  transition: transform 0.8s cubic-bezier(0.7, 0, 0.3, 1);
+}
+
+.marca-mask {
+  display: inline-block;
+  height: 1.3em;
+  line-height: 1.3em;
+  overflow: hidden;
+}
+
+.marca-track {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.6s cubic-bezier(0.7, 0, 0.3, 1);
+}
+
+.marca-track > span {
+  height: 1.3em;
+  white-space: nowrap;
+}
+
+.header-marca:hover .marca-copy,
+.header-marca:focus-visible .marca-copy {
+  transform: rotate(360deg);
+}
+
+.header-marca:hover .marca-track,
+.header-marca:focus-visible .marca-track {
+  transform: translateY(-1.3em);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marca-copy,
+  .marca-track {
+    transition: none;
   }
 }

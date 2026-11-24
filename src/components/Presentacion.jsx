@@ -1,48 +1,97 @@
 import React from "react";
-import { FaLinkedin, FaGithub } from "react-icons/fa";
 import "./Presentacion.css";
 
 export default function Presentacion() {
   return (
-    <section id="presentacion" className="presentacion">
-      <div className="presentacion-contenedor">
-        <div className="foto-lateral">
-          <img
-            src="/imagenes/foto-sol.webp"
-            alt="Sol Andriani, desarrolladora web"
-            className="foto-sol"
-          />
+    <section id="presentacion" className="hero">
+      {/* Todo el hero vive dentro de este contenedor: la foto se mide
+          contra él y no contra la ventana, así el encuadre no cambia
+          entre un monitor de 1024 y uno de 1920. */}
+      <div className="hero-inner">
+        <div className="hero-foto">
+          <picture>
+            {/* En celular la versión liviana; en desktop la vertical completa */}
+            <source
+              media="(max-width: 767px)"
+              srcSet="/imagenes/sol-hero-mobile.webp"
+            />
+            <img
+              src="/imagenes/sol-hero.webp"
+              alt="Retrato de Sol Andriani"
+              width="1440"
+              height="1920"
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
+            />
+          </picture>
         </div>
 
-        <div className="texto-presentacion">
-          <h1><span>Sol Andriani</span></h1>
-          <h2>AI Engineer · Automatización de agentes de IA & Full Stack</h2>
-          <p>
-            Construyo sistemas que conectan IA con procesos reales de negocio:
-            agentes conversacionales en WhatsApp, flujos automáticos con n8n y
-            dashboards de gestión en tiempo real.
-          </p>
-          <p>
-            Mi formación en Diagnóstico por Imágenes me da además una mirada
-            distinta a la hora de trabajar en proyectos vinculados a salud,
-            entendiendo tanto la parte clínica como la técnica.
+        <div className="hero-fundido" aria-hidden="true" />
+
+        <div className="hero-contenido">
+          <p className="hero-estado u">
+            <span className="hero-punto" aria-hidden="true" />
+            Disponible para trabajo remoto
           </p>
 
-          <p className="hero-cv">
-            <a href="/Sol-Andriani-CV.pdf" target="_blank" rel="noreferrer">
-              Descargar CV (PDF)
-            </a>
+          <h1 className="hero-titulo u u2">
+            Construyo
+            <br />
+            <span className="words">
+              <span>
+                asistentes de IA
+                <br />
+                agentes que entienden
+                <br />
+                automatizaciones
+                <br />
+                asistentes de IA
+              </span>
+            </span>
+            <br />
+            que trabajan solos.
+          </h1>
+
+          <p className="hero-descripcion u u2">
+            AI Engineer. Desarrollo agentes de IA, automatizaciones y
+            aplicaciones full stack: del diseño del proceso al deploy.
           </p>
 
-          <div className="social-icons">
-            <a href="https://www.linkedin.com/in/solandriani" target="_blank" rel="noreferrer" aria-label="Perfil de LinkedIn">
-              <FaLinkedin />
+          <div className="hero-acciones u u3">
+            <a className="btn btn--oscuro" href="#proyectos">
+              Ver proyectos <span aria-hidden="true">→</span>
             </a>
-            <a href="https://github.com/solandriani" target="_blank" rel="noreferrer" aria-label="Perfil de GitHub">
-              <FaGithub />
+            <a
+              className="link hero-link"
+              href="/Sol-Andriani-CV.pdf"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Descargar CV
+            </a>
+            <a
+              className="link hero-link"
+              href="https://www.linkedin.com/in/solandriani/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              LinkedIn
+            </a>
+            <a
+              className="link hero-link"
+              href="https://github.com/SolAndriani"
+              target="_blank"
+              rel="noreferrer"
+            >
+              GitHub
             </a>
           </div>
         </div>
+
+        <span className="hero-scroll" aria-hidden="true">
+          Scroll ↓
+        </span>
       </div>
     </section>
   );

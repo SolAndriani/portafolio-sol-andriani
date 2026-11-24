@@ -1,45 +1,59 @@
-import React from 'react';
-import { FaEnvelope, FaLinkedin, FaGithub } from 'react-icons/fa';
-import './Footer.css';
+import React from "react";
+import "./Footer.css";
 
-const EMAIL = 'solagustinaandriani@gmail.com';
+const LINKEDIN = "https://www.linkedin.com/in/solandriani/";
+const GITHUB = "https://github.com/SolAndriani";
 
 export default function Footer() {
   return (
-    <footer id="contacto">
-      <div className="footer-inner">
-      <a className="footer-email" href={`mailto:${EMAIL}`}>
-        {EMAIL}
-      </a>
+    <section id="contacto" className="contacto">
+      <span className="eyebrow">Contacto</span>
 
-      <div className="iconos-contacto">
-        <a href={`mailto:${EMAIL}`} title="Enviar correo" aria-label="Enviar correo">
-          <FaEnvelope />
-        </a>
+      <h2 className="contacto-titulo">
+        Trabajemos <span className="serif">juntos.</span>
+      </h2>
 
+      <div className="contacto-acciones">
         <a
-          href="https://www.linkedin.com/in/solandriani"
+          className="btn btn--oscuro"
+          href={LINKEDIN}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Escribime por LinkedIn <span aria-hidden="true">→</span>
+        </a>
+        <a
+          className="btn btn--borde"
+          href="/Sol-Andriani-CV.pdf"
           target="_blank"
           rel="noreferrer"
-          title="LinkedIn"
-          aria-label="Perfil de LinkedIn"
         >
-          <FaLinkedin />
-        </a>
-
-        <a
-          href="https://github.com/solandriani"
-          target="_blank"
-          rel="noreferrer"
-          title="GitHub"
-          aria-label="Perfil de GitHub"
-        >
-          <FaGithub />
+          Descargar CV
         </a>
       </div>
 
-        <p>© {new Date().getFullYear()} Sol Andriani</p>
-      </div>
-    </footer>
+      <footer className="pie">
+        <span>© {new Date().getFullYear()} Sol Andriani</span>
+        <span className="pie-lugar">Córdoba, Argentina</span>
+        <span className="pie-redes">
+          <a
+            className="link"
+            href={LINKEDIN}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn
+          </a>
+          <a
+            className="link"
+            href={GITHUB}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </a>
+        </span>
+      </footer>
+    </section>
   );
 }

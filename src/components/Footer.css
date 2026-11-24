@@ -1,73 +1,95 @@
-/* ===== Footer unificado ===== */
-footer {
-  background-color: var(--crema); /* mismo fondo claro que Presentación */
-  color: var(--texto);
-  font-family: 'Montserrat', sans-serif;
-  padding: 2.5rem 2rem 3rem;
-  text-align: center;
+/* ===== Contacto y pie ===== */
+
+.contacto {
+  padding: 120px var(--lateral) 80px;
+  border-top: 1px solid var(--borde);
 }
 
-/* ===== Iconos de contacto ===== */
-.iconos-contacto {
+.contacto-titulo {
+  margin: 20px 0 48px;
+  font-size: 112px;
+  font-weight: 500;
+  letter-spacing: -4.5px;
+  line-height: 0.98;
+}
+
+.contacto-acciones {
   display: flex;
-  justify-content: center;
-  gap: 2rem;
-  font-size: var(--t-xl);
-  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 110px;
 }
 
-.iconos-contacto a {
-  color: var(--navy); /* azul principal coherente con Presentación/Proyectos */
-  transition: color 0.3s ease, transform 0.3s ease;
+.contacto-acciones .btn {
+  height: 60px;
+  font-size: 16px;
+  font-weight: 600;
 }
 
-.iconos-contacto a:hover {
-  color: var(--azul); /* azul secundario para hover */
-  transform: scale(1.2);
+.contacto-acciones .btn--borde {
+  padding: 0 28px;
+  font-weight: 500;
 }
 
-/* ===== Texto del copyright ===== */
-footer p {
-  font-size: var(--t-sm);
-  color: var(--texto);
-  margin-top: 0.5rem;
-  letter-spacing: 0.5px;
+/* --- Pie --- */
+
+.pie {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--e-3);
+  padding-top: 28px;
+  border-top: 1px solid var(--borde);
+  font-size: 14px;
+  color: #6b6760;
+}
+
+.pie-redes {
+  display: flex;
+  gap: 24px;
+  color: var(--tinta);
+  font-weight: 500;
 }
 
 /* ===== Responsive ===== */
-@media (max-width: 768px) {
-  .iconos-contacto {
-    gap: 1.5rem;
-    font-size: var(--t-lg);
+
+@media (max-width: 1100px) {
+  .contacto-titulo {
+    font-size: 80px;
+    letter-spacing: -3px;
+  }
+
+  .contacto-acciones {
+    margin-bottom: 80px;
   }
 }
 
-/* ===== Cierre de contacto ===== */
+@media (max-width: 760px) {
+  .contacto {
+    padding: 72px var(--lateral) 48px;
+  }
 
+  .contacto-titulo {
+    margin: 16px 0 32px;
+    font-size: 48px;
+    letter-spacing: -1.8px;
+  }
 
-.footer-email {
-  display: inline-block;
-  font-size: clamp(1.05rem, 2vw, 1.35rem);
-  font-weight: 600;
-  color: var(--navy);
-  border-bottom: 2px solid var(--azul);
-  padding-bottom: 2px;
-  margin-bottom: 2rem;
-  word-break: break-all;
-}
+  .contacto-acciones {
+    margin-bottom: 56px;
+  }
 
-.footer-email:hover {
-  color: var(--azul);
-}
+  .contacto-acciones .btn {
+    width: 100%;
+    justify-content: center;
+    height: 54px;
+    font-size: 15px;
+  }
 
-.iconos-contacto a:focus-visible,
-.footer-email:focus-visible {
-  outline: 3px solid var(--azul);
-  outline-offset: 4px;
-  border-radius: var(--r-sm);
-}
-
-.footer-inner {
-  max-width: var(--ancho);
-  margin: 0 auto;
+  .pie {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--e-2);
+    text-align: left;
+  }
 }

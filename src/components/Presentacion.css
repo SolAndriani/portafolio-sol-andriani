@@ -1,163 +1,341 @@
-#presentacion {
-  background-color: var(--crema);
-  padding: clamp(2.5rem, 4vw, 4.5rem) 2rem;
-  box-sizing: border-box;
+/* ===== Hero =====
+   Todo se mide contra un contenedor de 1280px centrado, no contra la
+   ventana: así el encuadre de la foto es idéntico en 1024, 1440 y 1920.
+   Los bordes de la foto se funden a crema para que en monitores anchos
+   no se vea un corte recto. */
+
+.hero {
+  position: relative;
+  background: var(--crema);
+  overflow: hidden;
 }
 
-.presentacion-contenedor {
+/* El hero replica el mockup G: la foto vertical va a todo el ancho del
+   contenedor con su proporción natural (sin object-fit: cover), así el
+   encuadre es siempre el mismo. El contenedor no pasa de 1440px: en
+   monitores más anchos los costados son crema y no hay zoom. */
+.hero-inner {
+  position: relative;
+  margin: 0 auto;
+  /* Alto de pantalla: la foto entra entera (columna + cuerpo) */
+  height: max(100vh, 680px);
+}
+
+/* --- Foto --- */
+
+/* La caja tiene la misma proporción que la foto (3:4): se ve entera,
+   sin recorte ni zoom, y su tamaño depende del alto, no del ancho. */
+.hero-foto {
+  position: absolute;
+  /* En monitores de más de 1440px la foto se pega al borde izquierdo de
+     la pantalla en vez de quedar flotando dentro del contenedor. */
+  left: -1px;
+  top: 0;
+  height: 100%;
+  aspect-ratio: 3 / 4;
+}
+
+.hero-foto picture {
+  display: block;
+  height: 100%;
+  overflow: hidden;
+}
+
+.hero-foto img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: hero-intro 2.2s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  transform-origin: 30% 30%;
+}
+
+/* Fundido a crema: lateral detrás del texto y al pie */
+.hero-foto::after {
+  content: "";
+  position: absolute;
+  inset: 0 -8px 0 0;
+  background:
+    linear-gradient(90deg, rgba(245, 243, 239, 0) 55%, rgba(245, 243, 239, 0.85) 82%, #f5f3ef 95%),
+    linear-gradient(180deg, rgba(245, 243, 239, 0) 88%, #f5f3ef 100%);
+}
+
+@keyframes hero-intro {
+  from {
+    transform: scale(1.08);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.hero-fundido {
+  display: none;
+}
+
+/* --- Texto --- */
+
+.hero-contenido {
+  position: absolute;
+  z-index: 2;
+  right: 5.5%;
+  top: 52%;
+  transform: translateY(-50%);
+  width: 42%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  color: var(--tinta);
+}
+
+.hero-estado {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--gris);
+}
+
+.hero-punto {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--verde);
+  flex-shrink: 0;
+  animation: hero-pulse 2s infinite;
+}
+
+@keyframes hero-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(61, 220, 151, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 0 7px rgba(61, 220, 151, 0);
+  }
+}
+
+.hero-titulo {
+  margin: 0;
+  font-weight: 500;
+  font-size: clamp(44px, 5.1vw, 74px);
+  line-height: 1.1;
+  letter-spacing: -2.8px;
+}
+
+/* Palabra que rota */
+.words {
+  display: inline-block;
+  height: 1.1em;
+  line-height: 1.1em;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+
+.words > span {
+  display: block;
+  height: 1.1em;
+  line-height: 1.1em;
+  /* cada frase tiene que ocupar una sola línea o el rotador se desalinea */
+  white-space: nowrap;
+  font-family: var(--fuente-serif);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -1px;
+  color: var(--azul);
+  animation: words 7.5s cubic-bezier(0.7, 0, 0.3, 1) infinite;
+}
+
+@keyframes words {
+  0%,
+  26% {
+    transform: translateY(0);
+  }
+  33%,
+  59% {
+    transform: translateY(-1.1em);
+  }
+  66%,
+  92% {
+    transform: translateY(-2.2em);
+  }
+  100% {
+    transform: translateY(-3.3em);
+  }
+}
+
+.hero-descripcion {
+  margin: 0;
+  max-width: 520px;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--gris);
+}
+
+.hero-acciones {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  gap: 4rem;
-  max-width: var(--ancho);
-  margin: 0 auto;
   flex-wrap: wrap;
+  gap: 26px;
 }
 
-.foto-lateral {
-  flex: 0 0 260px;
+.hero-link {
+  color: var(--tinta);
+  font-size: 15px;
+  font-weight: 500;
 }
 
-.foto-lateral img {
-  width: 100%;
-  height: auto;
-  border-radius: var(--r-lg);
-  object-fit: cover;
-  display: block;
-  box-shadow: var(--sombra-md);
-  transition: transform 0.4s ease;
-}
+/* --- Indicador de scroll --- */
 
-.foto-lateral img:hover {
-  transform: scale(1.03);
-}
-
-.texto-presentacion {
-  flex: 1;
-  min-width: 250px;
-  max-width: 600px;
-}
-
-.texto-presentacion h1 {
-  font-size: clamp(2.2rem, 3vw, 3rem);
-  color: var(--navy);
-  line-height: 1.2;
-  margin-bottom: 0.3rem;
-  font-weight: 600;
-}
-
-.texto-presentacion h1 span {
-  color: var(--azul);
-  font-weight: 700;
-}
-
-.texto-presentacion h2 {
-  font-size: var(--t-md);
+.hero-scroll {
+  position: absolute;
+  right: 5.5%;
+  bottom: 7%;
+  z-index: 2;
   color: var(--gris);
-  margin-bottom: 0.8rem;
-  line-height: 1.35;
-  font-weight: 400;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  animation: hero-bob 2.4s ease-in-out infinite;
 }
 
-.texto-presentacion p {
-  font-size: clamp(1rem, 1.05vw, 1.08rem);
-  color: var(--texto);
-  line-height: 1.6;
-  margin-bottom: 0.9rem;
-}
-
-.social-icons {
-  display: flex;
-  gap: 0.9rem;
-  margin-top: 1.1rem;
-}
-
-.social-icons a {
-  color: var(--navy);
-  font-size: var(--t-lg);
-  transition: transform 0.3s ease;
-}
-
-.social-icons a:hover,
-.social-icons a:focus,
-.social-icons a:active {
-  transform: translateY(-3px) scale(1.1);
-  color: var(--navy) !important;
-}
-
-@media (max-width: 1024px) {
-  .foto-lateral {
-    flex: 0 0 220px;
+@keyframes hero-bob {
+  0%,
+  100% {
+    transform: translateY(0);
   }
-
-  .texto-presentacion h1 {
-    font-size: var(--t-2xl);
-  }
-
-  .texto-presentacion p {
-    font-size: var(--t-md);
+  50% {
+    transform: translateY(8px);
   }
 }
 
-@media (max-width: 768px) {
-  .presentacion-contenedor {
-    flex-direction: column;
-    text-align: center;
-    gap: 2rem;
+/* --- Entrada --- */
+
+.u {
+  animation: hero-up 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) 0.2s both;
+}
+
+.u2 {
+  animation-delay: 0.7s;
+}
+
+.u3 {
+  animation-delay: 0.9s;
+}
+
+@keyframes hero-up {
+  from {
+    transform: translateY(26px);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+/* En pantallas anchas el texto se centra en el espacio libre que deja
+   la foto, para que no quede un hueco grande en el medio. */
+@media (min-width: 1101px) {
+  .hero-contenido {
+    right: auto;
+    left: min(calc(100% - 600px - 80px), calc(max(100vh, 680px) * 0.75 + 32px));
+    width: 600px;
+  }
+}
+
+/* ===== Responsive ===== */
+
+@media (max-width: 1100px) {
+  /* En pantallas medianas la caja de la foto es más angosta (recorta los
+     costados) para que el texto no quede encima del cuerpo. */
+  .hero-foto {
+    aspect-ratio: auto;
+    width: 54%;
   }
 
-  .foto-lateral {
-    flex: 0 0 auto;
+  .hero-foto img {
+    object-position: 25% 60%;
+  }
+
+  .hero-contenido {
     width: 50%;
-    max-width: 200px;
-    margin: 0 auto;
+    gap: 20px;
   }
 
-  .texto-presentacion h1 {
-    font-size: var(--t-xl);
+  .hero-descripcion {
+    font-size: 16px;
   }
 
-  .texto-presentacion p {
-    font-size: var(--t-md);
+  .hero-acciones {
+    gap: 18px;
+  }
+}
+
+/* Hasta 900px la foto va arriba y el texto abajo, nunca encima. */
+@media (max-width: 900px) {
+  .hero-inner {
+    height: auto;
   }
 
-  .social-icons {
+  .hero-foto {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    aspect-ratio: auto;
+    height: 68vh;
+    min-height: 420px;
+  }
+
+  .hero-foto img {
+    height: 100%;
+    margin-top: 0;
+    object-fit: cover;
+    object-position: 30% 70%;
+  }
+
+  .hero-foto::after {
+    background: linear-gradient(180deg, rgba(245, 243, 239, 0) 75%, #f5f3ef 100%);
+  }
+
+  .hero-contenido {
+    position: static;
+    transform: none;
+    width: 100%;
+    max-width: none;
+    padding: 8px var(--lateral) 64px;
+    gap: 22px;
+  }
+
+  .hero-titulo {
+    font-size: 44px;
+    letter-spacing: -1.4px;
+  }
+
+  .hero-scroll {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-foto {
+    height: 60vh;
+  }
+
+  .hero-titulo {
+    font-size: 40px;
+  }
+
+  .hero-acciones .btn {
+    width: 100%;
     justify-content: center;
   }
 }
 
-@media (max-width: 400px) {
-  .social-icons a {
-    font-size: var(--t-lg);
+@media (max-width: 380px) {
+  .hero-titulo {
+    font-size: 34px;
+    letter-spacing: -1.1px;
   }
-}
-
-.social-icons a:focus-visible {
-  outline: 3px solid var(--azul);
-  outline-offset: 3px;
-  border-radius: var(--r-sm);
-}
-
-/* Link al CV */
-.hero-cv {
-  margin-top: 1.4rem;
-  margin-bottom: 0;
-}
-
-.hero-cv a {
-  font-size: var(--t-sm);
-  font-weight: 600;
-  color: var(--navy);
-  border-bottom: 1.5px solid var(--azul);
-  padding-bottom: 2px;
-}
-
-.hero-cv a:hover {
-  color: var(--azul);
-}
-
-.hero-cv a:focus-visible {
-  outline: 3px solid var(--azul);
-  outline-offset: 3px;
-  border-radius: var(--r-sm);
 }
