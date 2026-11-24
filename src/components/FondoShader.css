@@ -34,8 +34,10 @@
 }
 
 @media (max-width: 900px) {
+  /* En celular la foto es el fondo del hero: se desvanece hacia abajo
+     para que el texto se lea sobre el fondo animado. */
   .hero-foto {
-    -webkit-mask-image: linear-gradient(to bottom, #000 72%, transparent 100%);
-    mask-image: linear-gradient(to bottom, #000 72%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, #000 62%, transparent 98%);
+    mask-image: linear-gradient(to bottom, #000 62%, transparent 98%);
   }
 }

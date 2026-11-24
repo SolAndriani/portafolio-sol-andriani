@@ -298,44 +298,64 @@
   }
 }
 
-/* Hasta 900px la foto va arriba y el texto abajo, nunca encima. */
+/* Hasta 900px (celulares y tablets) la foto pasa a ser el fondo del hero
+   a pantalla completa y el texto va encima, abajo, como en desktop:
+   la primera pantalla muestra foto, título, bajada y botones juntos. */
 @media (max-width: 900px) {
   .hero-inner {
-    height: auto;
+    height: 100vh;
+    height: 100svh;
+    min-height: 640px;
   }
 
   .hero-foto {
-    position: relative;
-    inset: auto;
+    top: 0;
+    left: 0;
+    right: 0;
     width: 100%;
+    height: 62%;
     aspect-ratio: auto;
-    height: 68vh;
-    min-height: 420px;
   }
 
   .hero-foto img {
     height: 100%;
-    margin-top: 0;
     object-fit: cover;
-    object-position: 30% 70%;
+    object-position: 30% 22%;
   }
 
   .hero-foto::after {
-    background: linear-gradient(180deg, rgba(245, 243, 239, 0) 75%, #f5f3ef 100%);
+    display: none;
   }
 
   .hero-contenido {
-    position: static;
+    top: auto;
+    right: var(--lateral);
+    bottom: 40px;
+    left: var(--lateral);
     transform: none;
-    width: 100%;
-    max-width: none;
-    padding: 8px var(--lateral) 64px;
-    gap: 22px;
+    width: auto;
+    max-width: 560px;
+    gap: 14px;
   }
 
   .hero-titulo {
-    font-size: 44px;
-    letter-spacing: -1.4px;
+    font-size: 38px;
+    line-height: 1.08;
+    letter-spacing: -1.3px;
+  }
+
+  .hero-descripcion {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .hero-etiqueta {
+    font-size: 13px;
+  }
+
+  .hero-acciones {
+    gap: 12px 20px;
+    margin-top: 4px;
   }
 
   .hero-scroll {
@@ -344,12 +364,8 @@
 }
 
 @media (max-width: 767px) {
-  .hero-foto {
-    height: 60vh;
-  }
-
   .hero-titulo {
-    font-size: 40px;
+    font-size: 34px;
   }
 
   .hero-acciones .btn {
@@ -360,7 +376,7 @@
 
 @media (max-width: 380px) {
   .hero-titulo {
-    font-size: 34px;
+    font-size: 30px;
     letter-spacing: -1.1px;
   }
 }
