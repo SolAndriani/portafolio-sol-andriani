@@ -29,9 +29,7 @@ export default function Cortina() {
     let timers = [];
     const alPedir = (e) => {
       const { id, texto: t } = e.detail || {};
-      const sinMovimiento = window.matchMedia(
-        "(prefers-reduced-motion: reduce)"
-      ).matches;
+      const sinMovimiento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       if (sinMovimiento) {
         irA(id);
         return;

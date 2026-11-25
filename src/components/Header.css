@@ -12,7 +12,10 @@
   font-size: 15px;
   font-weight: 500;
   background: transparent;
-  transition: background 0.3s ease, padding 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    background 0.3s ease,
+    padding 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .header--fondo {
@@ -82,7 +85,9 @@
   margin: 0 auto;
   border-radius: 2px;
   background-color: var(--tinta);
-  transition: transform 0.25s ease, opacity 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
 }
 
 .bar.open:nth-child(1) {
@@ -163,7 +168,6 @@
   color: var(--tinta);
   text-shadow: none;
 }
-
 
 /* --- Marca animada (estilo dennissnellenberg.com) ---
    "© Code by Sol": al pasar el mouse el © gira y el texto sube
@@ -303,8 +307,11 @@
   .idioma,
   .idioma button,
   .bar {
-    transition: color 0.35s ease, background-color 0.35s ease,
-      transform 0.35s cubic-bezier(0.7, 0, 0.3, 1), opacity 0.25s ease;
+    transition:
+      color 0.35s ease,
+      background-color 0.35s ease,
+      transform 0.35s cubic-bezier(0.7, 0, 0.3, 1),
+      opacity 0.25s ease;
   }
 
   .header-nav {
@@ -319,7 +326,9 @@
     background: var(--crema);
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.35s ease, visibility 0s linear 0.35s;
+    transition:
+      opacity 0.35s ease,
+      visibility 0s linear 0.35s;
   }
 
   .header-nav.open {
@@ -342,14 +351,18 @@
   .header-nav-pie {
     opacity: 0;
     transform: translateY(16px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease;
   }
 
   .header-nav.open > a,
   .header-nav.open .header-nav-pie {
     opacity: 1;
     transform: none;
-    transition: opacity 0.5s ease, transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+    transition:
+      opacity 0.5s ease,
+      transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
   }
 
   .header-nav.open > a:nth-of-type(1) {

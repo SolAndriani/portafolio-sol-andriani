@@ -75,7 +75,6 @@ export default function Presentacion() {
         <div className="hero-fundido" aria-hidden="true" />
 
         <div className="hero-contenido">
-
           <p className="hero-etiqueta u">
             <span className="hero-linea" aria-hidden="true" />
             <span>

@@ -27,11 +27,7 @@ export function IdiomaProvider({ children }) {
     }
   }, [idioma]);
 
-  return (
-    <IdiomaContext.Provider value={{ idioma, setIdioma }}>
-      {children}
-    </IdiomaContext.Provider>
-  );
+  return <IdiomaContext.Provider value={{ idioma, setIdioma }}>{children}</IdiomaContext.Provider>;
 }
 
 export function useIdioma() {

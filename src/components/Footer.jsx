@@ -15,8 +15,7 @@ export default function Footer() {
       <span className="eyebrow">{t("Contacto", "Contact")}</span>
 
       <h2 className="contacto-titulo">
-        {t("Trabajemos", "Let's work")}{" "}
-        <span className="serif">{t("juntos.", "together.")}</span>
+        {t("Trabajemos", "Let's work")} <span className="serif">{t("juntos.", "together.")}</span>
       </h2>
 
       <a className="contacto-mail link" href={`mailto:${EMAIL}`}>
@@ -24,14 +23,8 @@ export default function Footer() {
       </a>
 
       <div className="contacto-acciones">
-        <a
-          className="btn btn--oscuro"
-          href={LINKEDIN}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {t("Escribime por LinkedIn", "Message me on LinkedIn")}{" "}
-          <span aria-hidden="true">→</span>
+        <a className="btn btn--oscuro" href={LINKEDIN} target="_blank" rel="noopener noreferrer">
+          {t("Escribime por LinkedIn", "Message me on LinkedIn")} <span aria-hidden="true">→</span>
         </a>
         <a
           className="btn btn--borde"
@@ -54,7 +47,8 @@ export default function Footer() {
             href={LINKEDIN}
             target="_blank"
             rel="noopener noreferrer"
-          aria-label="LinkedIn">
+            aria-label="LinkedIn"
+          >
             <FaLinkedinIn aria-hidden="true" />
           </a>
           <a
@@ -62,7 +56,8 @@ export default function Footer() {
             href={GITHUB}
             target="_blank"
             rel="noopener noreferrer"
-          aria-label="GitHub">
+            aria-label="GitHub"
+          >
             <FaGithub aria-hidden="true" />
           </a>
         </span>

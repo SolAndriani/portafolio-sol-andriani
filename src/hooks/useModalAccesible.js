@@ -29,7 +29,7 @@ export default function useModalAccesible(activo, cerrar) {
 
     const visibles = () =>
       Array.from(contenedorRef.current?.querySelectorAll(FOCUSABLES) || []).filter(
-        (el) => el.offsetParent !== null
+        (el) => el.offsetParent !== null,
       );
 
     // Foco inicial adentro del modal

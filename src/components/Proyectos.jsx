@@ -105,9 +105,7 @@ function Cuerpo({ numero, titulo, descripcion, rol, tags, flecha }) {
         <span className="row-descripcion">{descripcion}</span>
         {rol && (
           <span className="row-rol">
-            <span className="row-rol-label">
-              {idioma === "en" ? "My role" : "Mi rol"}
-            </span>
+            <span className="row-rol-label">{idioma === "en" ? "My role" : "Mi rol"}</span>
             {rol}
           </span>
         )}
@@ -162,12 +160,7 @@ function Fila({ proyecto, ultimo }) {
   // Link externo: pestaña nueva y flecha en diagonal.
   if (tipo === "externo") {
     return (
-      <a
-        className={clase}
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      <a className={clase} href={href} target="_blank" rel="noopener noreferrer">
         <Cuerpo {...proyecto} flecha="↗" />
       </a>
     );
@@ -204,11 +197,7 @@ export default function Proyectos() {
 
       <div className="proyectos-lista">
         {proyectos.map((p, i) => (
-          <Fila
-            key={p.numero}
-            proyecto={p}
-            ultimo={i === proyectos.length - 1}
-          />
+          <Fila key={p.numero} proyecto={p} ultimo={i === proyectos.length - 1} />
         ))}
       </div>
 

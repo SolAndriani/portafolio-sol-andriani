@@ -70,7 +70,8 @@ const TEXTOS = {
     ],
     capturaWa:
       "Lo que ve la tutora en WhatsApp: manda un audio, elige un horario de la lista y el turno queda confirmado.",
-    capturaWaAlt: "Conversación de WhatsApp con el asistente de Austreon Vet: audio, lista de horarios y turno confirmado",
+    capturaWaAlt:
+      "Conversación de WhatsApp con el asistente de Austreon Vet: audio, lista de horarios y turno confirmado",
     capturaPanel:
       "Lo que ve la clínica en el panel: la misma conversación en vivo, con la opción de tomar el control.",
     capturaPanelAlt: "Panel de la clínica con la conversación en vivo y el botón Tomar control",
@@ -78,15 +79,18 @@ const TEXTOS = {
     listaDecisiones: [
       {
         titulo: "El modelo no decide lo crítico",
-        texto: "Agendar un turno o derivar una urgencia va por flujos fijos en n8n. El modelo entiende al paciente y redacta la respuesta.",
+        texto:
+          "Agendar un turno o derivar una urgencia va por flujos fijos en n8n. El modelo entiende al paciente y redacta la respuesta.",
       },
       {
         titulo: "De LLaMA/Groq a OpenAI",
-        texto: "Migré el motor conversacional después de comparar calidad de respuesta, latencia y costo con conversaciones de prueba.",
+        texto:
+          "Migré el motor conversacional después de comparar calidad de respuesta, latencia y costo con conversaciones de prueba.",
       },
       {
         titulo: "Cada clínica ve solo lo suyo",
-        texto: "El aislamiento entre clínicas está resuelto en la base de datos, no librado a que el frontend filtre bien.",
+        texto:
+          "El aislamiento entre clínicas está resuelto en la base de datos, no librado a que el frontend filtre bien.",
       },
     ],
     mide: "Qué se mide",
@@ -120,7 +124,8 @@ const TEXTOS = {
     ],
     capturaWa:
       "What the pet owner sees on WhatsApp: sends a voice note, picks a time from the list and the appointment is confirmed.",
-    capturaWaAlt: "WhatsApp conversation with the Austreon Vet assistant: voice note, list of times and confirmed appointment",
+    capturaWaAlt:
+      "WhatsApp conversation with the Austreon Vet assistant: voice note, list of times and confirmed appointment",
     capturaPanel:
       "What the clinic sees in the dashboard: the same conversation live, with the option to take over.",
     capturaPanelAlt: "Clinic dashboard with the live conversation and the Take control button",
@@ -128,15 +133,18 @@ const TEXTOS = {
     listaDecisiones: [
       {
         titulo: "The model doesn't decide what's critical",
-        texto: "Booking an appointment or escalating an urgency runs through fixed workflows in n8n. The model understands the patient and drafts the reply.",
+        texto:
+          "Booking an appointment or escalating an urgency runs through fixed workflows in n8n. The model understands the patient and drafts the reply.",
       },
       {
         titulo: "From LLaMA/Groq to OpenAI",
-        texto: "I migrated the conversational engine after comparing response quality, latency and cost with test conversations.",
+        texto:
+          "I migrated the conversational engine after comparing response quality, latency and cost with test conversations.",
       },
       {
         titulo: "Each clinic only sees its own data",
-        texto: "Isolation between clinics is enforced in the database, not left to the frontend filtering correctly.",
+        texto:
+          "Isolation between clinics is enforced in the database, not left to the frontend filtering correctly.",
       },
     ],
     mide: "What gets measured",
@@ -228,8 +236,7 @@ export default function CasoAustreon() {
           aria-expanded={abierto}
           aria-controls="caso-completo"
         >
-          {abierto ? tx.cerrar : tx.abrir}{" "}
-          <span aria-hidden="true">{abierto ? "↑" : "→"}</span>
+          {abierto ? tx.cerrar : tx.abrir} <span aria-hidden="true">{abierto ? "↑" : "→"}</span>
         </button>
       </div>
 

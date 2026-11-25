@@ -4,32 +4,32 @@
 
 :root {
   /* --- Color --- */
-  --crema: #F5F3EF;        /* fondo general */
-  --crema-hover: #ECE8E1;  /* fondo de fila al pasar el mouse */
-  --tinta: #1F1712;        /* texto principal: negro cálido, con un toque marrón */
-  --gris: #4A4A4A;         /* texto secundario */
-  --gris-tenue: #6E6B65;   /* etiquetas, números, carrusel (contraste AA sobre crema) */
-  --borde: #DDD9D1;
-  --borde-tag: #D3CEC5;
-  --punto: #CFCAC1;        /* separador del carrusel */
-  --azul: #2F4FD8;         /* acento: cursivas y hover del carrusel */
-  --verde: #22A06B;        /* punto de disponibilidad */
+  --crema: #f5f3ef; /* fondo general */
+  --crema-hover: #ece8e1; /* fondo de fila al pasar el mouse */
+  --tinta: #1f1712; /* texto principal: negro cálido, con un toque marrón */
+  --gris: #4a4a4a; /* texto secundario */
+  --gris-tenue: #6e6b65; /* etiquetas, números, carrusel (contraste AA sobre crema) */
+  --borde: #ddd9d1;
+  --borde-tag: #d3cec5;
+  --punto: #cfcac1; /* separador del carrusel */
+  --azul: #2f4fd8; /* acento: cursivas y hover del carrusel */
+  --verde: #22a06b; /* punto de disponibilidad */
 
   /* Bloque oscuro del caso */
-  --oscuro: #3B2A21;
-  --oscuro-borde: #5A4436;
-  --oscuro-texto: #E3D6CA;
-  --oscuro-tenue: #BCA898;
+  --oscuro: #3b2a21;
+  --oscuro-borde: #5a4436;
+  --oscuro-texto: #e3d6ca;
+  --oscuro-tenue: #bca898;
 
-  --blanco: #FFFFFF;
+  --blanco: #ffffff;
 
   /* --- Tipografía --- */
-  --fuente: 'Inter Variable', Inter, system-ui, -apple-system, sans-serif;
-  --fuente-serif: 'Instrument Serif', Georgia, serif;
+  --fuente: "Inter Variable", Inter, system-ui, -apple-system, sans-serif;
+  --fuente-serif: "Instrument Serif", Georgia, serif;
 
   /* --- Medidas --- */
   --ancho: 1440px;
-  --lateral: 120px;  /* margen lateral de las secciones en desktop */
+  --lateral: 120px; /* margen lateral de las secciones en desktop */
   --ancho-hero: 1440px; /* hero y header comparten este ancho */
   --alto-header: 88px; /* medido: 32px de padding arriba y abajo + la línea de texto */
 
@@ -98,8 +98,7 @@ img {
 
 /* Subrayado que crece al pasar el mouse */
 .link {
-  background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px
-    no-repeat;
+  background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat;
   transition: background-size 0.4s;
   text-decoration: none;
   color: inherit;
@@ -123,8 +122,10 @@ img {
   text-decoration: none;
   border: 1px solid transparent;
   cursor: pointer;
-  transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1),
-    background 0.3s, color 0.3s;
+  transition:
+    transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1),
+    background 0.3s,
+    color 0.3s;
 }
 
 /* Relleno que sube desde abajo al pasar el mouse (como Dennis) */
@@ -144,7 +145,8 @@ img {
   z-index: -1;
   border-radius: 50%;
   background: #243063;
-  transition: top 0.5s cubic-bezier(0.7, 0, 0.3, 1),
+  transition:
+    top 0.5s cubic-bezier(0.7, 0, 0.3, 1),
     border-radius 0.5s cubic-bezier(0.7, 0, 0.3, 1);
 }
 
@@ -262,7 +264,8 @@ figcaption,
 .revelar {
   clip-path: inset(0 0 100% 0);
   transform: translateY(40px);
-  transition: clip-path 1s cubic-bezier(0.7, 0, 0.2, 1),
+  transition:
+    clip-path 1s cubic-bezier(0.7, 0, 0.2, 1),
     transform 1s cubic-bezier(0.7, 0, 0.2, 1);
 }
 

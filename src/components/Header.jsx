@@ -41,9 +41,7 @@ export default function Header() {
 
   // Marca en el nav la sección que se está viendo.
   useEffect(() => {
-    const nodos = SECCIONES.map(({ id }) => document.getElementById(id)).filter(
-      Boolean
-    );
+    const nodos = SECCIONES.map(({ id }) => document.getElementById(id)).filter(Boolean);
     if (nodos.length === 0) return;
 
     const observador = new IntersectionObserver(
@@ -53,7 +51,7 @@ export default function Header() {
           .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
         if (visibles[0]) setActiva(visibles[0].target.id);
       },
-      { rootMargin: "-45% 0px -45% 0px", threshold: 0 }
+      { rootMargin: "-45% 0px -45% 0px", threshold: 0 },
     );
 
     nodos.forEach((n) => observador.observe(n));
@@ -61,10 +59,18 @@ export default function Header() {
   }, []);
 
   return (
-    <header className={`header ${scrolleado ? "header--fondo" : ""} ${menuAbierto ? "header--menu" : ""}`}>
+    <header
+      className={`header ${scrolleado ? "header--fondo" : ""} ${menuAbierto ? "header--menu" : ""}`}
+    >
       <div className="header-inner">
-        <a className="header-marca" href="#presentacion" aria-label={idioma === "en" ? "Sol Andriani, back to top" : "Sol Andriani, ir al inicio"}>
-          <span className="marca-copy" aria-hidden="true">©</span>
+        <a
+          className="header-marca"
+          href="#presentacion"
+          aria-label={idioma === "en" ? "Sol Andriani, back to top" : "Sol Andriani, ir al inicio"}
+        >
+          <span className="marca-copy" aria-hidden="true">
+            ©
+          </span>
           <span className="marca-mask" aria-hidden="true">
             <span className="marca-track">
               <span>Sol Andriani</span>
@@ -94,21 +100,19 @@ export default function Header() {
           {SECCIONES.map(({ id, es, en }) => {
             const texto = idioma === "en" ? en : es;
             return (
-            <a
-              key={id}
-              className={`link ${activa === id ? "activa" : ""}`}
-              href={`#${id}`}
-              aria-current={activa === id ? "true" : undefined}
-              onClick={(e) => {
-                e.preventDefault();
-                setMenuAbierto(false);
-                window.dispatchEvent(
-                  new CustomEvent("cortina", { detail: { id, texto } })
-                );
-              }}
-            >
-              {texto}
-            </a>
+              <a
+                key={id}
+                className={`link ${activa === id ? "activa" : ""}`}
+                href={`#${id}`}
+                aria-current={activa === id ? "true" : undefined}
+                onClick={(e) => {
+                  e.preventDefault();
+                  setMenuAbierto(false);
+                  window.dispatchEvent(new CustomEvent("cortina", { detail: { id, texto } }));
+                }}
+              >
+                {texto}
+              </a>
             );
           })}
 

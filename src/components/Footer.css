@@ -105,7 +105,10 @@
   border: 1px solid var(--borde);
   color: var(--tinta);
   font-size: 17px;
-  transition: background 0.3s, color 0.3s, border-color 0.3s;
+  transition:
+    background 0.3s,
+    color 0.3s,
+    border-color 0.3s;
 }
 
 .pie-icono:hover {

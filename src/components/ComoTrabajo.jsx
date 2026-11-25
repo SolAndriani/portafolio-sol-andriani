@@ -14,8 +14,7 @@ const PASOS = {
     },
     {
       titulo: "Construyo y pruebo",
-      texto:
-        "Integraciones, datos, prompts y casos límite, antes de que lo use un cliente.",
+      texto: "Integraciones, datos, prompts y casos límite, antes de que lo use un cliente.",
     },
   ],
   en: [
@@ -29,8 +28,7 @@ const PASOS = {
     },
     {
       titulo: "I build and test",
-      texto:
-        "Integrations, data, prompts and edge cases, before a client uses it.",
+      texto: "Integrations, data, prompts and edge cases, before a client uses it.",
     },
   ],
 };
@@ -71,9 +69,7 @@ export default function ComoTrabajo() {
         <h2 className="trabajo-titulo">
           {en ? "Full stack developer," : "Desarrolladora full stack,"}{" "}
           <span className="serif">
-            {en
-              ? "focused on AI and automation."
-              : "enfocada en IA y automatización."}
+            {en ? "focused on AI and automation." : "enfocada en IA y automatización."}
           </span>
         </h2>
         <p className="trabajo-bio">

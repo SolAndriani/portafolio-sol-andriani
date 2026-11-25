@@ -14,8 +14,7 @@ export default function Escritura({ frases }) {
   const [texto, setTexto] = useState("");
   const [borrando, setBorrando] = useState(false);
   const sinMovimiento =
-    typeof window !== "undefined" &&
-    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   // al cambiar de idioma, arrancar de cero
   useEffect(() => {
@@ -36,10 +35,8 @@ export default function Escritura({ frases }) {
     } else {
       espera = setTimeout(
         () =>
-          setTexto(
-            borrando ? frase.slice(0, texto.length - 1) : frase.slice(0, texto.length + 1)
-          ),
-        borrando ? BORRAR : ESCRIBIR
+          setTexto(borrando ? frase.slice(0, texto.length - 1) : frase.slice(0, texto.length + 1)),
+        borrando ? BORRAR : ESCRIBIR,
       );
     }
     return () => clearTimeout(espera);
