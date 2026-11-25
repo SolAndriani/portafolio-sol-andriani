@@ -95,17 +95,6 @@ export default function Presentacion() {
             {t("que ahorran horas de\u00A0trabajo.", "that save hours of\u00A0work.")}
           </h1>
 
-          {/* En desktop corta en "y aplicaciones" para que cada renglón
-              tenga sentido; en pantallas más chicas el texto fluye solo. */}
-          <p className="hero-descripcion u u2">
-            {t("Desarrollo agentes de IA, automatizaciones", "I develop AI agents, automations")}
-            <br className="hero-corte" />{" "}
-            {t(
-              "y aplicaciones full stack, de la idea a producción.",
-              "and full stack applications, from idea to production."
-            )}
-          </p>
-
           <div className="hero-acciones u u3">
             <a className="btn btn--oscuro" href="#proyectos">
               {t("Ver proyectos", "View projects")} <span aria-hidden="true">→</span>
