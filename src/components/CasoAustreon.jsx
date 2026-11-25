@@ -54,8 +54,6 @@ const TEXTOS = {
     eyebrow: "Caso de estudio",
     titulo: "Cómo funciona un asistente",
     tituloSerif: "de principio a fin",
-    intro:
-      "Soy la líder técnica de Austreon: diseñé la arquitectura, los flujos, el modelo de datos y los prompts. El sistema está en etapa de lanzamiento y hoy se puede ver en las dos demos.",
     demos: "Probá las demos:",
     abrir: "Leer el caso completo",
     cerrar: "Cerrar el caso",
@@ -106,8 +104,6 @@ const TEXTOS = {
     eyebrow: "Case study",
     titulo: "How an assistant works",
     tituloSerif: "from start to finish",
-    intro:
-      "I'm the technical lead at Austreon: I designed the architecture, the workflows, the data model and the prompts. The system is in its launch stage and can be seen today in the two demos.",
     demos: "Try the demos:",
     abrir: "Read the full case",
     cerrar: "Close the case",
@@ -170,7 +166,6 @@ export default function CasoAustreon() {
             {tx.titulo} <span className="serif">{tx.tituloSerif}</span>
           </h2>
         </div>
-        <p className="caso-intro">{tx.intro}</p>
       </div>
 
       <ol className="caso-pasos">
