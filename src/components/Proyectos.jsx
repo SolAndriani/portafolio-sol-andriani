@@ -15,14 +15,13 @@ const ES = [
   },
   {
     numero: "02",
-    titulo: "Oportunidades en Mercado Público",
+    titulo: "Licitaciones: de la oportunidad a la oferta",
     descripcion:
-      "Automatización que descarga a diario unas 4.250 Compras Ágiles del Estado chileno, las filtra por palabras clave del área comercial y le envía al equipo un resumen de oportunidades.",
-    rol: "Diseño e integración de la automatización.",
-    tags: ["n8n", "API REST", "Interno"],
-    tipo: "acordeon",
-    detalle:
-      "Problema: el equipo comercial revisaba a mano las compras públicas y se perdía oportunidades. Solución: un flujo en n8n consulta la API de Mercado Público todos los días, filtra por palabras clave que administra el área comercial y envía un resumen. Sistema interno, no público.",
+      "Sistema que revisa a diario unas 4.250 Compras Ágiles del Estado chileno, filtra las que calzan y, con IA, analiza las bases y redacta la cotización para aprobar y firmar.",
+    rol: "Diseño y desarrollo completo: automatización, plataforma web, integración con IA y puesta en producción.",
+    tags: ["n8n", "Claude\u00A0API", "PHP", "API REST", "Interno"],
+    tipo: "ancla",
+    href: "#caso-licitaciones",
   },
   {
     numero: "03",
@@ -65,13 +64,11 @@ const EN = [
   },
   {
     ...ES[1],
-    titulo: "Public procurement opportunities (Chile)",
+    titulo: "Tenders: from opportunity to offer",
     descripcion:
-      "Automation that downloads around 4,250 public purchase requests from the Chilean government every day, filters them by the sales team's keywords and sends the team a summary of opportunities.",
-    rol: "Design and integration of the automation.",
-    tags: ["n8n", "REST API", "Internal"],
-    detalle:
-      "Problem: the sales team reviewed public purchases by hand and missed opportunities. Solution: an n8n workflow queries the Mercado Público API every day, filters by keywords managed by the sales team and sends a summary. Internal system, not public.",
+      "A system that reviews around 4,250 Chilean government Compras Ágiles every day, filters the ones that fit and, with AI, analyzes the tender documents and drafts the quote to approve and sign.",
+    rol: "End-to-end design and development: automation, web platform, AI integration and production rollout.",
+    tags: ["n8n", "Claude\u00A0API", "PHP", "REST API", "Internal"],
   },
   {
     ...ES[2],

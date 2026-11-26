@@ -3,6 +3,8 @@ import Presentacion from "./components/Presentacion";
 import Tecnologias from "./components/Tecnologias";
 import Proyectos from "./components/Proyectos";
 import CasoAustreon from "./components/CasoAustreon";
+import CasoLicitaciones from "./components/CasoLicitaciones";
+import VisorImagen from "./components/VisorImagen";
 import ComoTrabajo from "./components/ComoTrabajo";
 import Footer from "./components/Footer";
 import Cortina from "./components/Cortina";
@@ -30,9 +32,11 @@ function App() {
         <Tecnologias />
         <Proyectos />
         <CasoAustreon />
+        <CasoLicitaciones />
         <ComoTrabajo />
         <Footer />
       </main>
+      <VisorImagen />
     </IdiomaProvider>
   );
 }

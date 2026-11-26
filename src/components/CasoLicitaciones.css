@@ -1,0 +1,43 @@
+/* ===== Caso de estudio: Licitaciones =====
+   Usa los estilos de CasoAustreon.css; acá solo lo propio de este caso. */
+
+/* Separación con el caso anterior, que también es oscuro */
+.caso--licitaciones {
+  margin-top: 40px;
+}
+
+/* Seis pasos: tres por fila */
+.caso-pasos--seis {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* Capturas en pares y video */
+.caso-capturas-grid--pares {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.caso-video {
+  display: block;
+  width: 100%;
+  margin-bottom: 20px;
+  border: 1px solid var(--oscuro-borde);
+  border-radius: 10px;
+  background: #000;
+}
+
+@media (max-width: 1100px) {
+  .caso-pasos--seis {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 760px) {
+  .caso--licitaciones {
+    margin-top: 24px;
+  }
+
+  .caso-pasos--seis,
+  .caso-capturas-grid--pares {
+    grid-template-columns: 1fr;
+  }
+}

@@ -57,23 +57,40 @@ const TEXTOS = {
     demos: "Probá las demos:",
     abrir: "Leer el caso completo",
     cerrar: "Cerrar el caso",
-    parrafos1: [
-      "Diseñé asistentes de WhatsApp para clínicas que agendan turnos y responden consultas sin intervención. El problema aparece cuando el asistente no puede: una urgencia, alguien que insiste en hablar con una persona, o una pregunta que no sabe responder. Sin una forma ordenada de pasar esa conversación a alguien del equipo, termina en el celular de recepción o se pierde.",
-      "Construí un panel donde el equipo ve las conversaciones en vivo y puede meterse en una cuando hace falta. Toma el control, responde y al terminar se la devuelve al asistente. Del lado del paciente no cambia nada, porque los mensajes salen por el mismo número.",
+    bloques: [
+      {
+        titulo: "El problema",
+        parrafos: [
+          "Los asistentes de WhatsApp agendan turnos y responden consultas solos. El problema es cuando no pueden, por una urgencia, alguien que pide hablar con una persona o una pregunta sin respuesta. Esa conversación terminaba en el celular de recepción o se perdía.",
+        ],
+      },
+      {
+        titulo: "La solución",
+        parrafos: [
+          "Un panel donde el equipo ve las conversaciones en vivo, toma el control de una, responde y se la devuelve al asistente. El paciente no nota nada, porque los mensajes salen por el mismo número.",
+        ],
+      },
+      { capturas: true },
+      {
+        titulo: "Qué hubo que resolver",
+        lista: [
+          "El asistente se calla solo en la conversación que tomó una persona.",
+          "Si el equipo no responde en dos horas, el asistente retoma el chat.",
+          "El panel avisa si se cerró la ventana de 24 horas de WhatsApp antes de que alguien escriba.",
+          "Las conversaciones se borran a los 30 días y las métricas no guardan nombres ni teléfonos.",
+        ],
+      },
+      {
+        titulo: "Qué se mide",
+        parrafos: [
+          "Cuánto resuelve el asistente solo, cuántos turnos se agendan fuera de horario y por qué se deriva cada conversación. Con esos números se decide qué mejorar.",
+        ],
+      },
     ],
-    resolver: "Qué hubo que resolver",
-    parrafos2: [
-      "Que el asistente y la persona no se pisen. Cuando alguien toma el control, el asistente tiene que callarse en esa conversación y solo en esa. Antes de contestar cada mensaje, consulta ese estado.",
-      "Que nadie se olvide de devolver el chat. Si queda tomado, el paciente deja de recibir respuestas. Lo resolví con un vencimiento: si el equipo no responde en dos horas, el asistente retoma la conversación solo.",
-      "Los límites de WhatsApp, que no dejan escribirle a alguien que no escribió en las últimas 24 horas. El panel avisa antes de que la persona redacte, así no se entera cuando el envío ya falló.",
-      "Los datos de salud. Las conversaciones se borran solas a los 30 días y las métricas se guardan sin nombres ni teléfonos.",
-    ],
-    capturaWa:
-      "Lo que ve la tutora en WhatsApp: manda un audio, elige un horario de la lista y el turno queda confirmado.",
+    capturaWa: "La tutora manda un audio, elige un horario y el turno queda confirmado.",
     capturaWaAlt:
       "Conversación de WhatsApp con el asistente de Austreon Vet: audio, lista de horarios y turno confirmado",
-    capturaPanel:
-      "Lo que ve la clínica en el panel: la misma conversación en vivo, con la opción de tomar el control.",
+    capturaPanel: "La clínica ve la misma conversación en vivo y puede tomar el control.",
     capturaPanelAlt: "Panel de la clínica con la conversación en vivo y el botón Tomar control",
     decisiones: "Decisiones técnicas",
     listaDecisiones: [
@@ -93,16 +110,11 @@ const TEXTOS = {
           "El aislamiento entre clínicas está resuelto en la base de datos, no librado a que el frontend filtre bien.",
       },
     ],
-    mide: "Qué se mide",
-    parrafos4: [
-      "Dejé instrumentado el registro de sus propios números: cuánto resuelve el asistente solo, cuántos turnos se agendan fuera del horario de atención y por qué motivo derivó cada conversación (pidió una persona, no tenía la respuesta, urgencia, reclamo). Con eso se decide qué mejorar después.",
-    ],
     flujo:
       "El flujo principal en n8n: entra el mensaje de WhatsApp, el agente de IA decide y usa herramientas para consultar y confirmar turnos, registrar el triage, notificar urgencias y escalar a una persona.",
     flujoAlt: "El agente de IA del asistente de Austreon en n8n, con sus herramientas",
     ampliar: "Ver el flujo completo ↗",
     verFlujo: "Ver el flujo en n8n ↗",
-    nota: "Hecho con n8n, OpenAI, WhatsApp Cloud API, Airtable, JavaScript y Supabase. El panel es una herramienta interna y requiere usuario, así que no es público.",
   },
   en: {
     eyebrow: "Case study",
@@ -111,23 +123,40 @@ const TEXTOS = {
     demos: "Try the demos:",
     abrir: "Read the full case",
     cerrar: "Close the case",
-    parrafos1: [
-      "I designed WhatsApp assistants for clinics that book appointments and answer questions without human intervention. The problem appears when the assistant can't handle something: an urgency, someone who insists on talking to a person, or a question it can't answer. Without an orderly way to hand that conversation to someone on the team, it ends up on the front desk's phone or gets lost.",
-      "I built a dashboard where the team sees conversations live and can step into one when needed. They take control, reply and, when they're done, hand it back to the assistant. Nothing changes for the patient, because messages come from the same number.",
+    bloques: [
+      {
+        titulo: "The problem",
+        parrafos: [
+          "The WhatsApp assistants book appointments and answer questions on their own. The problem is when they can't, because of an urgency, someone asking for a person or a question with no answer. That conversation ended up on the front desk's phone or got lost.",
+        ],
+      },
+      {
+        titulo: "The solution",
+        parrafos: [
+          "A dashboard where the team sees conversations live, takes over one, replies and hands it back to the assistant. The patient doesn't notice anything, because messages come from the same number.",
+        ],
+      },
+      { capturas: true },
+      {
+        titulo: "What had to be solved",
+        lista: [
+          "The assistant goes quiet only in the conversation a person took over.",
+          "If the team doesn't reply within two hours, the assistant takes the chat back.",
+          "The dashboard warns when WhatsApp's 24-hour window has closed, before anyone types.",
+          "Conversations are deleted after 30 days and metrics don't store names or phone numbers.",
+        ],
+      },
+      {
+        titulo: "What gets measured",
+        parrafos: [
+          "How much the assistant resolves on its own, how many appointments are booked after hours and why each conversation gets escalated. Those numbers decide what to improve next.",
+        ],
+      },
     ],
-    resolver: "What had to be solved",
-    parrafos2: [
-      "Keeping the assistant and the person from talking over each other. When someone takes control, the assistant has to stay quiet in that conversation, and only that one. Before replying to each message, it checks that state.",
-      "Making sure nobody forgets to hand the chat back. If it stays taken, the patient stops getting replies. I solved it with an expiry: if the team doesn't reply within two hours, the assistant takes the conversation back on its own.",
-      "WhatsApp's limits, which don't let you message someone who hasn't written in the last 24 hours. The dashboard warns before the person starts typing, so they don't find out after the message has already failed.",
-      "Health data. Conversations are deleted automatically after 30 days and metrics are stored without names or phone numbers.",
-    ],
-    capturaWa:
-      "What the pet owner sees on WhatsApp: sends a voice note, picks a time from the list and the appointment is confirmed.",
+    capturaWa: "The pet owner sends a voice note, picks a time and the appointment is confirmed.",
     capturaWaAlt:
       "WhatsApp conversation with the Austreon Vet assistant: voice note, list of times and confirmed appointment",
-    capturaPanel:
-      "What the clinic sees in the dashboard: the same conversation live, with the option to take over.",
+    capturaPanel: "The clinic sees the same conversation live and can take over.",
     capturaPanelAlt: "Clinic dashboard with the live conversation and the Take control button",
     decisiones: "Technical decisions",
     listaDecisiones: [
@@ -147,16 +176,11 @@ const TEXTOS = {
           "Isolation between clinics is enforced in the database, not left to the frontend filtering correctly.",
       },
     ],
-    mide: "What gets measured",
-    parrafos4: [
-      "I instrumented it to log its own numbers: how much the assistant resolves on its own, how many appointments are booked outside office hours and why each conversation was escalated (asked for a person, didn't have the answer, urgency, complaint). That data decides what to improve next.",
-    ],
     flujo:
       "The main workflow in n8n: the WhatsApp message comes in, the AI agent decides and uses tools to check and confirm appointments, log triage, notify urgencies and escalate to a person.",
     flujoAlt: "The AI agent of the Austreon assistant in n8n, with its tools",
     ampliar: "View the full workflow ↗",
     verFlujo: "See the n8n workflow ↗",
-    nota: "Built with n8n, OpenAI, WhatsApp Cloud API, Airtable, JavaScript and Supabase. The dashboard is an internal tool and requires a login, so it isn't public.",
   },
 };
 
@@ -221,6 +245,7 @@ export default function CasoAustreon() {
           <span aria-hidden="true"> · </span>
           <a
             className="link"
+            data-visor
             href="/imagenes/caso-n8n-flujo-ordenado.webp"
             target="_blank"
             rel="noopener noreferrer"
@@ -240,54 +265,66 @@ export default function CasoAustreon() {
         </button>
       </div>
 
-      <div id="caso-completo" className="caso-completo" hidden={!abierto}>
-        {tx.parrafos1.map((p) => (
-          <p key={p}>{p}</p>
-        ))}
-
-        {/* Capturas reales de la demo de Austreon Vet */}
-        <div className="caso-capturas">
-          <div className="caso-capturas-grid">
-            <figure className="caso-captura">
-              <a href="/imagenes/caso-vet-whatsapp.webp" target="_blank" rel="noopener noreferrer">
-                <img
-                  src="/imagenes/caso-vet-whatsapp.webp"
-                  alt={tx.capturaWaAlt}
-                  width="1316"
-                  height="816"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </a>
-              <figcaption>{tx.capturaWa}</figcaption>
-            </figure>
-            <figure className="caso-captura">
-              <a href="/imagenes/caso-vet-panel.webp" target="_blank" rel="noopener noreferrer">
-                <img
-                  src="/imagenes/caso-vet-panel.webp"
-                  alt={tx.capturaPanelAlt}
-                  width="1600"
-                  height="719"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </a>
-              <figcaption>{tx.capturaPanel}</figcaption>
-            </figure>
-          </div>
-        </div>
-
-        <h3>{tx.resolver}</h3>
-        {tx.parrafos2.map((p) => (
-          <p key={p}>{p}</p>
-        ))}
-
-        <h3>{tx.mide}</h3>
-        {tx.parrafos4.map((p) => (
-          <p key={p}>{p}</p>
-        ))}
-
-        <p className="caso-nota">{tx.nota}</p>
+      <div id="caso-completo" className="caso-completo caso-completo--bloques" hidden={!abierto}>
+        {tx.bloques.map((bloque) =>
+          bloque.capturas ? (
+            // Capturas reales de la demo de Austreon Vet
+            <div className="caso-capturas caso-bloque--ancho" key="capturas">
+              <div className="caso-capturas-grid">
+                <figure className="caso-captura">
+                  <a
+                    data-visor
+                    href="/imagenes/caso-vet-whatsapp.webp"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      src="/imagenes/caso-vet-whatsapp.webp"
+                      alt={tx.capturaWaAlt}
+                      width="1316"
+                      height="816"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </a>
+                  <figcaption>{tx.capturaWa}</figcaption>
+                </figure>
+                <figure className="caso-captura">
+                  <a
+                    data-visor
+                    href="/imagenes/caso-vet-panel.webp"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      src="/imagenes/caso-vet-panel.webp"
+                      alt={tx.capturaPanelAlt}
+                      width="1600"
+                      height="719"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </a>
+                  <figcaption>{tx.capturaPanel}</figcaption>
+                </figure>
+              </div>
+            </div>
+          ) : (
+            <div className="caso-bloque" key={bloque.titulo}>
+              <h3>{bloque.titulo}</h3>
+              {bloque.parrafos?.map((p) => (
+                <p key={p}>{p}</p>
+              ))}
+              {bloque.lista && (
+                <ul className="caso-lista">
+                  {bloque.lista.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          ),
+        )}
       </div>
     </section>
   );

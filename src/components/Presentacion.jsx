@@ -78,7 +78,7 @@ export default function Presentacion() {
           <p className="hero-etiqueta u">
             <span className="hero-linea" aria-hidden="true" />
             <span>
-              {"AI\u00A0Engineer"}
+              {"AI\u00A0&\u00A0Full\u00A0Stack\u00A0Developer"}
               <span>
                 {" · "}
                 {t("IA y automatización", "AI & automation")}

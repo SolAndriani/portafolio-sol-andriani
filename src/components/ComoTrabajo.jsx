@@ -35,24 +35,24 @@ const PASOS = {
 
 const STACK = {
   es: [
-    { grupo: "IA", items: "OpenAI · Gemini · Claude Code" },
+    { grupo: "IA", items: "OpenAI · Claude API · Gemini · Claude Code" },
     { grupo: "Automatización", items: "n8n · WhatsApp Cloud API · Webhooks" },
     {
       grupo: "Desarrollo",
-      items: "Python · JavaScript / TypeScript · React · Node.js · FastAPI",
+      items: "Python · JavaScript / TypeScript · React · Node.js · FastAPI · PHP",
     },
-    { grupo: "Datos", items: "PostgreSQL · Supabase · MongoDB · Airtable" },
+    { grupo: "Datos", items: "PostgreSQL · SQLite · Supabase · MongoDB · Airtable" },
     { grupo: "Deploy", items: "Hetzner · Vercel" },
     { grupo: "Aprendiendo", items: "AWS" },
   ],
   en: [
-    { grupo: "AI", items: "OpenAI · Gemini · Claude Code" },
+    { grupo: "AI", items: "OpenAI · Claude API · Gemini · Claude Code" },
     { grupo: "Automation", items: "n8n · WhatsApp Cloud API · Webhooks" },
     {
       grupo: "Development",
-      items: "Python · JavaScript / TypeScript · React · Node.js · FastAPI",
+      items: "Python · JavaScript / TypeScript · React · Node.js · FastAPI · PHP",
     },
-    { grupo: "Data", items: "PostgreSQL · Supabase · MongoDB · Airtable" },
+    { grupo: "Data", items: "PostgreSQL · SQLite · Supabase · MongoDB · Airtable" },
     { grupo: "Deploy", items: "Hetzner · Vercel" },
     { grupo: "Learning", items: "AWS" },
   ],

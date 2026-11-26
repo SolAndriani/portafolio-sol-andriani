@@ -15,6 +15,9 @@ import {
   SiSupabase,
   SiVercel,
   SiClaude,
+  SiAnthropic,
+  SiPhp,
+  SiSqlite,
 } from "react-icons/si";
 import "./Tecnologias.css";
 
@@ -25,12 +28,15 @@ const HERRAMIENTAS = [
   { nombre: "React", Icono: SiReact },
   { nombre: "Node.js", Icono: SiNodedotjs },
   { nombre: "FastAPI", Icono: SiFastapi },
+  { nombre: "PHP", Icono: SiPhp },
   { nombre: "n8n", Icono: SiN8N },
   { nombre: "OpenAI", Icono: SiOpenai },
+  { nombre: "Claude API", Icono: SiAnthropic },
   { nombre: "Gemini", Icono: SiGooglegemini },
   { nombre: "WhatsApp Cloud API", Icono: SiWhatsapp },
   { nombre: "Airtable", Icono: SiAirtable },
   { nombre: "PostgreSQL", Icono: SiPostgresql },
+  { nombre: "SQLite", Icono: SiSqlite },
   { nombre: "Supabase", Icono: SiSupabase },
   { nombre: "Vercel", Icono: SiVercel },
   { nombre: "Claude Code", Icono: SiClaude },
